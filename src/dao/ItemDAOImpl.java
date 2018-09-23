@@ -4,6 +4,7 @@ import java.util.List;
 
 import model.Customer;
 import model.Item;
+import model.ItemFilter;
 
 public class ItemDAOImpl implements ItemDAO{
 
@@ -36,6 +37,19 @@ public class ItemDAOImpl implements ItemDAO{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public List<Item> getAllItems() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Item> getFilteredItems(ItemFilter filter) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 	
 	

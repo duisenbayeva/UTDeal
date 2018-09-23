@@ -6,6 +6,7 @@ import java.util.List;
 
 import model.Customer;
 import model.Item;
+import model.ItemFilter;
 
 public interface ItemDAO {
 	
@@ -14,5 +15,7 @@ public interface ItemDAO {
 	void deleteItem(int id);
 	List<Item> fetchPostedItems(Customer cust);
 	List<Item> fetchFavItems(Customer cust);
+	List<Item> getAllItems();
+	List<Item> getFilteredItems(ItemFilter filter);
 	
 }
