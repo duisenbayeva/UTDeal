@@ -1,4 +1,8 @@
-package domain.login;
+package dao;
+
+import domain.login.Login;
+import model.Customer;
+
 /**
  * 
  * @author mehra

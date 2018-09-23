@@ -1,4 +1,4 @@
-package domain.login;
+package model;
 /**
  * 
  * @author mehra

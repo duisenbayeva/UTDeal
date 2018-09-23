@@ -2,7 +2,7 @@ package dao;
 
 import java.util.List;
 
-import domain.login.Customer;
+import model.Customer;
 import model.Item;
 
 public class ItemDAOImpl implements ItemDAO{
