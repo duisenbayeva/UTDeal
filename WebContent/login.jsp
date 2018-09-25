@@ -31,19 +31,18 @@
 	
 	<form name="loginform" action="LoginController" method="post" onsubmit="return loginValidate()" class="form-horizontal" role="form">
 	<br>
-	${message}<br>
-	${successMessage}<br>
+
 	
 	 <div style="margin-bottom: 25px" class="input-group">
 	 
       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
       
-      <input id="username" type="text" class="form-control" name="username" value="" placeholder="netid">                                        
+      <input id="username" type="text" class="form-control" name="username" value="" placeholder="netid should be @utdallas.edu" pattern="@utdallas.edu" title="Must be a utdallas email address" required>                                                    
        </div>
                                 
      <div style="margin-bottom: 25px" class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-      <input id="password" type="password" class="form-control" name="password" placeholder="password">
+      <input id="password" type="password" class="form-control" name="password" placeholder="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
        </div>
          
      <input type="submit" name="submit" value="login"><br>
