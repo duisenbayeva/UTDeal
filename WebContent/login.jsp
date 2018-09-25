@@ -11,6 +11,7 @@
 </head>
 <body>
 	<%out.print("Hello!"); %>
+	<%out.print("Namrata"); %>
 	<%= new java.util.Date() %>
 	
 	
