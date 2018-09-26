@@ -54,159 +54,117 @@
 			<ul class="navbar-nav mr-auto w-100 justify-content-left clearfix">
 				<li class="nav-item active"><a class="nav-link"
 					href="#hero-area"> Home </a></li>
-				<li class="nav-item"><a class="nav-link" href="#feature">
-						About Us </a></li>
-
 				<li class="nav-item"><a class="nav-link" href="#team"> Team
 				</a></li>
-
-
 				<li class="nav-item"><a class="nav-link" href="#contact">
 						Contact </a></li>
-			</ul>
+				
+				<li class="nav-item"><a class="nav-link" href="#feature">
+						My Profile </a></li>
+				<li class="nav-item"><a class="nav-link " href="#feature">
+						My List </a>
+			</ul></div>
 		</div>
 	</div>
-
 	<!-- Mobile Menu Start -->
 	<ul class="mobile-menu navbar-nav">
 		<li><a class="page-scroll" href="#hero-area"> Home </a></li>
-
-		<li><a class="page-scroll" href="#feature"> About Us </a></li>
-
 		<li class="nav-item"><a class="nav-link" href="#team"> Team </a>
 		</li>
-
 		<li><a class="page-scroll" href="#contact"> Contact </a></li>
+		<li><a class="page-scroll" href="#feature "> My Profile </a></li>
+		<li><a class="page-scroll" href="#feature "> My List </a></li>
 	</ul>
-	<!-- Mobile Menu End --> </nav> <!-- Navbar End --> <!-- Hero Area Start -->
+	<!-- Mobile Menu End --> </nav> <!-- Navbar End --> <!--  Hero Area Start -->
 	<div id="hero-area" class="hero-area-bg">
 		<div class="overlay"></div>
 		<div class="container">
-			<div class="row">
+			<div class="row" style="background-color: white">
 				<div class="col-md-12 col-sm-12">
 					<div class="contents text-center">
-						<h2 class="head-title wow fadeInUp">
-							Welcome to<br> UTDeals
-						</h2>
-						<div class="header-button wow fadeInUp" data-wow-delay="0.3s">
-							<a href="register.jsp" class="btn btn-common">SignUp now</a> <a
-								href="login.jsp" class="btn btn-common">SignIn</a>
+
+
+						<div class="row">
+							<div class="left" style="background-color: #bbb;">
+								<div class="search-container">
+									<form action=searchfunction()>
+										<input type="text" placeholder="Enter your search term"
+											name="searchbar">
+										<button type="submit">Go</button>
+									</form>
+								</div>
+								<ul id="myMenu">
+									<li><a href="#">Furniture</a></li>
+									<li><a href="#">Books</a></li>
+									<li><a href="#">Kitchen</a></li>
+									<li><a href="#">Electronics</a></li>
+									<li><a href="#">Clothes</a></li>
+								</ul>
+							</div>
+
+							<div class="right">
+								<h2 class="w3-center"
+									style="font-size: 25px; float: left; font-family: Segoe UI Light">Now
+									trending...</h2>
+								<div class="w3-content w3-section" style="max-width: 500px">
+									<img class="mySlides" src="home/assets/img/item/1.jpg"
+										style="width: 100%"> <img class="mySlides"
+										src="home/assets/img/item/2.jpg" " style="width: 100%">
+									<img class="mySlides" src="home/assets/img/item/3.jpg"
+										style="width: 100%"> <img class="mySlides"
+										src="home/assets/img/item/5.jpg" " style="width: 100%">
+									<img class="mySlides" src="home/assets/img/item/6.jpg"
+										style="width: 100%">
+								</div>
+
+								<script>
+									var myIndex = 0;
+									carousel();
+
+									function carousel() {
+										var i;
+										var x = document
+												.getElementsByClassName("mySlides");
+										for (i = 0; i < x.length; i++) {
+											x[i].style.display = "none";
+										}
+										myIndex++;
+										if (myIndex > x.length) {
+											myIndex = 1
+										}
+										x[myIndex - 1].style.display = "block";
+										setTimeout(carousel, 4000); // Change image every 4 seconds
+									}
+								</script>
+							</div>
 						</div>
 					</div>
-					<h2 class="w3-center"
-						style="font-size: 25px; float: left; font-family: Segoe UI Light">Now
-						trending...</h2>
-					<div class="w3-content w3-section" style="max-width: 500px">
-						<img class="mySlides" src="home/assets/img/item/1.jpg"
-							style="width: 100%"> <img class="mySlides"
-							src="home/assets/img/item/2.jpg" " style="width: 100%"> <img
-							class="mySlides" src="home/assets/img/item/3.jpg"
-							style="width: 100%"> <img class="mySlides"
-							src="home/assets/img/item/5.jpg" " style="width: 100%"> <img
-							class="mySlides" src="home/assets/img/item/6.jpg"
-							style="width: 100%">
-					</div>
-					<script>
-var myIndex = 0;
-carousel();
 
-function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";  
-    }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 4000); // Change image every 4 seconds
-}
-</script>
-					<%-- <div class="img-thumb text-center wow fadeInUp" data-wow-delay="0.6s">
-                <img class="img-fluid" src="home/assets/img/hero-1.jpg" alt="">
-              </div> --%>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- Hero Area End --> </header>
 	<!-- Header Area wrapper End -->
+	<script>
+		function myFunction() {
+			var input, filter, ul, li, a, i;
+			input = document.getElementById("mySearch");
+			filter = input.value.toUpperCase();
+			ul = document.getElementById("myMenu");
+			li = ul.getElementsByTagName("li");
+			for (i = 0; i < li.length; i++) {
+				a = li[i].getElementsByTagName("a")[0];
+				if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+					li[i].style.display = "";
+				} else {
+					li[i].style.display = "none";
+				}
+			}
+		}
+	</script>
 
 
-
-
-	<!-- Feature Section Start -->
-	<div id="feature">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-6 col-md-12 col-sm-12">
-					<div class="text-wrapper">
-						<div>
-
-							<br /> <br />
-
-							<div class="contents text-center">
-								<h2 class="title-hl wow fadeInLeft" data-wow-delay="0.3s">Learn
-									More About Us</h2>
-							</div>
-							<div class="row">
-								<div class="col-md-6 col-sm-6">
-									<div class="features-box wow fadeInLeft" data-wow-delay="0.3s">
-										<div class="features-icon">
-											<i class="lni-layers"></i>
-										</div>
-										<div class="features-content">
-											<h4>Sell and Buy</h4>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit. Veniam tempora quidem vel sint.</p>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 col-sm-6">
-									<div class="features-box wow fadeInLeft" data-wow-delay="0.6s">
-										<div class="features-icon">
-											<i class="lni-briefcase"></i>
-										</div>
-										<div class="features-content">
-											<h4>100% Free</h4>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit. Veniam tempora quidem vel sint.</p>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 col-sm-6">
-									<div class="features-box wow fadeInLeft" data-wow-delay="0.9s">
-										<div class="features-icon">
-											<i class="lni-cog"></i>
-										</div>
-										<div class="features-content">
-											<h4>Responsive</h4>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit. Veniam tempora quidem vel sint.</p>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 col-sm-6">
-									<div class="features-box wow fadeInLeft" data-wow-delay="1.2s">
-										<div class="features-icon">
-											<i class="lni-leaf"></i>
-										</div>
-										<div class="features-content">
-											<h4>Easy to Use</h4>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit. Veniam tempora quidem vel sint.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-	<!-- Feature Section End -->
 
 	<!-- Team Section Start -->
 	<section id="team" class="section-padding text-center">
@@ -350,30 +308,6 @@ function carousel() {
 
 
 
-	<!-- Subscribe Section Start -->
-	<section id="Subscribes" class="subscribes section-padding">
-	<div class="container">
-		<div class="row justify-content-md-center">
-			<div class="col-md-10 col-lg-5">
-				<h4 class="wow fadeInUp" data-wow-delay="0.3s">Start For Free</h4>
-				<p class="wow fadeInUp" data-wow-delay="0.6s">
-					Buy and sell Products <br>
-				</p>
-				<form for="">
-					<div class="subscribe wow fadeInDown" data-wow-delay="0.3s">
-						<input type="Email" class="form-control" name="username"
-							placeholder="enter your netid"> <a href="register.jsp"><i
-							class="lni-arrow-right"></i>
-						</button></a>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-	</section>
-	<!-- Subscribe Section End -->
-
-
 	<!-- Contact Section Start -->
 	<section id="contact" class="section-padding">
 	<div class="container">
@@ -433,7 +367,7 @@ function carousel() {
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<p>Copyright Â© 2018 UTDeals All Right Reserved</p>
+				<p>Copyright © 2018 UTDeals All Right Reserved</p>
 			</div>
 		</div>
 	</div>
