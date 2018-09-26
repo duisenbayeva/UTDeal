@@ -33,13 +33,15 @@ public class LoginController extends HttpServlet {
 		Login login = new Login(username, pass);
 		Customer c = customerDao.validateCustomer(login);
 		
-		if(submitType.equals("login") && c!=null && c.getName()!=null){
-			request.setAttribute("message", "Hello "+c.getName());
+		if(submitType.equals("login") && c!=null && c.getFirst_name()!=null){
+			request.setAttribute("message", "Hello "+c.getFirst_name());
 			request.getRequestDispatcher("welcome.jsp").forward(request, response);
 		}else if(submitType.equals("register")){
-			c.setName(request.getParameter("name"));
+			c.setFirst_name(request.getParameter("first_name"));
+			c.setLast_name(request.getParameter("last_name"));
 			c.setUsername(request.getParameter("username"));
 			c.setPassword(request.getParameter("password"));
+			c.setCell_phone(request.getParameter("cell_phone"));
 			customerDao.register(c);
 			request.setAttribute("successMessage", "Registration done, please login!");
 			request.getRequestDispatcher("login.jsp").forward(request, response);
