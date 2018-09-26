@@ -2345,3 +2345,6 @@ to {
 	height: 500px;
 	background-position: 100% 100%
 }
+.navbar-right{
+	float:right;
+}

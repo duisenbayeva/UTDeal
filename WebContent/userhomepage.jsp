@@ -38,7 +38,7 @@
 <body>
 
 	<header id="header-wrap"> <!-- Navbar Start --> <nav
-		class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
+		class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo" >
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -59,11 +59,22 @@
 				<li class="nav-item"><a class="nav-link" href="#contact">
 						Contact </a></li>
 				
-				<li class="nav-item"><a class="nav-link" href="#feature">
+				
+			</ul>
+			
+			<img src="home/assets/img/logo.png" style="width:500px;height:100px;">
+			
+			Hello_Username ${message} !!!!
+			<ul class="navbar-right navbar-nav mr-auto w-100 justify-content-right clearfix nav-item">
+			
+			<li class=" nav-item "><a class="nav-link" href="#feature">
 						My Profile </a></li>
 				<li class="nav-item"><a class="nav-link " href="#feature">
 						My List </a>
-			</ul></div>
+			<li class="nav-item"><a class="nav-link " href="logout.jsp">
+						Logout </a></li></ul>
+			</div>
+			
 		</div>
 	</div>
 	<!-- Mobile Menu Start -->

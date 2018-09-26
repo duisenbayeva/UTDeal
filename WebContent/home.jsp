@@ -59,11 +59,16 @@
 
 				<li class="nav-item"><a class="nav-link" href="#team"> Team
 				</a></li>
-
-
+<li class="nav-item"><a class="nav-link" href="#Subscribes">
+						Jumpstart </a></li>
 				<li class="nav-item"><a class="nav-link" href="#contact">
 						Contact </a></li>
+				
+						
 			</ul>
+			<div>
+						<img src="home/assets/img/logo.png" style="float:right;width:100px;height:50px"></div>
+			
 		</div>
 	</div>
 
@@ -75,7 +80,7 @@
 
 		<li class="nav-item"><a class="nav-link" href="#team"> Team </a>
 		</li>
-
+<li><a class="page-scroll" href="#Subscribes"> Jumpstart </a></li>
 		<li><a class="page-scroll" href="#contact"> Contact </a></li>
 	</ul>
 	<!-- Mobile Menu End --> </nav> <!-- Navbar End --> <!-- Hero Area Start -->
@@ -86,6 +91,7 @@
 				<div class="col-md-12 col-sm-12">
 					<div class="contents text-center">
 						<h2 class="head-title wow fadeInUp">
+						
 							Welcome to<br> UTDeals
 						</h2>
 						<div class="header-button wow fadeInUp" data-wow-delay="0.3s">
