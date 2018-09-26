@@ -67,7 +67,7 @@
 						
 			</ul>
 			<div>
-						<img src="home/assets/img/logo.png" style="float:right;width:100px;height:50px"></div>
+						<img src="home/assets/img/logo.png" style="float:right;width:110px;height:70px"></div>
 			
 		</div>
 	</div>

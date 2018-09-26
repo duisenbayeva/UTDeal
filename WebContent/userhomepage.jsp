@@ -62,7 +62,6 @@
 				
 			</ul>
 			
-			<img src="home/assets/img/logo.png" style="width:500px;height:100px;">
 			
 			Hello_Username ${message} !!!!
 			<ul class="navbar-right navbar-nav mr-auto w-100 justify-content-right clearfix nav-item">
@@ -73,6 +72,10 @@
 						My List </a>
 			<li class="nav-item"><a class="nav-link " href="logout.jsp">
 						Logout </a></li></ul>
+						<div>
+						<img src="home/assets/img/logo.png" style="float:right;width:110px;height:70px"></div>
+			
+		</div>
 			</div>
 			
 		</div>
