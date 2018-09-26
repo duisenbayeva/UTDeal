@@ -242,8 +242,53 @@
                 </div>
               </div>
               <div class="info-text">
-                <h3><a href="#">Rafael Basilla</a></h3>
-                <p>Front-end Developer, Dropbox</p>
+                <h3><a href="#">Sanket Modi</a></h3>
+                <p>Front-end Designer</p>
+              </div>
+            </div>
+            <!-- Team Item Ends -->
+          </div>
+        <div class="col-sm-6 col-md-6 col-lg-4">
+            <!-- Team Item Starts -->
+            <div class="team-item text-center">
+              <div class="team-img">
+                <img class="img-fluid" src="home/assets/img/team/team-02.jpg" alt="">
+                <div class="team-overlay">
+                  <div class="overlay-social-icon text-center">
+                    <ul class="social-icons">
+                      <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="lni-instagram-filled" aria-hidden="true"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="info-text">
+                <h3><a href="#">Balnur Duisenbayeva</a></h3>
+                <p>Back-end Designer</p>
+              </div>
+            </div>
+            <!-- Team Item Ends -->
+          </div>
+                  
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <!-- Team Item Starts -->
+            <div class="team-item text-center">
+              <div class="team-img">
+                <img class="img-fluid" src="home/assets/img/team/team-03.jpg" alt="">
+                <div class="team-overlay">
+                  <div class="overlay-social-icon text-center">
+                    <ul class="social-icons">
+                      <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="lni-instagram-filled" aria-hidden="true"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="info-text">
+                <h3><a href="#">Pavithra Kannan</a></h3>
+                <p>Front-end Developer</p>
               </div>
             </div>
             <!-- Team Item Ends -->
@@ -264,8 +309,8 @@
                 </div>
               </div>
               <div class="info-text">
-                <h3><a href="#">Renee Fleck</a></h3>
-                <p>Product Designer, Tesla</p>
+                <h3><a href="#">Tulika Mithal</a></h3>
+                <p>Back-end Designer</p>
               </div>
             </div>
             <!-- Team Item Ends -->
@@ -287,13 +332,12 @@
                 </div>
               </div>
               <div class="info-text">
-                <h3><a href="#">Paul Kowalsy</a></h3>
-                <p>Lead Designer, TNW</p>
+                <h3><a href="#">Namratha Rathore</a></h3>
+                <p>Front-end Designer</p>
               </div>
             </div>
             <!-- Team Item Ends -->
           </div>
-          
         </div>
       </div>
     </section>
@@ -342,21 +386,21 @@
                   <div class="contact-icon">
                     <i class="lni-map-marker"></i>
                   </div>
-                  <p>Dallas,Texas</p>
+                  <p>Richardson,Texas</p>
                 </div>
                 <div class="single-contact">
                   <div class="contact-icon">
                     <i class="lni-envelope"></i>
                   </div>
-                  <p><a href="#">email@gmail.com</a></p>
-                  <p><a href="#">tomsaulnier@gmail.com</a></p>
+                  <p><a href="#">utdeals@gmail.com</a></p>
+                  <p><a href="#">s.b.p.t.n@gmail.com</a></p>
                 </div>
                 <div class="single-contact">
                   <div class="contact-icon">
                     <i class="lni-phone-handset"></i>
                   </div>
-                  <p><a href="#">+42 374 5967</a></p>
-                  <p><a href="#">+99 123 5967</a></p>
+                  <p><a href="#">+(123) 456-7890</a></p>
+                  <p><a href="#">+(123) 789-0456</a></p>
                 </div>
               </div>
             </div>
