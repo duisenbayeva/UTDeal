@@ -40,7 +40,7 @@
 	 
       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
        
-      <input id="username" disabled type="text" class="form-control" name="username" value="${userDetails.username}" placeholder="netid should be @utdallas.edu" pattern="+.@utdallas.edu" title="Must be a utdallas email address" required>                                        
+      <input id="username" readonly type="text" class="form-control" name="username" value="${userDetails.username}" placeholder="netid should be @utdallas.edu" pattern="+.@utdallas.edu" title="Must be a utdallas email address" required>                                        
        </div>
        
        
