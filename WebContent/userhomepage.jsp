@@ -38,7 +38,7 @@
 <body>
 
 	<header id="header-wrap"> <!-- Navbar Start --> <nav
-		class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo" >
+		class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -48,37 +48,29 @@
 				<span class="navbar-toggler-icon"></span> <span class="icon-menu"></span>
 				<span class="icon-menu"></span> <span class="icon-menu"></span>
 			</button>
-			<!-- <img src="home/assets/img/logo.png" alt=""></a>-->
 		</div>
-		<div class="collapse navbar-collapse" id="main-navbar">
-			<ul class="navbar-nav mr-auto w-100 justify-content-left clearfix">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light"
+			style="width:100%">
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="nav navbar-nav mr-auto">
 				<li class="nav-item active"><a class="nav-link"
 					href="#hero-area"> Home </a></li>
 				<li class="nav-item"><a class="nav-link" href="#team"> Team
 				</a></li>
 				<li class="nav-item"><a class="nav-link" href="#contact">
 						Contact </a></li>
-				
-				
 			</ul>
-			
-			
-			Hello_Username ${message} !!!!
-			<ul class="navbar-right navbar-nav mr-auto w-100 justify-content-right clearfix nav-item">
-			
-			<li class=" nav-item "><a class="nav-link" href="#feature">
+			${message}!
+			<ul class="nav navbar-nav ml-auto">
+
+				<li class=" nav-item "><a class="nav-link" href="#feature">
 						My Profile </a></li>
 				<li class="nav-item"><a class="nav-link " href="#feature">
-						My List </a>
-			<li class="nav-item"><a class="nav-link " href="logout.jsp">
-						Logout </a></li></ul>
-						<div>
-						<img src="home/assets/img/logo.png" style="float:right;width:110px;height:70px"></div>
-			
+						My List </a> <li class="nav-item"><a class="nav-link " href="logout.jsp">
+						Logout </a></li>
+			</ul>
 		</div>
-			</div>
-			
-		</div>
+	
 	</div>
 	<!-- Mobile Menu Start -->
 	<ul class="mobile-menu navbar-nav">
@@ -124,12 +116,13 @@
 									<img class="mySlides" src="home/assets/img/item/1.jpg"
 										style="width: 100%"> <img class="mySlides"
 										src="home/assets/img/item/2.jpg" " style="width: 100%">
-									<img class="mySlides" src="home/assets/img/item/3.jpg"
-										style="width: 100%"> <img class="mySlides"
-										src="home/assets/img/item/5.jpg" " style="width: 100%">
-									<img class="mySlides" src="home/assets/img/item/6.jpg"
-										style="width: 100%">
-								</div>
+								<img class="mySlides" src="home/assets/img/item/3.jpg"
+					style="width: 100%"> <img class="mySlides"
+					src="home/assets/img/item/5.jpg" " style="width: 100%"> <img
+					class="mySlides" src="home/assets/img/item/6.jpg"
+					style="width: 100%">
+								
+				</div>
 
 								<script>
 									var myIndex = 0;
@@ -201,8 +194,8 @@
 						<div class="team-overlay">
 							<div class="overlay-social-icon text-center">
 								<ul class="social-icons">
-									<li><a href="https://www.linkedin.com/in/sanket-modi"><i class="lni-linkedin-filled"
-											aria-hidden="true"></i></a></li>
+									<li><a href="https://www.linkedin.com/in/sanket-modi"><i
+											class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -225,8 +218,9 @@
 						<div class="team-overlay">
 							<div class="overlay-social-icon text-center">
 								<ul class="social-icons">
-									<li><a href="https://www.linkedin.com/in/balnur-duisenbayeva/"><i class="lni-linkedin-filled"
-											aria-hidden="true"></i></a></li>
+									<li><a
+										href="https://www.linkedin.com/in/balnur-duisenbayeva/"><i
+											class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -250,8 +244,8 @@
 						<div class="team-overlay">
 							<div class="overlay-social-icon text-center">
 								<ul class="social-icons">
-									<li><a href="https://www.linkedin.com/in/pavithraconnect/"><i class="lni-linkedin-filled"
-											aria-hidden="true"></i></a></li>
+									<li><a href="https://www.linkedin.com/in/pavithraconnect/"><i
+											class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -274,8 +268,9 @@
 						<div class="team-overlay">
 							<div class="overlay-social-icon text-center">
 								<ul class="social-icons">
-									<li><a href="https://www.linkedin.com/in/tulika-mithal-95695886/"><i class="lni-linkedin-filled"
-											aria-hidden="true"></i></a></li>
+									<li><a
+										href="https://www.linkedin.com/in/tulika-mithal-95695886/"><i
+											class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -299,8 +294,9 @@
 						<div class="team-overlay">
 							<div class="overlay-social-icon text-center">
 								<ul class="social-icons">
-									<li><a href="https://www.linkedin.com/in/namrata-rathore-88150212a/"><i class="lni-linkedin-filled"
-											aria-hidden="true"></i></a></li>
+									<li><a
+										href="https://www.linkedin.com/in/namrata-rathore-88150212a/"><i
+											class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</div>
