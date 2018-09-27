@@ -35,6 +35,7 @@ public class LoginController extends HttpServlet {
 		
 		if(submitType.equals("login") && c!=null && c.getFirst_name()!=null){
 			request.setAttribute("message", "Hello "+c.getFirst_name());
+			request.setAttribute("userId", c.getUsername());
 			request.getRequestDispatcher("welcome.jsp").forward(request, response);
 		}else if(submitType.equals("register")){
 			c.setFirst_name(request.getParameter("first_name"));
