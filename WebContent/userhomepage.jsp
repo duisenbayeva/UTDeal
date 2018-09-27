@@ -62,7 +62,6 @@
 			</ul>
 			${message}!
 			<ul class="nav navbar-nav ml-auto">
-
 				<li class=" nav-item "><a class="nav-link" href="#feature">
 						My Profile </a></li>
 				<li class="nav-item"><a class="nav-link " href="#feature">
@@ -169,6 +168,7 @@
 				}
 			}
 		}
+		
 	</script>
 
 
