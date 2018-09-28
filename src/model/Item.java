@@ -7,7 +7,7 @@ public class Item {
 	private Category category;
 	private int quantity;
 	private String tags;
-	private String net_id;
+	private Customer customer;
 	private String image_url;
 	private boolean for_sale;
 	private float price;
@@ -15,7 +15,7 @@ public class Item {
 	private String comments;
 	private String date_posted;
 	private int fav_count;
-	private String status;
+	private Status status;
 	/**
 	 * @return the id
 	 */
@@ -77,18 +77,6 @@ public class Item {
 		this.tags = tags;
 	}
 	/**
-	 * @return the net_id
-	 */
-	public String getNet_id() {
-		return net_id;
-	}
-	/**
-	 * @param net_id the net_id to set
-	 */
-	public void setNet_id(String net_id) {
-		this.net_id = net_id;
-	}
-	/**
 	 * @return the image_url
 	 */
 	public String getImage_url() {
@@ -139,13 +127,13 @@ public class Item {
 	/**
 	 * @return the status
 	 */
-	public String getStatus() {
+	public Status getStatus() {
 		return status;
 	}
 	/**
 	 * @param status the status to set
 	 */
-	public void setStatus(String status) {
+	public void setStatus(Status status) {
 		this.status = status;
 	}
 	/**
@@ -184,6 +172,14 @@ public class Item {
 	public void setComments(String comments) {
 		this.comments = comments;
 	}
+	public Customer getCustomer() {
+		return customer;
+	}
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+	
+	
 	
 
 }
