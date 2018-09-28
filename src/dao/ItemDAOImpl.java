@@ -62,14 +62,14 @@ public class ItemDAOImpl implements ItemDAO{
 	}
 
 	@Override
-	public List<Item> fetchPostedItems(Customer cust) {
+	public List<Item> fetchPostedItems(String username) {
 		// TODO Auto-generated method stub
 		
 		List<Item> list = new ArrayList<>();
 		try{
 			conn = db.getConnection();
 			ps =conn.prepareStatement("select * from item where net_id=?");
-			ps.setString(1, cust.getUsername());
+			ps.setString(1, username);
 
 			ResultSet rs = ps.executeQuery();
 			Item i = null;

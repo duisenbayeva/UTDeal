@@ -12,7 +12,7 @@ public interface ItemDAO {
 	
 	public int saveItem(Item i);
 	public int deleteItem(int id);
-	List<Item> fetchPostedItems(Customer cust);
+	List<Item> fetchPostedItems(String username);
 	List<Item> fetchFavItems(Customer cust);
 	List<Item> getAllItems();
 	List<Item> getFilteredItems(ItemFilter filter);

@@ -178,6 +178,13 @@ public class Item {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
+	@Override
+	public String toString() {
+		return "Item [id=" + id + ", name=" + name + ", category=" + category + ", quantity=" + quantity + ", tags="
+				+ tags + ", customer=" + customer + ", image_url=" + image_url + ", for_sale=" + for_sale + ", price="
+				+ price + ", negotiable=" + negotiable + ", comments=" + comments + ", date_posted=" + date_posted
+				+ ", fav_count=" + fav_count + ", status=" + status + "]";
+	}
 	
 	
 	
