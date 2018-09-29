@@ -61,7 +61,7 @@ public class CustomerController extends HttpServlet {
 			user.setUsername(request.getParameter("username"));
 			user.setPassword(request.getParameter("password"));
 			user.setCell_phone(request.getParameter("cell_phone"));
-			
+			request.setAttribute("userId",user.getUsername());
 			System.out.println(user.getFirst_name()+" "+user.getLast_name()+" "+user.getCell_phone()+" "+user.getPassword()+" "+user.getUsername());
 			customerDao.updateProfile(user);
 			request.getRequestDispatcher("userhomepage.jsp").forward(request, response);
