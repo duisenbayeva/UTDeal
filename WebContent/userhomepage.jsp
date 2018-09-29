@@ -38,7 +38,7 @@
 <body>
 
 	<header id="header-wrap"> <!-- Navbar Start --> <nav
-		class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo" >
+		class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -48,37 +48,42 @@
 				<span class="navbar-toggler-icon"></span> <span class="icon-menu"></span>
 				<span class="icon-menu"></span> <span class="icon-menu"></span>
 			</button>
-			<!-- <img src="home/assets/img/logo.png" alt=""></a>-->
 		</div>
-		<div class="collapse navbar-collapse" id="main-navbar">
-			<ul class="navbar-nav mr-auto w-100 justify-content-left clearfix">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light"
+			style="width:100%">
+		<div class="collapse navbar-collapse" id="navbarNav">
+
+
+
+
+			<ul class="nav navbar-nav mr-auto">
 				<li class="nav-item active"><a class="nav-link"
 					href="#hero-area"> Home </a></li>
 				<li class="nav-item"><a class="nav-link" href="#team"> Team
 				</a></li>
 				<li class="nav-item"><a class="nav-link" href="#contact">
 						Contact </a></li>
-				
-				
 			</ul>
-			
-			
-			Hello_Username ${message} !!!!
-			<ul class="navbar-right navbar-nav mr-auto w-100 justify-content-right clearfix nav-item">
-			
-			<li class=" nav-item "><a class="nav-link" href="#feature">
-						My Profile </a></li>
+			${message}
+			<ul class="nav navbar-nav ml-auto">
+				<form name="regform" action="CustomerController" method="post"
+					class="form-horizontal" role="form">
+					<input class=" nav-item nav-link" type="hidden" name="username"
+						value="${userId}"></input> 
+					<input class=" nav-item nav-link"
+						type="submit" name="submit" value="editProfile"
+						style="border: hidden"></input>
+				</form>
+				<li class=" nav-item "><a class="nav-link" href="#feature">
+						Post Item </a></li>
 				<li class="nav-item"><a class="nav-link " href="#feature">
 						My List </a>
-			<li class="nav-item"><a class="nav-link " href="logout.jsp">
-						Logout </a></li></ul>
-						<div>
-						<img src="home/assets/img/logo.png" style="float:right;width:110px;height:70px"></div>
-			
+				<li class="nav-item"><a class="nav-link " href="logout.jsp">
+						Logout </a></li>
+			</ul>
 		</div>
-			</div>
-			
-		</div>
+	
+	
 	</div>
 	<!-- Mobile Menu Start -->
 	<ul class="mobile-menu navbar-nav">
@@ -86,8 +91,9 @@
 		<li class="nav-item"><a class="nav-link" href="#team"> Team </a>
 		</li>
 		<li><a class="page-scroll" href="#contact"> Contact </a></li>
-		<li><a class="page-scroll" href="#feature "> My Profile </a></li>
+		<li><a class="page-scroll" href="#feature "> Edit Profile </a></li>
 		<li><a class="page-scroll" href="#feature "> My List </a></li>
+		<li><a class="page-scroll" href="#feature "> Logout </a></li>
 	</ul>
 	<!-- Mobile Menu End --> </nav> <!-- Navbar End --> <!--  Hero Area Start -->
 	<div id="hero-area" class="hero-area-bg">
@@ -124,32 +130,32 @@
 									<img class="mySlides" src="home/assets/img/item/1.jpg"
 										style="width: 100%"> <img class="mySlides"
 										src="home/assets/img/item/2.jpg" " style="width: 100%">
-									<img class="mySlides" src="home/assets/img/item/3.jpg"
-										style="width: 100%"> <img class="mySlides"
-										src="home/assets/img/item/5.jpg" " style="width: 100%">
-									<img class="mySlides" src="home/assets/img/item/6.jpg"
-										style="width: 100%">
-								</div>
+								<img class="mySlides" src="home/assets/img/item/3.jpg"
+					style="width: 100%"> <img class="mySlides"
+					src="home/assets/img/item/5.jpg" " style="width: 100%"> <img
+					class="mySlides" src="home/assets/img/item/6.jpg"
+					style="width: 100%"></div>
 
-								<script>
-									var myIndex = 0;
-									carousel();
+						
+						<script>
+							var myIndex = 0;
+							carousel();
 
-									function carousel() {
-										var i;
-										var x = document
-												.getElementsByClassName("mySlides");
-										for (i = 0; i < x.length; i++) {
-											x[i].style.display = "none";
-										}
-										myIndex++;
-										if (myIndex > x.length) {
-											myIndex = 1
-										}
-										x[myIndex - 1].style.display = "block";
-										setTimeout(carousel, 4000); // Change image every 4 seconds
-									}
-								</script>
+							function carousel() {
+								var i;
+								var x = document
+										.getElementsByClassName("mySlides");
+								for (i = 0; i < x.length; i++) {
+									x[i].style.display = "none";
+								}
+								myIndex++;
+								if (myIndex > x.length) {
+									myIndex = 1
+								}
+								x[myIndex - 1].style.display = "block";
+								setTimeout(carousel, 4000); // Change image every 4 seconds
+							}
+						</script>
 							</div>
 						</div>
 					</div>
@@ -201,8 +207,8 @@
 						<div class="team-overlay">
 							<div class="overlay-social-icon text-center">
 								<ul class="social-icons">
-									<li><a href="https://www.linkedin.com/in/sanket-modi"><i class="lni-linkedin-filled"
-											aria-hidden="true"></i></a></li>
+									<li><a href="https://www.linkedin.com/in/sanket-modi"><i
+											class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -225,8 +231,9 @@
 						<div class="team-overlay">
 							<div class="overlay-social-icon text-center">
 								<ul class="social-icons">
-									<li><a href="https://www.linkedin.com/in/balnur-duisenbayeva/"><i class="lni-linkedin-filled"
-											aria-hidden="true"></i></a></li>
+									<li><a
+										href="https://www.linkedin.com/in/balnur-duisenbayeva/"><i
+											class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -250,8 +257,8 @@
 						<div class="team-overlay">
 							<div class="overlay-social-icon text-center">
 								<ul class="social-icons">
-									<li><a href="https://www.linkedin.com/in/pavithraconnect/"><i class="lni-linkedin-filled"
-											aria-hidden="true"></i></a></li>
+									<li><a href="https://www.linkedin.com/in/pavithraconnect/"><i
+											class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -274,8 +281,9 @@
 						<div class="team-overlay">
 							<div class="overlay-social-icon text-center">
 								<ul class="social-icons">
-									<li><a href="https://www.linkedin.com/in/tulika-mithal-95695886/"><i class="lni-linkedin-filled"
-											aria-hidden="true"></i></a></li>
+									<li><a
+										href="https://www.linkedin.com/in/tulika-mithal-95695886/"><i
+											class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -299,8 +307,9 @@
 						<div class="team-overlay">
 							<div class="overlay-social-icon text-center">
 								<ul class="social-icons">
-									<li><a href="https://www.linkedin.com/in/namrata-rathore-88150212a/"><i class="lni-linkedin-filled"
-											aria-hidden="true"></i></a></li>
+									<li><a
+										href="https://www.linkedin.com/in/namrata-rathore-88150212a/"><i
+											class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</div>

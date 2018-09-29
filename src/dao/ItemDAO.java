@@ -10,12 +10,13 @@ import model.ItemFilter;
 
 public interface ItemDAO {
 	
-	void addItem(Item i);
-	void updateItem(Item i);
-	void deleteItem(int id);
-	List<Item> fetchPostedItems(Customer cust);
+	public int saveItem(Item i);
+	public int deleteItem(int id);
+	List<Item> fetchPostedItems(String username);
 	List<Item> fetchFavItems(Customer cust);
 	List<Item> getAllItems();
 	List<Item> getFilteredItems(ItemFilter filter);
+	List<Item> getTrendingItems();
+	
 	
 }

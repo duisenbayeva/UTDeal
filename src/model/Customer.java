@@ -12,6 +12,14 @@ public class Customer {
 	private String last_name;
 	private String cell_phone;
 	
+	
+	public Customer() {
+		super();
+	}
+	public Customer(String username) {
+		super();
+		this.username = username;
+	}
 	public String getUsername() {
 		return username;
 	}

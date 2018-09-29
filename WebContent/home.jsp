@@ -48,10 +48,11 @@
 				<span class="navbar-toggler-icon"></span> <span class="icon-menu"></span>
 				<span class="icon-menu"></span> <span class="icon-menu"></span>
 			</button>
-			<!-- <img src="home/assets/img/logo.png" alt=""></a>-->
 		</div>
-		<div class="collapse navbar-collapse" id="main-navbar">
-			<ul class="navbar-nav mr-auto w-100 justify-content-left clearfix">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light"
+			style="width:100%">
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="nav navbar-nav mr-auto">
 				<li class="nav-item active"><a class="nav-link"
 					href="#hero-area"> Home </a></li>
 				<li class="nav-item"><a class="nav-link" href="#feature">
@@ -59,16 +60,13 @@
 
 				<li class="nav-item"><a class="nav-link" href="#team"> Team
 				</a></li>
-<li class="nav-item"><a class="nav-link" href="#Subscribes">
+				<li class="nav-item"><a class="nav-link" href="#Subscribes">
 						Jumpstart </a></li>
 				<li class="nav-item"><a class="nav-link" href="#contact">
 						Contact </a></li>
-				
-						
+
+
 			</ul>
-			<div>
-						<img src="home/assets/img/logo.png" style="float:right;width:110px;height:70px"></div>
-			
 		</div>
 	</div>
 
@@ -80,7 +78,7 @@
 
 		<li class="nav-item"><a class="nav-link" href="#team"> Team </a>
 		</li>
-<li><a class="page-scroll" href="#Subscribes"> Jumpstart </a></li>
+		<li><a class="page-scroll" href="#Subscribes"> Jumpstart </a></li>
 		<li><a class="page-scroll" href="#contact"> Contact </a></li>
 	</ul>
 	<!-- Mobile Menu End --> </nav> <!-- Navbar End --> <!-- Hero Area Start -->
@@ -91,7 +89,7 @@
 				<div class="col-md-12 col-sm-12">
 					<div class="contents text-center">
 						<h2 class="head-title wow fadeInUp">
-						
+
 							Welcome to<br> UTDeals
 						</h2>
 						<div class="header-button wow fadeInUp" data-wow-delay="0.3s">
@@ -113,21 +111,23 @@
 							style="width: 100%">
 					</div>
 					<script>
-var myIndex = 0;
-carousel();
+						var myIndex = 0;
+						carousel();
 
-function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";  
-    }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 4000); // Change image every 4 seconds
-}
-</script>
+						function carousel() {
+							var i;
+							var x = document.getElementsByClassName("mySlides");
+							for (i = 0; i < x.length; i++) {
+								x[i].style.display = "none";
+							}
+							myIndex++;
+							if (myIndex > x.length) {
+								myIndex = 1
+							}
+							x[myIndex - 1].style.display = "block";
+							setTimeout(carousel, 4000); // Change image every 4 seconds
+						}
+					</script>
 					<%-- <div class="img-thumb text-center wow fadeInUp" data-wow-delay="0.6s">
                 <img class="img-fluid" src="home/assets/img/hero-1.jpg" alt="">
               </div> --%>
@@ -235,8 +235,8 @@ function carousel() {
 						<div class="team-overlay">
 							<div class="overlay-social-icon text-center">
 								<ul class="social-icons">
-									<li><a href="https://www.linkedin.com/in/sanket-modi"><i class="lni-linkedin-filled"
-											aria-hidden="true"></i></a></li>
+									<li><a href="https://www.linkedin.com/in/sanket-modi"><i
+											class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -259,8 +259,9 @@ function carousel() {
 						<div class="team-overlay">
 							<div class="overlay-social-icon text-center">
 								<ul class="social-icons">
-									<li><a href="https://www.linkedin.com/in/balnur-duisenbayeva/"><i class="lni-linkedin-filled"
-											aria-hidden="true"></i></a></li>
+									<li><a
+										href="https://www.linkedin.com/in/balnur-duisenbayeva/"><i
+											class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -284,8 +285,8 @@ function carousel() {
 						<div class="team-overlay">
 							<div class="overlay-social-icon text-center">
 								<ul class="social-icons">
-									<li><a href="https://www.linkedin.com/in/pavithraconnect/"><i class="lni-linkedin-filled"
-											aria-hidden="true"></i></a></li>
+									<li><a href="https://www.linkedin.com/in/pavithraconnect/"><i
+											class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -308,8 +309,9 @@ function carousel() {
 						<div class="team-overlay">
 							<div class="overlay-social-icon text-center">
 								<ul class="social-icons">
-									<li><a href="https://www.linkedin.com/in/tulika-mithal-95695886/"><i class="lni-linkedin-filled"
-											aria-hidden="true"></i></a></li>
+									<li><a
+										href="https://www.linkedin.com/in/tulika-mithal-95695886/"><i
+											class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -333,8 +335,9 @@ function carousel() {
 						<div class="team-overlay">
 							<div class="overlay-social-icon text-center">
 								<ul class="social-icons">
-									<li><a href="https://www.linkedin.com/in/namrata-rathore-88150212a/"><i class="lni-linkedin-filled"
-											aria-hidden="true"></i></a></li>
+									<li><a
+										href="https://www.linkedin.com/in/namrata-rathore-88150212a/"><i
+											class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -370,7 +373,7 @@ function carousel() {
 						<input type="Email" class="form-control" name="username"
 							placeholder="enter your netid"> <a href="register.jsp"><i
 							class="lni-arrow-right"></i>
-						</button></a>
+							</button></a>
 					</div>
 				</form>
 			</div>

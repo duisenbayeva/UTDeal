@@ -5,6 +5,12 @@ public class Category {
 	private int id;
 	private String name;
 	
+	
+	
+	public Category(int id) {
+		super();
+		this.id = id;
+	}
 	/**
 	 * @return the id
 	 */

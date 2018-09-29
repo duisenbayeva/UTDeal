@@ -37,7 +37,7 @@
 	 
       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
       
-      <input id="username"  type="text" class="form-control" name="username" value="" placeholder="netid should be @utdallas.edu" pattern="+.@utdallas.edu" title="Must be a utdallas email address" required>                                                    
+      <input id="username"  type="text" class="form-control" name="username" value="" placeholder="netid should be @utdallas.edu" pattern="+@utdallas.edu" title="Must be a utdallas email address" required>                                                    
        </div>
                                 
      <div style="margin-bottom: 25px" class="input-group">
