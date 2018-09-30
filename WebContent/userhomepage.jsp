@@ -104,10 +104,8 @@
 						<div class="row">
 						<div class="left" style="background-color: #bbb;">
 								<div class="search-container">
-									<form action=searchfunction()>
 										<input type="text" onkeyup="myFunction()" placeholder="Enter your search term"
-											name="searchbar">
-										<button type="submit">Go</button>
+											name="searchbar" id="mySearch" style="width:95%">
 								</form>
 								</div>
 								<ul id="myMenu">
