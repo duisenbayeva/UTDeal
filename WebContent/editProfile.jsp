@@ -11,7 +11,7 @@
 <script type="text/javascript" src="script.js"></script>
 <script type="text/javascript" src="password.css"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Register Page</title>
+<title>Edit Profile</title>
 </head>
 <body>
 
@@ -22,11 +22,9 @@
             <div class="panel panel-info" >
 	
 	<div class="panel-heading">
-     <div class="panel-title">Sign Up</div>
-     <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="login.jsp">Already a user?</a></div>
+     <div class="panel-title">Edit Profile</div>
      </div> 
      
-     <h5> <p> * fields are compulsory</p></h5>
 	
 	<div style="padding-top:30px" class="panel-body" >
 

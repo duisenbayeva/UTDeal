@@ -40,7 +40,7 @@
 	 
       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
        
-      <input id="username" type="text" class="form-control" name="username" value="" placeholder="netid should be @utdallas.edu" pattern="+@utdallas.edu" title="Must be a utdallas email address" required>                                        
+      <input id="username" type="text" class="form-control" name="username" value="" placeholder="Username should be UTDallas netid" pattern=".{9,9}" maxlength="9" title="Not a valid netid" required>                                        
        </div>
        
        
@@ -86,8 +86,8 @@
        
        
          
-     <input type="submit" name="submit" value="register" >
-							<input type="reset" name="reset">
+     <input class="btn btn-primary" type="submit" name="submit" value="register" >
+							<input class="btn btn-primary" type="reset" name="reset">
 	                          
 	
 	
