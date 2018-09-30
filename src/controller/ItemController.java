@@ -63,7 +63,6 @@ public class ItemController extends HttpServlet {
 		
 		if(submitType.equals("saveItem")) {
 			Item item = new Item();
-			item.setId(Integer.parseInt(request.getParameter("id")));
 			item.setName(request.getParameter("name"));
 			item.setCategory(new Category(Integer.parseInt(request.getParameter("category"))));
 			item.setQuantity(Integer.parseInt(request.getParameter("quantity")));
@@ -80,6 +79,27 @@ public class ItemController extends HttpServlet {
 			
 			System.out.println(item.toString());
 			itemDao.saveItem(item);
+			request.getRequestDispatcher("home.jsp").forward(request, response);
+		}
+		if(submitType.equals("updateItem")) {
+			Item item = new Item();
+			item.setId(Integer.parseInt(request.getParameter("id")));
+			item.setName(request.getParameter("name"));
+			item.setCategory(new Category(Integer.parseInt(request.getParameter("category"))));
+			item.setQuantity(Integer.parseInt(request.getParameter("quantity")));
+			item.setFav_count(Integer.parseInt(request.getParameter("fav_count")));
+			item.setCustomer(new Customer(request.getParameter("customer")));
+			item.setImage_url(request.getParameter("image_url"));
+			item.setComments(request.getParameter("comments"));
+			item.setDate_posted(request.getParameter("date_posted"));
+			item.setFor_sale(Boolean.parseBoolean(request.getParameter("for_sale")));
+			item.setNegotiable(Boolean.parseBoolean(request.getParameter("negotiable")));
+			item.setPrice(Float.parseFloat(request.getParameter("price")));
+			item.setStatus(new Status(Integer.parseInt(request.getParameter("status"))));
+			
+			
+			System.out.println(item.toString());
+			itemDao.updateItem(item);
 			request.getRequestDispatcher("home.jsp").forward(request, response);
 		}
 	}
