@@ -74,7 +74,7 @@
 						type="submit" name="submit" value="editProfile"
 						style="border: hidden"></input>
 				</form>
-				<li class=" nav-item "><a class="nav-link" href="#feature">
+				<li class=" nav-item "><a class="nav-link" href="postItem.jsp">
 						Post Item </a></li>
 				<li class="nav-item"><a class="nav-link " href="#feature">
 						My List </a>

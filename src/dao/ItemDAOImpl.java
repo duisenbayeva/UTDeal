@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import db.DbManager;
@@ -20,9 +21,15 @@ public class ItemDAOImpl implements ItemDAO{
 	@Override
 	public int saveItem(Item i) {
 		int status = 0, j=0;
+		int id=(int)(Math.random()*1000);
+		
+		System.out.println("id generated="+id);
 		try{
 			conn = db.getConnection();				
-			ps =conn.prepareStatement("insert into item values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
+			ps =conn.prepareStatement("insert into item(id,name,category,quantity,tags,net_id,"
+					+ "photo,for_sale,price,negotiable,comments,fav_count, status) "
+					+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
+			ps.setInt(++j, id);
 			ps.setString(++j, i.getName());
 			ps.setInt(++j, i.getCategory().getId());
 			ps.setInt(++j, i.getQuantity());
@@ -33,13 +40,15 @@ public class ItemDAOImpl implements ItemDAO{
 			ps.setFloat(++j, i.getPrice());
 			ps.setBoolean(++j, i.isNegotiable());
 			ps.setString(++j, i.getComments());
-			ps.setString(++j, i.getDate_posted());
+//			ps.setString(++j, new Date().toString());
 			ps.setInt(++j, i.getFav_count());
-			ps.setString(++j, i.getStatus().toString());
+			ps.setBoolean(++j, true);
+			System.out.println("before executing ");
 			status = ps.executeUpdate();
+			System.out.println("after executing ");
 			conn.close();
 		}catch(Exception e){
-			System.out.println(e);
+			e.printStackTrace();
 		}
 		return status;
 		

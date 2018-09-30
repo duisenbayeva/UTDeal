@@ -9,9 +9,13 @@ package db;
  */
 public interface MyDB {
 
-	String USER="root";
-	String PASS="";
-	String CONN_URL="jdbc:mysql://127.0.0.1:3306/utdeals?autoReconnect=true&useSSL=false";
+//	String USER="root";
+//	String PASS="";
+//	String CONN_URL="jdbc:mysql://127.0.0.1:3306/utdeals?autoReconnect=true&useSSL=false";
+	
+	String USER="testuser";
+	String PASS="password";
+	String CONN_URL="jdbc:mysql://127.0.0.1:3306/testdb?autoReconnect=true&useSSL=false";
 	
 	
 }

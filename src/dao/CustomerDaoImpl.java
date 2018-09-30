@@ -43,6 +43,7 @@ public class CustomerDaoImpl implements CustomerDao {
 			ps =conn.prepareStatement("select * from user where net_id=? and password=?");
 			ps.setString(1, login.getUsername());
 			ps.setString(2, login.getPassword());
+			
 
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()){

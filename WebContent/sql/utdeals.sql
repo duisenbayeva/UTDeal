@@ -38,6 +38,13 @@ LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
+INSERT INTO `testdb`.`category` (`name`, `id`) VALUES ('Furniture', '1');
+INSERT INTO `testdb`.`category` (`name`, `id`) VALUES ('Books', '2');
+INSERT INTO `testdb`.`category` (`name`, `id`) VALUES ('Kitchen', '3');
+INSERT INTO `testdb`.`category` (`name`, `id`) VALUES ('Electronics', '4');
+INSERT INTO `testdb`.`category` (`name`, `id`) VALUES ('Clothes', '5');
+
+
 --
 -- Table structure for table `item`
 --
@@ -54,10 +61,10 @@ CREATE TABLE `item` (
   `net_id` varchar(9) NOT NULL,
   `photo` varchar(1024) DEFAULT NULL,
   `for_sale` bit(1) DEFAULT b'1',
-  `price` int(11) NOT NULL,
+  `price` int(11) NOT NULL DEFAULT 0,
   `negotiable` bit(1) NOT NULL,
   `comments` varchar(1024) DEFAULT NULL,
-  `date_posted` date NOT NULL,category
+  `date_posted` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `fav_count` int(11) DEFAULT '0',
   `status` bit(1) DEFAULT NULL,
   PRIMARY KEY (`id`)

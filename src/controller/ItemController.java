@@ -63,18 +63,19 @@ public class ItemController extends HttpServlet {
 		
 		if(submitType.equals("saveItem")) {
 			Item item = new Item();
-			item.setName(request.getParameter("name"));
-			item.setCategory(new Category(Integer.parseInt(request.getParameter("category"))));
-			item.setQuantity(Integer.parseInt(request.getParameter("quantity")));
-			item.setFav_count(Integer.parseInt(request.getParameter("fav_count")));
-			item.setCustomer(new Customer(request.getParameter("customer")));
-			item.setImage_url(request.getParameter("image_url"));
-			item.setComments(request.getParameter("comments"));
+			item.setName(request.getParameter("pname"));
+			item.setCategory(new Category(1));
+			if(request.getParameter("quantity")!=null)item.setQuantity(Integer.parseInt(request.getParameter("quantity")));
+			item.setTags(request.getParameter("tags"));			
+			if(request.getParameter("fav_count")!=null)item.setFav_count(Integer.parseInt(request.getParameter("fav_count")));
+			item.setCustomer(new Customer(request.getSession().getAttribute("username").toString()));
+			if(request.getParameter("image_url")!=null)item.setImage_url(request.getParameter("image_url"));
+			item.setComments(request.getParameter("comment"));
 			item.setDate_posted(request.getParameter("date_posted"));
-			item.setFor_sale(Boolean.parseBoolean(request.getParameter("for_sale")));
+			if(request.getParameter("for_sale")!=null)item.setFor_sale(Boolean.parseBoolean(request.getParameter("for_sale")));
 			item.setNegotiable(Boolean.parseBoolean(request.getParameter("negotiable")));
 			item.setPrice(Float.parseFloat(request.getParameter("price")));
-			item.setStatus(new Status(Integer.parseInt(request.getParameter("status"))));
+
 			
 			
 			System.out.println(item.toString());

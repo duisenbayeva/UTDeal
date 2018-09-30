@@ -38,56 +38,51 @@
 					<div style="display: none" id="login-alert"
 						class="alert alert-danger col-sm-12"></div>
 
-					<form name="loginform" action="LoginController" method="post"
+					<form name="itemform" action="ItemController" method="post"
 						onsubmit="return loginValidate()" accept="image/gif, image/jpeg" class="form-horizontal"
 						role="form">
+						
 						<br> <label for="primary">*Product name:</label>
 						<div style="margin-bottom: 25px" class="input-group">
-
-							<span class="input-group-addon"></span> <input id="pname"
-								type="text" class="form-control" name="pname" value=""
+							<span class="input-group-addon"></span> 
+							<input id="pname" type="text" class="form-control" name="pname" value=""
 								placeholder="Enter the product name"
 								title="Missing product name" required>
 						</div>
 
-						<label for="primary">*Category:</label>
+						<labloginel for="primary">*Category:</label>
 						<div style="margin-bottom: 25px" class="input-group">
-
 							<span class="input-group-addon"></span> <select
 								class="form-control">
-								<option value="Furniture">Furniture</option>
-								<option value="Books">Books</option>
-								<option value="Kitchen">Kitchen</option>
-								<option value="Electronics">Electronics</option>
-								<option value="Clothes">Clothes</option>
-
+								<option value="1">Furniture</option>
+								<option value="2">Books</option>
+								<option value="3">Kitchen</option>
+								<option value="4">Electronics</option>
+								<option value="5">Clothes</option>
 							</select>
 						</div>
 
 
 						<label for="primary">*Quantity:</label>
 						<div style="margin-bottom: 25px" class="input-group">
-
-							<span class="input-group-addon"></span> <input type="text"
-								class="form-control" name="quantity" id="quantity"
-								placeholder="Enter the quantity" required />
+							<span class="input-group-addon"></span> 
+							<input type="text" class="form-control" name="quantity" id="quantity"
+								placeholder="Enter the quantity"  />
 						</div>
 
 
 						<label for="primary">*Tags:</label>
 						<div style="margin-bottom: 25px" class="input-group">
-
-							<span class="input-group-addon"></span> <input type="text"
-								class="form-control" name="tagname" id="tagname"
-								placeholder="Enter the tag names" required />
+							<span class="input-group-addon"></span> 
+							<input type="text"	class="form-control" name="tags" id="tags"
+								placeholder="Enter the tag names"  required/>
 						</div>
 
 						<label for="primary">*Photos:</label>
 						<div style="margin-bottom: 25px" class="input-group">
-
-							<span class="input-group-addon"></span> <input accept="image/gif, image/jpeg" type="file"
-								class="form-control" name="itemimage" id="itemimage"
-								placeholder="Upload a picture" required />
+							<span class="input-group-addon"></span> 
+							<input accept="image/gif, image/jpeg" type="file" class="form-control" 
+							name="image_url" id="image_url"	placeholder="Upload a picture"  />
 						</div>
 						<input class="btn btn-primary" type="submit" name="submit"
 							value="Upload">
@@ -96,54 +91,41 @@
 
 						<label for="primary">*Is this item for sale?</label>
 						<div style="margin-bottom: 25px" class="input-group">
-
 							<input type="radio" name="for_sale" id="for_sale" value="Yes"
 								required />Yes <input type="radio" name="for_sale"
-								id="for_sale" value="No" required />No
-
+								id="for_sale" value="No"  />No
 						</div>
 
 						<label for="primary">*Price:</label>
 						<div style="margin-bottom: 25px" class="input-group">
-
-							<span class="input-group-addon"></span> <input type="number"
-								class="form-control" name="price" id="price"
+							<span class="input-group-addon"></span> 
+							<input type="number" class="form-control" name="price" id="price"
 								placeholder="Enter the price" required />
-
 						</div>
 
 						<label for="primary">*Is the price negotiable?</label>
 						<div style="margin-bottom: 25px" class="input-group">
-
-							<input type="radio" name="negotiable" id="negotiable" value="Yes"
-								required />Yes <input type="radio" name="negotiable"
+							<input type="radio" name="negotiable" id="negotiable" value="Yes"/>Yes 
+							<input type="radio" name="negotiable"
 								id="negotiable" value="No" required />No
-
 						</div>
 
 						<label for="primary">Comments:</label>
 						<div style="margin-bottom: 25px" class="input-group">
-
 							<span class="input-group-addon"></span>
 							<textarea class="form-control" name="comment" id="comment"
 								rows="5" cols="50" placeholder="Enter the item description"></textarea>
-
 						</div>
 
 						<label for="primary">Is the item sold?</label>
 						<div style="margin-bottom: 25px" class="input-group">
-
 							<input type="radio" name="status" id="status" value="Yes" />Yes
 							<input type="radio" name="status" id="status" value="No" />No
-
 						</div>
 
 
 						<input class="btn btn-primary" type="submit" name="submit"
-							value="Post">
-
-
-
+							value="saveItem">
 
 
 					</form>
