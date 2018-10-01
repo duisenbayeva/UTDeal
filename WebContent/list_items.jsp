@@ -23,12 +23,11 @@
                 <div class="panel-body">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <div class="checkbox">
-                                <input type="checkbox" id="checkbox" />
+                          
                                 <label for="checkbox">
                                     Product 1
                                 </label>
-                            </div>
+                            
                             <div class="pull-right action-buttons">
                                 <a href="updateItem.jsp"><span class="glyphicon glyphicon-pencil"></span></a>
                                 <a href="" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
@@ -36,32 +35,29 @@
                             </div>
                         </li>
                         <li class="list-group-item">
-                            <div class="checkbox">
-                                <input type="checkbox" id="checkbox2" />
-                                <label for="checkbox2">
+                          
+                                <label for="checkbox">
                                     Product 2
                                 </label>
-                            </div>
-                           <div class="pull-right action-buttons">
-                                <a href="updateItem.jsp"><span class="glyphicon glyphicon-pencil"></span></a>
-                                <a href="" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
-                                
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="checkbox">
-                                <input type="checkbox" id="checkbox3" />
-                                <label for="checkbox3">
-                                   Product 3
-                                </label>
-                            </div>
+                            
                             <div class="pull-right action-buttons">
                                 <a href="updateItem.jsp"><span class="glyphicon glyphicon-pencil"></span></a>
                                 <a href="" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
                                 
                             </div>
                         </li>
-                        
+                        <li class="list-group-item">
+                          
+                                <label for="checkbox">
+                                    Product 3
+                                </label>
+                            
+                            <div class="pull-right action-buttons">
+                                <a href="updateItem.jsp"><span class="glyphicon glyphicon-pencil"></span></a>
+                                <a href="" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
+                                
+                            </div>
+                        </li>
                         
                     </ul>
                 </div>
