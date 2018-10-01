@@ -89,6 +89,8 @@
 						</div>
 						    <img id="blah" src="#" alt="" style="width:30%"/>
 						
+						<input class="btn btn-primary" type="submit" name="submit"
+							value="Upload">
 						<br/><br/>
 
 
