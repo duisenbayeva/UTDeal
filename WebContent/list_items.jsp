@@ -1,3 +1,7 @@
+<%@page import="com.sun.org.apache.bcel.internal.generic.INSTANCEOF"%>
+<%@page import="model.Item"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -10,6 +14,10 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<%
+List<Item> items = (List<Item>)request.getServletContext().getAttribute("postedItems");
+ if(items==null) items= new ArrayList<Item>();
+%>
 </head>
 <body>
 <div class="container">
@@ -22,10 +30,11 @@
                 </div>
                 <div class="panel-body">
                     <ul class="list-group">
+                    <% for(int i=0; i<items.size(); i++){ %>
                         <li class="list-group-item">
                           
                                 <label for="checkbox">
-                                    Product 1
+                                    <%= items.get(i).getName() %>
                                 </label>
                             
                             <div class="pull-right action-buttons">
@@ -34,31 +43,7 @@
                                 
                             </div>
                         </li>
-                        <li class="list-group-item">
-                          
-                                <label for="checkbox">
-                                    Product 2
-                                </label>
-                            
-                            <div class="pull-right action-buttons">
-                                <a href="updateItem.jsp"><span class="glyphicon glyphicon-pencil"></span></a>
-                                <a href="" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
-                                
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                          
-                                <label for="checkbox">
-                                    Product 3
-                                </label>
-                            
-                            <div class="pull-right action-buttons">
-                                <a href="updateItem.jsp"><span class="glyphicon glyphicon-pencil"></span></a>
-                                <a href="" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
-                                
-                            </div>
-                        </li>
-                        
+                        <%} %>
                     </ul>
                 </div>
                 <div class="panel-footer">
