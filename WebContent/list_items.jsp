@@ -1,3 +1,5 @@
+<%@page import="dao.ItemDAOImpl"%>
+<%@page import="dao.ItemDAO"%>
 <%@page import="com.sun.org.apache.bcel.internal.generic.INSTANCEOF"%>
 <%@page import="model.Item"%>
 <%@page import="java.util.List"%>
@@ -15,7 +17,10 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <%
-List<Item> items = (List<Item>)request.getServletContext().getAttribute("postedItems");
+ItemDAO itemDAO = new ItemDAOImpl();
+List<Item> items = itemDAO.fetchPostedItems(request.getSession().getAttribute("username").toString());
+System.out.println("Getting list of posted items"+items);
+request.getServletContext().setAttribute("postedItems", items);
  if(items==null) items= new ArrayList<Item>();
 %>
 </head>

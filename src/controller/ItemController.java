@@ -78,9 +78,9 @@ public class ItemController extends HttpServlet {
 			
 			System.out.println(item.toString());
 			itemDao.saveItem(item);
-			List<Item> items = itemDao.fetchPostedItems(request.getSession().getAttribute("username").toString());
-			System.out.println("Getting list of posted items"+items);
-			request.getServletContext().setAttribute("postedItems", items);
+//			List<Item> items = itemDao.fetchPostedItems(request.getSession().getAttribute("username").toString());
+//			System.out.println("Getting list of posted items"+items);
+//			request.getServletContext().setAttribute("postedItems", items);
 			request.getRequestDispatcher("userhomepage.jsp").forward(request, response);
 		}
 		if(submitType.equals("updateItem")) {

@@ -44,9 +44,6 @@ public class LoginController extends HttpServlet {
 			request.setAttribute("userId", c.getUsername());
 			request.getSession().setAttribute("user", c);
 			request.getSession().setAttribute("username", c.getUsername());
-			List<Item> items = itemDAO.fetchPostedItems(c.getUsername());
-			System.out.println("Getting list of posted items"+items);
-			request.getServletContext().setAttribute("postedItems", items);
 			request.getRequestDispatcher("userhomepage.jsp").forward(request, response);
 		}else if(submitType.equals("register")){
 			c.setFirst_name(request.getParameter("first_name"));
