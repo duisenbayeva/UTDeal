@@ -64,7 +64,6 @@
 				<li class="nav-item"><a class="nav-link" href="#contact">
 						Contact </a></li>
 			</ul>
-			${message}
 			<ul class="nav navbar-nav ml-auto">
 				<form name="regform" action="CustomerController" method="post"
 					class="form-horizontal" role="form">
@@ -75,6 +74,8 @@
 				</form>
 				<li class=" nav-item "><a class="nav-link" href="postItem.jsp">
 						Post Item </a></li>
+				<li class=" nav-item "><a class="nav-link" href="updateItem.jsp">
+						Update Item </a></li>
 				<li class="nav-item"><a class="nav-link " href="#feature">
 						My List </a>
 				<li class="nav-item"><a class="nav-link " href="logout.jsp">
@@ -102,11 +103,12 @@
 
 
 						<div class="row">
-						<div class="left" style="background-color: #bbb;">
+							<div class="left" style="background-color: #bbb;">
 								<div class="search-container">
-										<input type="text" onkeyup="myFunction()" placeholder="Enter your search term"
-											name="searchbar" id="mySearch" style="width:95%">
-								</form>
+									<input type="text" onkeyup="myFunction()"
+										placeholder="Enter your search term" name="searchbar"
+										id="mySearch" style="width: 95%">
+									</form>
 								</div>
 								<ul id="myMenu">
 									<li><a href="#">Furniture</a></li>
