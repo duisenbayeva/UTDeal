@@ -69,8 +69,7 @@
 				<form name="regform" action="CustomerController" method="post"
 					class="form-horizontal" role="form">
 					<input class=" nav-item nav-link" type="hidden" name="username"
-						value="${userId}"></input> 
-					<input class=" nav-item nav-link"
+						value="${userId}"></input> <input class=" nav-item nav-link"
 						type="submit" name="submit" value="editProfile"
 						style="border: hidden"></input>
 				</form>
@@ -82,8 +81,6 @@
 						Logout </a></li>
 			</ul>
 		</div>
-	
-	
 	</div>
 	<!-- Mobile Menu Start -->
 	<ul class="mobile-menu navbar-nav">
@@ -105,13 +102,11 @@
 
 
 						<div class="row">
-							<div class="left" style="background-color: #bbb;">
+						<div class="left" style="background-color: #bbb;">
 								<div class="search-container">
-									<form action=searchfunction()>
-										<input type="text" placeholder="Enter your search term"
-											name="searchbar">
-										<button type="submit">Go</button>
-									</form>
+										<input type="text" onkeyup="myFunction()" placeholder="Enter your search term"
+											name="searchbar" id="mySearch" style="width:95%">
+								</form>
 								</div>
 								<ul id="myMenu">
 									<li><a href="#">Furniture</a></li>
@@ -130,32 +125,33 @@
 									<img class="mySlides" src="home/assets/img/item/1.jpg"
 										style="width: 100%"> <img class="mySlides"
 										src="home/assets/img/item/2.jpg" " style="width: 100%">
-								<img class="mySlides" src="home/assets/img/item/3.jpg"
-					style="width: 100%"> <img class="mySlides"
-					src="home/assets/img/item/5.jpg" " style="width: 100%"> <img
-					class="mySlides" src="home/assets/img/item/6.jpg"
-					style="width: 100%"></div>
+									<img class="mySlides" src="home/assets/img/item/3.jpg"
+										style="width: 100%"> <img class="mySlides"
+										src="home/assets/img/item/5.jpg" " style="width: 100%">
+									<img class="mySlides" src="home/assets/img/item/6.jpg"
+										style="width: 100%">
+								</div>
 
-						
-						<script>
-							var myIndex = 0;
-							carousel();
 
-							function carousel() {
-								var i;
-								var x = document
-										.getElementsByClassName("mySlides");
-								for (i = 0; i < x.length; i++) {
-									x[i].style.display = "none";
-								}
-								myIndex++;
-								if (myIndex > x.length) {
-									myIndex = 1
-								}
-								x[myIndex - 1].style.display = "block";
-								setTimeout(carousel, 4000); // Change image every 4 seconds
-							}
-						</script>
+								<script>
+									var myIndex = 0;
+									carousel();
+
+									function carousel() {
+										var i;
+										var x = document
+												.getElementsByClassName("mySlides");
+										for (i = 0; i < x.length; i++) {
+											x[i].style.display = "none";
+										}
+										myIndex++;
+										if (myIndex > x.length) {
+											myIndex = 1
+										}
+										x[myIndex - 1].style.display = "block";
+										setTimeout(carousel, 4000); // Change image every 4 seconds
+									}
+								</script>
 							</div>
 						</div>
 					</div>
@@ -166,6 +162,7 @@
 	</div>
 	<!-- Hero Area End --> </header>
 	<!-- Header Area wrapper End -->
+
 	<script>
 		function myFunction() {
 			var input, filter, ul, li, a, i;
@@ -183,9 +180,6 @@
 			}
 		}
 	</script>
-
-
-
 	<!-- Team Section Start -->
 	<section id="team" class="section-padding text-center">
 	<div class="container">
