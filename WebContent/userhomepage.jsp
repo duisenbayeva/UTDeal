@@ -74,8 +74,6 @@
 				</form>
 				<li class=" nav-item "><a class="nav-link" href="postItem.jsp">
 						Post Item </a></li>
-				<li class=" nav-item "><a class="nav-link" href="updateItem.jsp">
-						Update Item </a></li>
 				<li class="nav-item"><a class="nav-link " href="list_items.jsp">
 						My List </a>
 				<li class="nav-item"><a class="nav-link " href="logout.jsp">

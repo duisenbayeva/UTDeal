@@ -38,11 +38,11 @@ LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
-INSERT INTO `testdb`.`category` (`name`, `id`) VALUES ('Furniture', '1');
-INSERT INTO `testdb`.`category` (`name`, `id`) VALUES ('Books', '2');
-INSERT INTO `testdb`.`category` (`name`, `id`) VALUES ('Kitchen', '3');
-INSERT INTO `testdb`.`category` (`name`, `id`) VALUES ('Electronics', '4');
-INSERT INTO `testdb`.`category` (`name`, `id`) VALUES ('Clothes', '5');
+INSERT INTO `utdeals`.`category` (`name`, `id`) VALUES ('Furniture', '1');
+INSERT INTO `utdeals`.`category` (`name`, `id`) VALUES ('Books', '2');
+INSERT INTO `utdeals`.`category` (`name`, `id`) VALUES ('Kitchen', '3');
+INSERT INTO `utdeals`.`category` (`name`, `id`) VALUES ('Electronics', '4');
+INSERT INTO `utdeals`.`category` (`name`, `id`) VALUES ('Clothes', '5');
 
 
 --

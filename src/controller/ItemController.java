@@ -75,12 +75,13 @@ public class ItemController extends HttpServlet {
 			if(request.getParameter("for_sale")!=null)item.setFor_sale(Boolean.parseBoolean(request.getParameter("for_sale")));
 			item.setNegotiable(Boolean.parseBoolean(request.getParameter("negotiable")));
 			item.setPrice(Float.parseFloat(request.getParameter("price")));
-
-			
 			
 			System.out.println(item.toString());
 			itemDao.saveItem(item);
-			request.getRequestDispatcher("home.jsp").forward(request, response);
+			List<Item> items = itemDao.fetchPostedItems(request.getSession().getAttribute("username").toString());
+			System.out.println("Getting list of posted items"+items);
+			request.getServletContext().setAttribute("postedItems", items);
+			request.getRequestDispatcher("userhomepage.jsp").forward(request, response);
 		}
 		if(submitType.equals("updateItem")) {
 			Item item = new Item();

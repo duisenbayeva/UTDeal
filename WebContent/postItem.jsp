@@ -39,7 +39,7 @@
 						class="alert alert-danger col-sm-12"></div>
 
 					<form name="itemform" action="ItemController" method="post"
-						onsubmit="return loginValidate()" accept="image/gif, image/jpeg" class="form-horizontal"
+						accept="image/gif, image/jpeg" class="form-horizontal"
 						role="form">
 						
 						<br> <label for="primary">*Product name:</label>
