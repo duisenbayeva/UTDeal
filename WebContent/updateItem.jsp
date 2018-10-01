@@ -14,7 +14,7 @@
 <script type="text/javascript" src="script.js"></script>
 <script type="text/javascript" src="password.css"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Post an Item</title>
+<title>Update Item</title>
 </head>
 <body>
 
@@ -26,12 +26,10 @@
 			<div class="panel panel-info">
 
 				<div class="panel-heading">
-					<div class="panel-title">Post an Item</div>
+					<div class="panel-title">Update the Item</div>
 				</div>
 
-				<h5>
-					<p>* fields are compulsory</p>
-				</h5>
+				
 
 				<div style="padding-top: 30px" class="panel-body">
 
@@ -85,15 +83,10 @@
 						<label for="primary">*Photos:</label>
 						<div style="margin-bottom: 25px" class="input-group">
 
-							<span class="input-group-addon"></span> 
-							<input type='file' onchange="readURL(this);" class="form-control" name="itemimage" id="itemimage"
-								placeholder="Upload a picture" required/>
-							<%--<input accept="image/gif, image/jpeg" type="file"
+							<span class="input-group-addon"></span> <input accept="image/gif, image/jpeg" type="file"
 								class="form-control" name="itemimage" id="itemimage"
-								placeholder="Upload a picture" required />--%>
+								placeholder="Upload a picture" required />
 						</div>
-						    <img id="blah" src="#" alt="" style="width:30%"/>
-						
 						<input class="btn btn-primary" type="submit" name="submit"
 							value="Upload">
 						<br/><br/>
@@ -145,7 +138,7 @@
 
 
 						<input class="btn btn-primary" type="submit" name="submit"
-							value="Post">
+							value="Update">
 
 
 
@@ -156,20 +149,6 @@
 			</div>
 		</div>
 	</div>
-<script type="text/javascript">
-function readURL(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
 
-        reader.onload = function (e) {
-            $('#blah')
-                .attr('src', e.target.result)
-                .width(150)
-                .height(200);
-        };
-
-        reader.readAsDataURL(input.files[0]);
-    }
-}</script>
 </body>
 </html>
