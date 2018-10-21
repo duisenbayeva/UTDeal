@@ -14,7 +14,7 @@
 <script type="text/javascript" src="script.js"></script>
 <script type="text/javascript" src="password.css"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Update Item</title>
+<title>Post an Item</title>
 </head>
 <body>
 
@@ -26,39 +26,39 @@
 			<div class="panel panel-info">
 
 				<div class="panel-heading">
-					<div class="panel-title">Update the Item</div>
+					<div class="panel-title">Post an Item</div>
 				</div>
 
-				
+				<h5>
+					<p>* fields are compulsory</p>
+				</h5>
 
 				<div style="padding-top: 30px" class="panel-body">
 
 					<div style="display: none" id="login-alert"
 						class="alert alert-danger col-sm-12"></div>
 
-					<form name="loginform" action="LoginController" method="post"
-						onsubmit="return loginValidate()" accept="image/gif, image/jpeg" class="form-horizontal"
+					<form name="itemform" action="ItemController" method="post"
+						accept="image/gif, image/jpeg" class="form-horizontal"
 						role="form">
+						
 						<br> <label for="primary">*Product name:</label>
 						<div style="margin-bottom: 25px" class="input-group">
-
-							<span class="input-group-addon"></span> <input id="pname"
-								type="text" class="form-control" name="pname" value=""
+							<span class="input-group-addon"></span> 
+							<input id="pname" type="text" class="form-control" name="pname" value="${itemDetails.product_name }"
 								placeholder="Enter the product name"
 								title="Missing product name" required>
 						</div>
 
 						<label for="primary">*Category:</label>
 						<div style="margin-bottom: 25px" class="input-group">
-
 							<span class="input-group-addon"></span> <select
-								class="form-control">
-								<option value="Furniture">Furniture</option>
-								<option value="Books">Books</option>
-								<option value="Kitchen">Kitchen</option>
-								<option value="Electronics">Electronics</option>
-								<option value="Clothes">Clothes</option>
-
+								class="form-control" id="selectCategory" name="category">
+								<option value="0">Furniture</option>
+								<option value="1">Books</option>
+								<option value="2">Kitchen</option>
+								<option value="3">Electronics</option>
+								<option value="4">Clothes</option>
 							</select>
 						</div>
 
@@ -68,80 +68,70 @@
 
 							<span class="input-group-addon"></span> <input type="text"
 								class="form-control" name="quantity" id="quantity"
-								placeholder="Enter the quantity" required />
+								placeholder="Enter the quantity" required value="${itemDetails.quantity}" />
 						</div>
 
 
 						<label for="primary">*Tags:</label>
 						<div style="margin-bottom: 25px" class="input-group">
-
-							<span class="input-group-addon"></span> <input type="text"
-								class="form-control" name="tagname" id="tagname"
-								placeholder="Enter the tag names" required />
+							<span class="input-group-addon"></span> 
+							<input type="text"	class="form-control" name="tags" id="tags"
+								placeholder="Enter the tag names"  required value="${itemDetails.tags}"/>
 						</div>
 
 						<label for="primary">*Photos:</label>
 						<div style="margin-bottom: 25px" class="input-group">
+					
 
-							<span class="input-group-addon"></span> <input accept="image/gif, image/jpeg" type="file"
-								class="form-control" name="itemimage" id="itemimage"
-								placeholder="Upload a picture" required />
+							<span class="input-group-addon"></span> 
+							<input type='file' onchange="readURL(this);" class="form-control" name="image_url" id="image_url"
+								placeholder="Upload a picture" required/>
 						</div>
-						<input class="btn btn-primary" type="submit" name="submit"
-							value="Upload">
+						    <img id="blah" src="#" alt="" style="width:30%"/>
+						
 						<br/><br/>
 
 
 						<label for="primary">*Is this item for sale?</label>
 						<div style="margin-bottom: 25px" class="input-group">
-
-							<input type="radio" name="for_sale" id="for_sale" value="Yes"
+							<input type="radio" name="for_sale" id="for_sale_yes" value="True"
 								required />Yes <input type="radio" name="for_sale"
-								id="for_sale" value="No" required />No
+								id="for_sale_no" value="False" required />No
 
 						</div>
 
 						<label for="primary">*Price:</label>
 						<div style="margin-bottom: 25px" class="input-group">
-
-							<span class="input-group-addon"></span> <input type="number"
-								class="form-control" name="price" id="price"
-								placeholder="Enter the price" required />
-
+							<span class="input-group-addon"></span> 
+							<input type="number" class="form-control" name="price" id="price"
+								placeholder="Enter the price" required value="${itemDetails.price}"/>
 						</div>
 
 						<label for="primary">*Is the price negotiable?</label>
 						<div style="margin-bottom: 25px" class="input-group">
 
-							<input type="radio" name="negotiable" id="negotiable" value="Yes"
+							<input type="radio" name="negotiable" id="negotiable_yes" value="True"
 								required />Yes <input type="radio" name="negotiable"
-								id="negotiable" value="No" required />No
-
+								id="negotiable_no" value="False" required />No
 						</div>
 
 						<label for="primary">Comments:</label>
 						<div style="margin-bottom: 25px" class="input-group">
-
 							<span class="input-group-addon"></span>
 							<textarea class="form-control" name="comment" id="comment"
-								rows="5" cols="50" placeholder="Enter the item description"></textarea>
-
+								rows="5" cols="50" placeholder="Enter the item description" value="${itemDetails.comments}">${itemDetails.comments}</textarea>
 						</div>
 
 						<label for="primary">Is the item sold?</label>
 						<div style="margin-bottom: 25px" class="input-group">
-
-							<input type="radio" name="status" id="status" value="Yes" />Yes
-							<input type="radio" name="status" id="status" value="No" />No
-
+							<input type="radio" name="status" id="status_yes" value="True" />Yes
+							<input type="radio" name="status" id="status_no" value="False" />No
 						</div>
 
 
+						<input type="hidden" name="itemId" value="${itemDetails.itemId}"></input>
 						<input class="btn btn-primary" type="submit" name="submit"
-							value="Update">
-
-
-
+							value="updateItem">
 
 
 					</form>
@@ -149,6 +139,47 @@
 			</div>
 		</div>
 	</div>
+<script type="text/javascript">
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
 
+        reader.onload = function (e) {
+            $('#blah')
+                .attr('src', e.target.result)
+                .width(150)
+                .height(200);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$(document).ready(function(){
+	document.getElementById("selectCategory").selectedIndex = "${itemDetails.category_id}";
+
+	console.log("${itemDetails.for_sale}");
+	if("${itemDetails.for_sale}" == "true")
+		document.getElementById("for_sale_yes").checked = true;
+	else
+		document.getElementById("for_sale_no").checked = true;
+		
+	if("${itemDetails.status}" == "true")
+		document.getElementById("status_yes").checked = true;
+	else
+		document.getElementById("status_no").checked = true;
+
+	if("${itemDetails.negotiable}" == "true")
+		document.getElementById("negotiable_yes").checked = true;
+	else
+		document.getElementById("negotiable_no").checked = true;
+	
+});
+
+
+	
+	
+
+</script>
 </body>
 </html>
