@@ -15,7 +15,7 @@ public class Item {
 	private String comments;
 	private String date_posted;
 	private int fav_count;
-	private Status status;
+	private boolean status;
 	/**
 	 * @return the id
 	 */
@@ -91,7 +91,7 @@ public class Item {
 	/**
 	 * @return the for_sale
 	 */
-	public boolean isFor_sale() {
+	public boolean getFor_sale() {
 		return for_sale;
 	}
 	/**
@@ -115,7 +115,7 @@ public class Item {
 	/**
 	 * @return the negotiable
 	 */
-	public boolean isNegotiable() {
+	public boolean getNegotiable() {
 		return negotiable;
 	}
 	/**
@@ -127,13 +127,13 @@ public class Item {
 	/**
 	 * @return the status
 	 */
-	public Status getStatus() {
+	public boolean getStatus() {
 		return status;
 	}
 	/**
 	 * @param status the status to set
 	 */
-	public void setStatus(Status status) {
+	public void setStatus(boolean status) {
 		this.status = status;
 	}
 	/**
