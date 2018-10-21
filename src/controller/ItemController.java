@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -64,7 +65,7 @@ public class ItemController extends HttpServlet {
 		if(submitType.equals("saveItem")) {
 			Item item = new Item();
 			item.setName(request.getParameter("pname"));
-			item.setCategory(new Category(1));
+			item.setCategory(new Category(Integer.parseInt(request.getParameter("category"))));
 			if(request.getParameter("quantity")!=null)item.setQuantity(Integer.parseInt(request.getParameter("quantity")));
 			item.setTags(request.getParameter("tags"));			
 			if(request.getParameter("fav_count")!=null)item.setFav_count(Integer.parseInt(request.getParameter("fav_count")));
@@ -75,34 +76,60 @@ public class ItemController extends HttpServlet {
 			if(request.getParameter("for_sale")!=null)item.setFor_sale(Boolean.parseBoolean(request.getParameter("for_sale")));
 			item.setNegotiable(Boolean.parseBoolean(request.getParameter("negotiable")));
 			item.setPrice(Float.parseFloat(request.getParameter("price")));
+			item.setStatus(Boolean.parseBoolean(request.getParameter("status")));
 			
-			System.out.println(item.toString());
+			System.out.println("check"+Boolean.parseBoolean(request.getParameter("for_sale")));
 			itemDao.saveItem(item);
 //			List<Item> items = itemDao.fetchPostedItems(request.getSession().getAttribute("username").toString());
 //			System.out.println("Getting list of posted items"+items);
 //			request.getServletContext().setAttribute("postedItems", items);
 			request.getRequestDispatcher("userhomepage.jsp").forward(request, response);
 		}
+		
+		
+		
+		if(submitType.equals("editItem")) {
+			
+			int itemId = Integer.parseInt(request.getParameter("itemId"));
+			System.out.println("check"+request.getParameter("itemId"));
+			Item item = itemDao.getItemDetails(itemId);
+			
+			HashMap<String,String> map = new HashMap<String,String>();
+			map.put("product_name", item.getName());
+			map.put("category_id", Integer.toString(item.getCategory().getId()));
+			map.put("quantity", Integer.toString(item.getQuantity()));
+			map.put("tags", item.getTags());
+			map.put("price", Float.toString(item.getPrice()));
+			map.put("comments", item.getComments());
+			map.put("itemId", Integer.toString(item.getId()));
+			map.put("for_sale",Boolean.toString(item.getFor_sale()));
+			map.put("status", Boolean.toString(item.getStatus()));
+			map.put("negotiable", Boolean.toString(item.getNegotiable()));
+			
+			System.out.println("bool"+item.getFor_sale()+" "+Boolean.toString(item.getFor_sale()));
+			request.setAttribute("itemDetails", map);
+			request.getRequestDispatcher("updateItem.jsp").forward(request, response);
+		}
+		
 		if(submitType.equals("updateItem")) {
 			Item item = new Item();
-			item.setId(Integer.parseInt(request.getParameter("id")));
-			item.setName(request.getParameter("name"));
+			item.setId(Integer.parseInt(request.getParameter("itemId")));
+			item.setName(request.getParameter("pname"));
 			item.setCategory(new Category(Integer.parseInt(request.getParameter("category"))));
-			item.setQuantity(Integer.parseInt(request.getParameter("quantity")));
-			item.setFav_count(Integer.parseInt(request.getParameter("fav_count")));
-			item.setCustomer(new Customer(request.getParameter("customer")));
-			item.setImage_url(request.getParameter("image_url"));
-			item.setComments(request.getParameter("comments"));
-			item.setDate_posted(request.getParameter("date_posted"));
-			item.setFor_sale(Boolean.parseBoolean(request.getParameter("for_sale")));
+			if(request.getParameter("quantity")!=null)item.setQuantity(Integer.parseInt(request.getParameter("quantity")));
+			item.setTags(request.getParameter("tags"));			
+			if(request.getParameter("fav_count")!=null)item.setFav_count(Integer.parseInt(request.getParameter("fav_count")));
+			item.setCustomer(new Customer(request.getSession().getAttribute("username").toString()));
+			if(request.getParameter("image_url")!=null)item.setImage_url(request.getParameter("image_url"));
+			item.setComments(request.getParameter("comment"));
+			if(request.getParameter("for_sale")!=null)item.setFor_sale(Boolean.parseBoolean(request.getParameter("for_sale")));
 			item.setNegotiable(Boolean.parseBoolean(request.getParameter("negotiable")));
 			item.setPrice(Float.parseFloat(request.getParameter("price")));
-			item.setStatus(new Status(Integer.parseInt(request.getParameter("status"))));
-			
+			item.setStatus(Boolean.parseBoolean(request.getParameter("status")));
 			
 			System.out.println(item.toString());
 			itemDao.updateItem(item);
-			request.getRequestDispatcher("home.jsp").forward(request, response);
+			request.getRequestDispatcher("userhomepage.jsp").forward(request, response);
 		}
 	}
 
