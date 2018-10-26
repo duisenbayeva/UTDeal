@@ -2396,3 +2396,12 @@ to {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+* {
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: border-box;
+}
+
