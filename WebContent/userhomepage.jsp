@@ -120,9 +120,15 @@
 							<div class="right">
 
 								<div class="search-container">
-									<input type="text" placeholder="Search.." name="itemSearch" id="itemSearch" style="border:solid;color:grey; height:50px;width:80%">
-									<button type="submit"style="float:right;vertical-align: top; height:50px"onclick="searchItem()"name="itemSearch" id="itemSearch">Submit</button>
-								</div><br/><br/>
+									<input type="text" placeholder="Search.." name="itemSearch"
+										id="itemSearch"
+										style="border: solid; color: grey; height: 50px; width: 80%">
+									<button type="submit"
+										style="float: right; vertical-align: top; height: 50px"
+										onclick="searchItem()" name="itemSearch" id="itemSearch">Submit</button>
+								</div>
+								<br />
+								<br />
 								<h2 class="w3-center"
 									style="font-size: 25px; float: left; font-family: Segoe UI Light">Now
 									trending...</h2>
@@ -161,19 +167,24 @@
 										setTimeout(carousel, 4000); // Change image every 4 seconds
 									}
 								</script>
-								
+
 								<script>
-function searchItem() {
-	var x = document.getElementById("itemSearch").value;
-	if(x=="ikea table"){
-	window.open("itemPage1.jsp","_self");}
-	else if(x=="rolling chair"){
-		window.open("itemPage2.jsp","_self");}
-	else if(x=="insta pot"){
-		window.open("itemPage3.jsp","_self");}
-}
-</script>
-								
+									function searchItem() {
+										var x = document
+												.getElementById("itemSearch").value;
+										if (x.includes("table") == true) {
+											window.open("itemPage1.jsp",
+													"_self");
+										} else if (x.includes("chair") == true) {
+											window.open("itemPage2.jsp",
+													"_self");
+										} else if (x.includes("insta") == true) {
+											window.open("itemPage3.jsp",
+													"_self");
+										}
+									}
+								</script>
+
 							</div>
 						</div>
 					</div>
