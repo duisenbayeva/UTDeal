@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="home.css">
-<title>Welcome to UTDeals</title>
+<title>IKEA Table</title>
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" type="text/css"
 	href="home/assets/css/bootstrap.min.css">
