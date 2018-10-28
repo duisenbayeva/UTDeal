@@ -1,2 +1,5 @@
 /domain/
 /model/
+/db/
+/controller/
+/dao/
