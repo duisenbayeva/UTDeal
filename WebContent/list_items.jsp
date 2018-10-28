@@ -23,6 +23,9 @@ System.out.println("Getting list of posted items"+items);
 request.getServletContext().setAttribute("postedItems", items);
  if(items==null) items= new ArrayList<Item>();
 %>
+
+
+
 </head>
 <body>
 <div class="container">
@@ -43,8 +46,18 @@ request.getServletContext().setAttribute("postedItems", items);
                                 </label>
                             
                             <div class="pull-right action-buttons">
-                                <a href="updateItem.jsp"><span class="glyphicon glyphicon-pencil"></span></a>
-                                <a href="" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
+                                
+                                    <form name="editItemform" action="ItemController" method="post"
+									class="form-horizontal" role="form">
+										<input type="hidden" name="itemId" value="<%=items.get(i).getId()%>"></input> 
+										<input type="hidden" name="submit"
+											value="editItem"></input> 
+									   <input type="submit" value="edit">
+									  <!-- <a href="javascript:document.editItemform.submit();"><span class="glyphicon glyphicon-pencil"></span></a> --> 
+                                      <a href="" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
+									</form>
+								
+                                
                                 
                             </div>
                         </li>
@@ -73,4 +86,6 @@ request.getServletContext().setAttribute("postedItems", items);
 </div>
 
 </body>
+
+
 </html>

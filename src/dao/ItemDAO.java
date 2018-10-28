@@ -13,6 +13,7 @@ public interface ItemDAO {
 	public int saveItem(Item i);
 	public int updateItem(Item i);
 	public int deleteItem(int id);
+	public Item getItemDetails(int itemId);
 	List<Item> fetchPostedItems(String username);
 	List<Item> fetchFavItems(Customer cust);
 	List<Item> getAllItems();

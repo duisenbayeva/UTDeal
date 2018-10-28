@@ -53,12 +53,12 @@
 						<label for="primary">*Category:</label>
 						<div style="margin-bottom: 25px" class="input-group">
 							<span class="input-group-addon"></span> <select
-								class="form-control">
-								<option value="1">Furniture</option>
-								<option value="2">Books</option>
-								<option value="3">Kitchen</option>
-								<option value="4">Electronics</option>
-								<option value="5">Clothes</option>
+								class="form-control" name="category">
+								<option value="0">Furniture</option>
+								<option value="1">Books</option>
+								<option value="2">Kitchen</option>
+								<option value="3">Electronics</option>
+								<option value="4">Clothes</option>
 							</select>
 						</div>
 
@@ -89,16 +89,14 @@
 						</div>
 						    <img id="blah" src="#" alt="" style="width:30%"/>
 						
-						<input class="btn btn-primary" type="submit" name="submit"
-							value="Upload">
 						<br/><br/>
 
 
 						<label for="primary">*Is this item for sale?</label>
 						<div style="margin-bottom: 25px" class="input-group">
-							<input type="radio" name="for_sale" id="for_sale" value="Yes"
+							<input type="radio" name="for_sale" id="for_sale" value="true"
 								required />Yes <input type="radio" name="for_sale"
-								id="for_sale" value="No" required />No
+								id="for_sale" value="false" required />No
 
 						</div>
 
@@ -112,9 +110,9 @@
 						<label for="primary">*Is the price negotiable?</label>
 						<div style="margin-bottom: 25px" class="input-group">
 
-							<input type="radio" name="negotiable" id="negotiable" value="Yes"
+							<input type="radio" name="negotiable" id="negotiable" value="true"
 								required />Yes <input type="radio" name="negotiable"
-								id="negotiable" value="No" required />No
+								id="negotiable" value="false" required />No
 						</div>
 
 						<label for="primary">Comments:</label>
@@ -126,8 +124,8 @@
 
 						<label for="primary">Is the item sold?</label>
 						<div style="margin-bottom: 25px" class="input-group">
-							<input type="radio" name="status" id="status" value="Yes" />Yes
-							<input type="radio" name="status" id="status" value="No" />No
+							<input type="radio" name="status" id="status" value="true" />Yes
+							<input type="radio" name="status" id="status" value="false" />No
 						</div>
 
 

@@ -4,10 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Calendar;
+import java.sql.Date;
 import java.util.List;
 
 import db.DbManager;
+import model.Category;
 import model.Customer;
 import model.Item;
 import model.ItemFilter;
@@ -22,13 +24,17 @@ public class ItemDAOImpl implements ItemDAO{
 	public int saveItem(Item i) {
 		int status = 0, j=0;
 		int id=(int)(Math.random()*1000);
-		
+
+        Calendar calendar = Calendar.getInstance();
+        Date sqlDate=new Date(calendar.getTime().getTime());
+        
+        
 		System.out.println("id generated="+id);
 		try{
 			conn = db.getConnection();				
 			ps =conn.prepareStatement("insert into item(id,name,category,quantity,tags,net_id,"
-					+ "photo,for_sale,price,negotiable,comments,fav_count, status) "
-					+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
+					+ "photo,for_sale,price,negotiable,comments,date_posted,fav_count, status) "
+					+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 			ps.setInt(++j, id);
 			ps.setString(++j, i.getName());
 			ps.setInt(++j, i.getCategory().getId());
@@ -36,13 +42,13 @@ public class ItemDAOImpl implements ItemDAO{
 			ps.setString(++j, i.getTags());
 			ps.setString(++j, i.getCustomer().getUsername());
 			ps.setString(++j, i.getImage_url());
-			ps.setBoolean(++j, i.isFor_sale());
+			ps.setBoolean(++j, i.getFor_sale());
 			ps.setFloat(++j, i.getPrice());
-			ps.setBoolean(++j, i.isNegotiable());
+			ps.setBoolean(++j, i.getNegotiable());
 			ps.setString(++j, i.getComments());
-//			ps.setString(++j, new Date().toString());
+			ps.setDate(++j, sqlDate);
 			ps.setInt(++j, i.getFav_count());
-			ps.setBoolean(++j, true);
+			ps.setBoolean(++j, i.getStatus());
 			System.out.println("before executing ");
 			status = ps.executeUpdate();
 			System.out.println("after executing ");
@@ -92,7 +98,7 @@ public class ItemDAOImpl implements ItemDAO{
 				i.setDate_posted(rs.getString(12));
 				i.setFav_count(rs.getInt(13));
 //				i.setStatus(rs.getString(14));
-				i.setStatus(null);
+				i.setStatus(rs.getBoolean(14));
 				list.add(i);
 			}
 			conn.close();
@@ -133,21 +139,21 @@ public class ItemDAOImpl implements ItemDAO{
 		int status = 0, j=0;
 		try{
 			conn = db.getConnection();
-			ps =conn.prepareStatement("insert into item values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-			ps.setInt(++j, i.getId());
+			ps =conn.prepareStatement("update item set name=?, category=?, quantity=?, tags=?, net_id=?, photo=?, for_sale=?, price=?, negotiable=?, comments=?, status=?  where id=?");
+		
 			ps.setString(++j, i.getName());
 			ps.setInt(++j, i.getCategory().getId());
 			ps.setInt(++j, i.getQuantity());
 			ps.setString(++j, i.getTags());
 			ps.setString(++j, i.getCustomer().getUsername());
 			ps.setString(++j, i.getImage_url());
-			ps.setBoolean(++j, i.isFor_sale());
+			ps.setBoolean(++j, i.getFor_sale());
 			ps.setFloat(++j, i.getPrice());
-			ps.setBoolean(++j, i.isNegotiable());
+			ps.setBoolean(++j, i.getNegotiable());
 			ps.setString(++j, i.getComments());
-			ps.setString(++j, i.getDate_posted());
-			ps.setInt(++j, i.getFav_count());
-			ps.setString(++j, i.getStatus().toString());
+			ps.setBoolean(++j, i.getStatus());
+			ps.setInt(++j, i.getId());
+			
 			status = ps.executeUpdate();
 			conn.close();
 		}catch(Exception e){
@@ -156,7 +162,41 @@ public class ItemDAOImpl implements ItemDAO{
 		return status;
 	} 
 
-	
+	@Override
+	public Item getItemDetails(int itemId) {
+		// TODO Auto-generated method stub
+		
+		Item i = new Item();
+		try{
+			conn = db.getConnection();
+			ps =conn.prepareStatement("select * from item where id=?");
+			ps.setInt(1, itemId);
+
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				i.setId(Integer.parseInt(rs.getString(1)));
+				i.setName(rs.getString(2));
+				i.setCategory(new Category(Integer.parseInt(rs.getString(3))));
+				i.setQuantity(Integer.parseInt(rs.getString(4)));
+				i.setTags(rs.getString(5));
+				i.setCustomer(new Customer(rs.getString(6)));
+				i.setImage_url(rs.getString(7));
+				System.out.println("check2"+((rs.getString(8)).equals("1")?true:false));
+				i.setFor_sale((rs.getString(8)).equals("1")?true:false);
+				i.setPrice(Integer.parseInt(rs.getString(9)));
+				i.setNegotiable((rs.getString(10)).equals("1")?true:false);
+				i.setComments(rs.getString(11));
+				i.setDate_posted(rs.getString(12));
+				i.setFav_count(Integer.parseInt(rs.getString(13)));
+				i.setStatus((rs.getString(14)).equals("1")?true:false);
+			}
+			conn.close();
+		}catch(Exception e){
+			System.out.println(e);
+		}
+		return i;
+	}
+
 	
 	
 

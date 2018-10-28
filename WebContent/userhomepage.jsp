@@ -74,7 +74,7 @@
 				</form>
 				<li class=" nav-item "><a class="nav-link" href="postItem.jsp">
 						Post Item </a></li>
-				<li class="nav-item"><a class="nav-link " href="list_items.jsp">
+				<li class="nav-item"><a class="nav-link " href="myList.jsp">
 						My List </a>
 				<li class="nav-item"><a class="nav-link " href="logout.jsp">
 						Logout </a></li>
@@ -88,10 +88,11 @@
 		</li>
 		<li><a class="page-scroll" href="#contact"> Contact </a></li>
 		<li><a class="page-scroll" href="#feature "> Edit Profile </a></li>
-		<li><a class="page-scroll" href="#feature "> My List </a></li>
+		<li><a class="page-scroll" href="myList.jsp"> My List </a></li>
 		<li><a class="page-scroll" href="#feature "> Logout </a></li>
 	</ul>
 	<!-- Mobile Menu End --> </nav> <!-- Navbar End --> <!--  Hero Area Start -->
+
 	<div id="hero-area" class="hero-area-bg">
 		<div class="overlay"></div>
 		<div class="container">
@@ -99,14 +100,13 @@
 				<div class="col-md-12 col-sm-12">
 					<div class="contents text-center">
 
-
 						<div class="row">
 							<div class="left" style="background-color: #bbb;">
 								<div class="search-container">
 									<input type="text" onkeyup="myFunction()"
 										placeholder="Enter your search term" name="searchbar"
 										id="mySearch" style="width: 95%">
-									</form>
+
 								</div>
 								<ul id="myMenu">
 									<li><a href="#">Furniture</a></li>
@@ -118,6 +118,17 @@
 							</div>
 
 							<div class="right">
+
+								<div class="search-container">
+									<input type="text" placeholder="Search.." name="itemSearch"
+										id="itemSearch"
+										style="border: solid; color: grey; height: 50px; width: 80%">
+									<button type="submit"
+										style="float: right; vertical-align: top; height: 50px"
+										onclick="searchItem()" name="itemSearch" id="itemSearch">Submit</button>
+								</div>
+								<br />
+								<br />
 								<h2 class="w3-center"
 									style="font-size: 25px; float: left; font-family: Segoe UI Light">Now
 									trending...</h2>
@@ -131,6 +142,10 @@
 									<img class="mySlides" src="home/assets/img/item/6.jpg"
 										style="width: 100%">
 								</div>
+
+
+
+
 
 
 								<script>
@@ -152,6 +167,24 @@
 										setTimeout(carousel, 4000); // Change image every 4 seconds
 									}
 								</script>
+
+								<script>
+									function searchItem() {
+										var x = document
+												.getElementById("itemSearch").value;
+										if (x.includes("table") == true) {
+											window.open("itemPage1.jsp",
+													"_self");
+										} else if (x.includes("chair") == true) {
+											window.open("itemPage2.jsp",
+													"_self");
+										} else if (x.includes("insta") == true) {
+											window.open("itemPage3.jsp",
+													"_self");
+										}
+									}
+								</script>
+
 							</div>
 						</div>
 					</div>
