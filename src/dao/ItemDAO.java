@@ -14,6 +14,7 @@ public interface ItemDAO {
 	public int updateItem(Item i);
 	public int deleteItem(int id);
 	public Item getItemDetails(int itemId);
+	public void addToFavorites(Item i);
 	List<Item> fetchPostedItems(String username);
 	List<Item> fetchFavItems(Customer cust);
 	List<Item> getAllItems();

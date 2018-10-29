@@ -1,4 +1,7 @@
 package model;
+
+import java.util.List;
+
 /**
  * 
  * @author mehra
@@ -11,6 +14,8 @@ public class Customer {
 	private String first_name;
 	private String last_name;
 	private String cell_phone;
+	private List<Item> favList;
+	private List<Item> postedList;
 	
 	
 	public Customer() {
@@ -50,6 +55,20 @@ public class Customer {
 	public void setFirst_name(String first_name) {
 		this.first_name = first_name;
 	}
+	public List<Item> getFavList() {
+		return favList;
+	}
+	public void setFavList(List<Item> favList) {
+		this.favList = favList;
+	}
+	public List<Item> getPostedList() {
+		return postedList;
+	}
+	public void setPostedList(List<Item> postedList) {
+		this.postedList = postedList;
+	}
+	
+	
 	
 	
 }

@@ -99,10 +99,13 @@
 						<div class="row contact-form-area wow fadeInUp"
 							data-wow-delay="0.4s">
 
-							<div class="col-md-6 col-lg-6 col-sm-12">
-								<img src="home/assets/img/item/1.jpg" style="float: right; width:50%; height:50%"/>
+							<form name="itemform" action="ItemController" method="post"
+								accept="image/gif, image/jpeg"
+								class="col-md-6 col-lg-6 col-sm-12" role="form">
+								<img src="home/assets/img/item/1.jpg"
+									style="float: right; width: 50%; height: 50%" />
 								<h2>
-									Product Name : <input type="text" name="productName"
+									Product Name : <input type="text" name="pname"
 										value="IKEA Table" style="font-weight: normal" readonly>
 								</h2>
 								<h2>
@@ -118,7 +121,7 @@
 										style="font-weight: normal" readonly>
 								</h2>
 								<h2>
-									Is this for sale? <input type="text" name="SaleorRent"
+									Is this for sale? <input type="text" name="for_sale"
 										value="Yes" style="font-weight: normal" readonly>
 								</h2>
 								<h2>
@@ -131,14 +134,15 @@
 								</h2>
 								<h2>
 									Comments
-									<textarea rows="4" cols="50" name="comments"
+									<textarea rows="4" cols="50" name="comment"
 										style="font-weight: normal" readonly>Brand new wooden IKEA Table hardly used. </textarea>
 								</h2>
 								<button type="button" class="btn btn-primary">Contact
 									Seller</button>
-								<button type="button" class="btn btn-primary">Add to my
-									list</button>
-							</div>
+								<input type="submit" class="btn btn-primary"
+									name="Add to my
+									list" value="addToFavorites">
+							</form>
 
 						</div>
 					</div>

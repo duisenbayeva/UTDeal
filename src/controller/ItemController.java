@@ -131,6 +131,26 @@ public class ItemController extends HttpServlet {
 			itemDao.updateItem(item);
 			request.getRequestDispatcher("userhomepage.jsp").forward(request, response);
 		}
+		if(submitType.equals("addToFavorites")) {
+			Item item = new Item();
+//			item.setId(Integer.parseInt(request.getParameter("itemId")));
+			item.setName(request.getParameter("pname"));
+			item.setCategory(new Category(Integer.parseInt(request.getParameter("category"))));
+			if(request.getParameter("quantity")!=null)item.setQuantity(Integer.parseInt(request.getParameter("quantity")));
+			item.setTags(request.getParameter("tags"));			
+			if(request.getParameter("fav_count")!=null)item.setFav_count(Integer.parseInt(request.getParameter("fav_count")));
+			item.setCustomer((Customer)request.getSession().getAttribute("user"));
+			if(request.getParameter("image_url")!=null)item.setImage_url(request.getParameter("image_url"));
+			item.setComments(request.getParameter("comment"));
+			if(request.getParameter("for_sale")!=null)item.setFor_sale(Boolean.parseBoolean(request.getParameter("for_sale")));
+			item.setNegotiable(Boolean.parseBoolean(request.getParameter("negotiable")));
+			item.setPrice(Float.parseFloat(request.getParameter("price")));
+			item.setStatus(Boolean.parseBoolean(request.getParameter("status")));
+			
+			System.out.println(item.toString());
+			itemDao.updateItem(item);
+			request.getRequestDispatcher("userhomepage.jsp").forward(request, response);
+		}
 	}
 
 }

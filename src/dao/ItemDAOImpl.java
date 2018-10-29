@@ -112,7 +112,9 @@ public class ItemDAOImpl implements ItemDAO{
 	@Override
 	public List<Item> fetchFavItems(Customer cust) {
 		// TODO Auto-generated method stub
-		return null;
+		if(cust.getFavList()==null)cust.setFavList(new ArrayList<Item>());
+//		cust.getFavList().add(i);
+		return cust.getFavList();
 	}
 
 	@Override
@@ -195,6 +197,15 @@ public class ItemDAOImpl implements ItemDAO{
 			System.out.println(e);
 		}
 		return i;
+	}
+
+
+	@Override
+	public void addToFavorites(Item i) {
+		if(i.getCustomer().getFavList()==null)i.getCustomer().setFavList(new ArrayList<Item>());
+		i.getCustomer().getFavList().add(i);
+		System.out.println("Adding item to favorites");
+		
 	}
 
 	
