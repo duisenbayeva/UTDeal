@@ -38,7 +38,8 @@
 <body>
 
 	<header id="header-wrap"> <!-- Navbar Start --> <nav
-		class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
+			class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo"></nav>
+	</header>
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -50,7 +51,7 @@
 			</button>
 		</div>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light"
-			style="width:100%">
+			 style="width:100%"></nav>
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="nav navbar-nav mr-auto">
 				<li class="nav-item active"><a class="nav-link"
@@ -60,12 +61,8 @@
 
 				<li class="nav-item"><a class="nav-link" href="#team"> Team
 				</a></li>
-				<li class="nav-item"><a class="nav-link" href="#Subscribes">
-						Jumpstart </a></li>
 				<li class="nav-item"><a class="nav-link" href="#contact">
 						Contact </a></li>
-
-
 			</ul>
 		</div>
 	</div>
@@ -78,7 +75,6 @@
 
 		<li class="nav-item"><a class="nav-link" href="#team"> Team </a>
 		</li>
-		<li><a class="page-scroll" href="#Subscribes"> Jumpstart </a></li>
 		<li><a class="page-scroll" href="#contact"> Contact </a></li>
 	</ul>
 	<!-- Mobile Menu End --> </nav> <!-- Navbar End --> <!-- Hero Area Start -->
@@ -93,22 +89,17 @@
 							Welcome to<br> UTDeals
 						</h2>
 						<div class="header-button wow fadeInUp" data-wow-delay="0.3s">
-							<a href="register.jsp" class="btn btn-common">SignUp now</a> <a
-								href="login.jsp" class="btn btn-common">SignIn</a>
+							<a href="register.jsp" class="btn btn-common">SignUp now</a> &nbsp
+							<a href="login.jsp" class="btn btn-common">SignIn</a>
 						</div>
 					</div>
-					<h2 class="w3-center"
-						style="font-size: 25px; float: left; font-family: Segoe UI Light">Now
-						trending...</h2>
-					<div class="w3-content w3-section" style="max-width: 500px">
-						<img class="mySlides" src="home/assets/img/item/1.jpg"
-							style="width: 100%"> <img class="mySlides"
-							src="home/assets/img/item/2.jpg" " style="width: 100%"> <img
-							class="mySlides" src="home/assets/img/item/3.jpg"
-							style="width: 100%"> <img class="mySlides"
-							src="home/assets/img/item/5.jpg" " style="width: 100%"> <img
-							class="mySlides" src="home/assets/img/item/6.jpg"
-							style="width: 100%">
+					<h2 class="w3-center" style="font-size: 25px; float: left; font-family:verdana"> Trending now</h2>
+					<div class="w3-content w3-section" style="max-width: 350px">
+						<img class="mySlides" src="home/assets/img/item/1.jpg" width="150" height="150">
+						<img class="mySlides" src="home/assets/img/item/2.jpg" width="150" height="150">
+						<img class="mySlides" src="home/assets/img/item/3.jpg" width="150" height="150">
+						<img class="mySlides" src="home/assets/img/item/5.jpg" width="150" height="150">
+						<img class="mySlides" src="home/assets/img/item/6.jpg" width="150" height="150">
 					</div>
 					<script>
 						var myIndex = 0;
@@ -135,84 +126,69 @@
 			</div>
 		</div>
 	</div>
-	<!-- Hero Area End --> </header>
-	<!-- Header Area wrapper End -->
+	<!-- Hero Area End -->
 
-
-
-
-	<!-- Feature Section Start -->
-	<div id="feature">
-		<div class="container-fluid">
+	<!--new features-->
+	<section id="feature" class="section-padding">
+		<div class="container">
 			<div class="row">
-				<div class="col-lg-6 col-md-12 col-sm-12">
-					<div class="text-wrapper">
-						<div>
+				<div class="col-12">
+					<div class="section-header text-center">
+						<h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Learn More About us</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row contact-form-area wow fadeInUp" data-wow-delay="0.4s">
 
-							<br /> <br />
-
-							<div class="contents text-center">
-								<h2 class="title-hl wow fadeInLeft" data-wow-delay="0.3s">Learn
-									More About Us</h2>
+				<div class="row">
+					<div class="col-md-6 col-sm-6">
+						<div class="features-box wow fadeInLeft" data-wow-delay="0.3s">
+							<div class="features-icon">
+								<i class="lni-layers"></i>
 							</div>
-							<div class="row">
-								<div class="col-md-6 col-sm-6">
-									<div class="features-box wow fadeInLeft" data-wow-delay="0.3s">
-										<div class="features-icon">
-											<i class="lni-layers"></i>
-										</div>
-										<div class="features-content">
-											<h4>Sell and Buy</h4>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit. Veniam tempora quidem vel sint.</p>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 col-sm-6">
-									<div class="features-box wow fadeInLeft" data-wow-delay="0.6s">
-										<div class="features-icon">
-											<i class="lni-briefcase"></i>
-										</div>
-										<div class="features-content">
-											<h4>100% Free</h4>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit. Veniam tempora quidem vel sint.</p>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 col-sm-6">
-									<div class="features-box wow fadeInLeft" data-wow-delay="0.9s">
-										<div class="features-icon">
-											<i class="lni-cog"></i>
-										</div>
-										<div class="features-content">
-											<h4>Responsive</h4>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit. Veniam tempora quidem vel sint.</p>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 col-sm-6">
-									<div class="features-box wow fadeInLeft" data-wow-delay="1.2s">
-										<div class="features-icon">
-											<i class="lni-leaf"></i>
-										</div>
-										<div class="features-content">
-											<h4>Easy to Use</h4>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit. Veniam tempora quidem vel sint.</p>
-										</div>
-									</div>
-								</div>
+							<div class="features-content">
+								<h4>Sell and Buy</h4>
+								<p>Students can easily sell and buy the products at a cheap price.</p>
 							</div>
 						</div>
 					</div>
-				</div>
-
+					<div class="col-md-6 col-sm-6">
+						<div class="features-box wow fadeInLeft" data-wow-delay="0.6s">
+							<div class="features-icon">
+								<i class="lni-briefcase"></i>
+							</div>
+							<div class="features-content">
+								<h4>100% Free</h4>
+								<p>The platform is free to use.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6">
+						<div class="features-box wow fadeInLeft" data-wow-delay="0.9s">
+							<div class="features-icon">
+								<i class="lni-cog"></i>
+							</div>
+							<div class="features-content">
+								<h4>Responsive</h4>
+								<p> UtDeals is responsive in nature.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6">
+						<div class="features-box wow fadeInLeft" data-wow-delay="1.2s">
+							<div class="features-icon">
+								<i class="lni-leaf"></i>
+							</div>
+							<div class="features-content">
+								<h4>Easy to Use</h4>
+								<p>UTDeals is very easy to use as a platform to buy and sell.</p>
+							</div>
+						</div>
+					</div>
 			</div>
 		</div>
-	</div>
-	<!-- Feature Section End -->
+		</div>
+	</section>
 
 	<!-- Team Section Start -->
 	<section id="team" class="section-padding text-center">
@@ -231,7 +207,7 @@
 				<div class="team-item text-center">
 					<div class="team-img">
 						<img class="img-fluid" src="home/assets/img/team/team-01.jpg"
-							alt="">
+							alt="" width="150" height="150">
 						<div class="team-overlay">
 							<div class="overlay-social-icon text-center">
 								<ul class="social-icons">
@@ -255,7 +231,7 @@
 				<div class="team-item text-center">
 					<div class="team-img">
 						<img class="img-fluid" src="home/assets/img/team/team-02.jpg"
-							alt="">
+							alt="" width="150" height="150">
 						<div class="team-overlay">
 							<div class="overlay-social-icon text-center">
 								<ul class="social-icons">
@@ -281,7 +257,7 @@
 				<div class="team-item text-center">
 					<div class="team-img">
 						<img class="img-fluid" src="home/assets/img/team/team-03.jpg"
-							alt="">
+							alt="" width="150" height="150">
 						<div class="team-overlay">
 							<div class="overlay-social-icon text-center">
 								<ul class="social-icons">
@@ -305,7 +281,7 @@
 				<div class="team-item text-center">
 					<div class="team-img">
 						<img class="img-fluid" src="home/assets/img/team/team-02.jpg"
-							alt="">
+							alt="" width="150" height="150">
 						<div class="team-overlay">
 							<div class="overlay-social-icon text-center">
 								<ul class="social-icons">
@@ -331,7 +307,7 @@
 				<div class="team-item text-center">
 					<div class="team-img">
 						<img class="img-fluid" src="home/assets/img/team/team-03.jpg"
-							alt="">
+							alt="" width="150" height="150">
 						<div class="team-overlay">
 							<div class="overlay-social-icon text-center">
 								<ul class="social-icons">
@@ -344,7 +320,7 @@
 					</div>
 					<div class="info-text">
 						<h3>
-							<a href="#">Namratha Rathore</a>
+							<a href="#">Namrata Rathore</a>
 						</h3>
 						<p>Front-end Designer</p>
 					</div>
@@ -355,32 +331,6 @@
 	</div>
 	</section>
 	<!-- Team Section End -->
-
-
-
-
-	<!-- Subscribe Section Start -->
-	<section id="Subscribes" class="subscribes section-padding">
-	<div class="container">
-		<div class="row justify-content-md-center">
-			<div class="col-md-10 col-lg-5">
-				<h4 class="wow fadeInUp" data-wow-delay="0.3s">Start For Free</h4>
-				<p class="wow fadeInUp" data-wow-delay="0.6s">
-					Buy and sell Products <br>
-				</p>
-				<form for="">
-					<div class="subscribe wow fadeInDown" data-wow-delay="0.3s">
-						<input type="Email" class="form-control" name="username"
-							placeholder="enter your netid"> <a href="register.jsp"><i
-							class="lni-arrow-right"></i>
-							</button></a>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-	</section>
-	<!-- Subscribe Section End -->
 
 
 	<!-- Contact Section Start -->
@@ -442,7 +392,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<p>Copyright Â© 2018 UTDeals All Right Reserved</p>
+				<p>Copyright © 2018 UTDeals All Right Reserved</p>
 			</div>
 		</div>
 	</div>

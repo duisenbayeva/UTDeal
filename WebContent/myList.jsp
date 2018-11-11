@@ -37,8 +37,9 @@
 </head>
 <body>
 
-	<header id="header-wrap"> <!-- Navbar Start --> <nav
-		class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
+	<header id="header-wrap"> <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo"></nav></header>
+    <div class="container">
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -77,6 +78,7 @@
 						Logout </a></li>
 			</ul>
 		</div>
+		</nav>
 	</div>
 	<!-- Mobile Menu Start -->
 	<ul class="mobile-menu navbar-nav">
@@ -111,12 +113,8 @@
 						</div>
 					</div>
 				</div>
-
 			</div>
 		</div>
-
-
-
 
 		<section id="copyright">
 		<div class="container">
@@ -137,7 +135,7 @@
 			<div class="loader" id="loader-1"></div>
 		</div>
 		<!-- End Preloader -->
-
+        </div>
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="home/assets/js/jquery-min.js"></script>
 		<script src="home/assets/js/popper.min.js"></script>
@@ -155,5 +153,7 @@
 		<script src="home/assets/js/map.js"></script>
 		<script type="text/javascript"
 			src="//maps.googleapis.com/maps/api/js?key=AIzaSyCsa2Mi2HqyEcEnM1urFSIGEpvualYjwwM"></script>
-</body>
+        </div>
+    </div>
+    </body>
 </html>

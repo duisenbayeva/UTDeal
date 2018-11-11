@@ -33,7 +33,7 @@
     <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
 	
 	<form name="loginform" action="LoginController" method="post" onsubmit="return loginValidate()" class="form-horizontal" role="form">
-	<br>
+	<%--@declare id="primary"--%><br>
 
 	<label for="primary">Netid:</label>
 	 <div style="margin-bottom: 25px" class="input-group">

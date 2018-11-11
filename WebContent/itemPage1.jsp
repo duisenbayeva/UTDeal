@@ -36,7 +36,8 @@
 <body>
 
 	<header id="header-wrap"> <!-- Navbar Start --> <nav
-		class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
+			class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo"></nav>
+	</header>
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -48,7 +49,7 @@
 			</button>
 		</div>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light"
-			style="width:100%">
+			 style="width:100%"></nav>
 		<div class="collapse navbar-collapse" id="navbarNav">
 
 
@@ -146,6 +147,10 @@
 
 						</div>
 					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 

@@ -42,7 +42,7 @@
 						accept="image/gif, image/jpeg" class="form-horizontal"
 						role="form">
 						
-						<br> <label for="primary">*Product name:</label>
+						<%--@declare id="primary"--%><br> <label for="primary">*Product name:</label>
 						<div style="margin-bottom: 25px" class="input-group">
 							<span class="input-group-addon"></span> 
 							<input id="pname" type="text" class="form-control" name="pname" value=""

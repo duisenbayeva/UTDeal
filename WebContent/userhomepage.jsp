@@ -52,10 +52,6 @@
 		<nav class="navbar navbar-expand-lg navbar-light bg-light"
 			style="width:100%">
 		<div class="collapse navbar-collapse" id="navbarNav">
-
-
-
-
 			<ul class="nav navbar-nav mr-auto">
 				<li class="nav-item active"><a class="nav-link"
 					href="#hero-area"> Home </a></li>
@@ -121,7 +117,7 @@
 
 								<div class="search-container">
 									<input type="text" placeholder="Search.." name="itemSearch"
-										id="itemSearch"
+
 										style="border: solid; color: grey; height: 50px; width: 80%">
 									<button type="submit"
 										style="float: right; vertical-align: top; height: 50px"
@@ -135,10 +131,10 @@
 								<div class="w3-content w3-section" style="max-width: 500px">
 									<img class="mySlides" src="home/assets/img/item/1.jpg"
 										style="width: 100%"> <img class="mySlides"
-										src="home/assets/img/item/2.jpg" " style="width: 100%">
+										src="home/assets/img/item/2.jpg" style="width: 100%">
 									<img class="mySlides" src="home/assets/img/item/3.jpg"
 										style="width: 100%"> <img class="mySlides"
-										src="home/assets/img/item/5.jpg" " style="width: 100%">
+										src="home/assets/img/item/5.jpg" style="width: 100%">
 									<img class="mySlides" src="home/assets/img/item/6.jpg"
 										style="width: 100%">
 								</div>
