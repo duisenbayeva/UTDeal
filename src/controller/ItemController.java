@@ -131,6 +131,12 @@ public class ItemController extends HttpServlet {
 			itemDao.updateItem(item);
 			request.getRequestDispatcher("userhomepage.jsp").forward(request, response);
 		}
+		
+		if(submitType.equals("deleteItem")) {
+			int status = itemDao.deleteItem(Integer.parseInt(request.getParameter("id")));
+			request.getRequestDispatcher("userhomepage.jsp").forward(request, response);
+		}
+		
 		if(submitType.equals("addToFavorites")) {
 			Item item = new Item();
 //			item.setId(Integer.parseInt(request.getParameter("itemId")));
