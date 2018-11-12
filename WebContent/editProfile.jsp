@@ -76,7 +76,7 @@
           <div style="margin-bottom: 25px" class="input-group">
 	 
       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-       <input type="number" class="form-control" name="cell_phone" id="cell_phone" value="${user.getCell_phone()}" placeholder="Enter your contact number" required/>
+       <input type="number" class="form-control" name="cell_phone" id="cell_phone" value="${user.getCell_phone()}" placeholder="Enter your contact number" pattern="^\d{10}$" required/>
          </div>
          
 
