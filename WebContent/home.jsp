@@ -95,11 +95,11 @@
 					</div>
 					<h2 class="w3-center" style="font-size: 25px; float: left; font-family:verdana"> Trending now</h2>
 					<div class="w3-content w3-section" style="max-width: 350px">
-						<img class="mySlides" src="home/assets/img/item/1.jpg" width="150" height="150">
-						<img class="mySlides" src="home/assets/img/item/2.jpg" width="150" height="150">
-						<img class="mySlides" src="home/assets/img/item/3.jpg" width="150" height="150">
-						<img class="mySlides" src="home/assets/img/item/5.jpg" width="150" height="150">
-						<img class="mySlides" src="home/assets/img/item/6.jpg" width="150" height="150">
+						<img class="mySlides" src="home/assets/img/item/1.jpg" width="250" height="250">
+						<img class="mySlides" src="home/assets/img/item/2.jpg" width="250" height="250">
+						<img class="mySlides" src="home/assets/img/item/3.jpg" width="250" height="250">
+						<img class="mySlides" src="home/assets/img/item/5.jpg" width="250" height="250">
+						<img class="mySlides" src="home/assets/img/item/6.jpg" width="250" height="250">
 					</div>
 					<script>
 						var myIndex = 0;

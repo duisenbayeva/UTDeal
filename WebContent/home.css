@@ -1695,7 +1695,7 @@ to {
 .w3-animate-left {
 	position: relative;
 	-webkit-animation: animateleft 0.4s;
-	animation: animateleft 0.4s
+	animation: animateleft 0.4s;
 }
 
 @
@@ -1709,7 +1709,7 @@ to {
 	opacity: 1
 }
 
-}
+
 @
 keyframes animateleft {
 	from {left: -300px;
@@ -1721,7 +1721,7 @@ to {
 	opacity: 1
 }
 
-}
+
 .w3-animate-right {
 	position: relative;
 	-webkit-animation: animateright 0.4s;

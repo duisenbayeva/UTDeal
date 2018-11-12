@@ -41,7 +41,7 @@ request.getServletContext().setAttribute("postedItems", items);
                     <% for(int i=0; i<items.size(); i++){ %>
                         <li class="list-group-item">
                           
-                                <label for="checkbox">
+                                <%--@declare id="checkbox"--%><label for="checkbox">
                                     <%= items.get(i).getName() %>
                                 </label>
                             

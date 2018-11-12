@@ -7,6 +7,53 @@
 <link rel="stylesheet" href="home.css">
 <title>Welcome to UTDeals</title>
 
+<%--<style>--%>
+    <%--.dropdown {--%>
+        <%--float: left;--%>
+        <%--overflow: hidden;--%>
+    <%--}--%>
+
+    <%--.dropdown .dropbtn {--%>
+        <%--font-size: 16px;--%>
+        <%--border: none;--%>
+        <%--outline: none;--%>
+        <%--color: white;--%>
+        <%--padding: 14px 16px;--%>
+        <%--/*background-color: inherit;*/--%>
+        <%--font-family: inherit;--%>
+        <%--margin: 0;--%>
+    <%--}--%>
+
+    <%--.navbar a:hover, .dropdown:hover .dropbtn {--%>
+        <%--/*background-color: red;*/--%>
+    <%--}--%>
+
+    <%--.dropdown-content {--%>
+        <%--display: none;--%>
+        <%--position: absolute;--%>
+        <%--/*background-color: #f9f9f9;*/--%>
+        <%--min-width: 160px;--%>
+        <%--box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);--%>
+        <%--z-index: 1;--%>
+    <%--}--%>
+
+    <%--.dropdown-content a {--%>
+        <%--float: none;--%>
+        <%--color: black;--%>
+        <%--padding: 12px 16px;--%>
+        <%--text-decoration: none;--%>
+        <%--display: block;--%>
+        <%--text-align: left;--%>
+    <%--}--%>
+
+    <%--.dropdown-content a:hover {--%>
+        <%--/*background-color: #ddd;*/--%>
+    <%--}--%>
+
+    <%--.dropdown:hover .dropdown-content {--%>
+        <%--display: block;--%>
+    <%--}
+    <style>--%>
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" type="text/css"
@@ -64,14 +111,25 @@
 				<form name="regform" action="CustomerController" method="post"
 					class="form-horizontal" role="form">
 					<input class=" nav-item nav-link" type="hidden" name="username"
-						value="${userId}"></input> <input class=" nav-item nav-link"
-						type="submit" name="submit" value="editProfile"
-						style="border: hidden"></input>
+						value="${userId}">
+                    <input class=" nav-item nav-link" type="submit" name="submit" value="editProfile"
+						style="border: hidden">
 				</form>
 				<li class=" nav-item "><a class="nav-link" href="postItem.jsp">
 						Post Item </a></li>
-				<li class="nav-item"><a class="nav-link " href="myList.jsp">
-						My List </a>
+                <%--<div class="dropdown">--%>
+                    <%--<<li class=" nav-item "><a class="dropbtn">MyList--%>
+                        <%--&lt;%&ndash;<i class="fa fa-caret-down"></i>&ndash;%&gt;--%>
+                    <%--</a></li>--%>
+                    <%--<div class="dropdown-content">--%>
+                        <%--<a href="list_items.jsp">Posted Items</a>--%>
+                        <%--<a href="myList.jsp">Favorite List</a>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+            <li class="nav-item"><a class="nav-link " href="list_items.jsp">
+						Posted Items </a>
+                <li class="nav-item"><a class="nav-link " href="myList.jsp">
+                    Favorite List </a>
 				<li class="nav-item"><a class="nav-link " href="logout.jsp">
 						Logout </a></li>
 			</ul>
@@ -84,7 +142,8 @@
 		</li>
 		<li><a class="page-scroll" href="#contact"> Contact </a></li>
 		<li><a class="page-scroll" href="#feature "> Edit Profile </a></li>
-		<li><a class="page-scroll" href="myList.jsp"> My List </a></li>
+        <li><a class="page-scroll" href="list_items.jsp"> Posted Items </a></li>
+		<li><a class="page-scroll" href="myList.jsp"> Favorite List </a></li>
 		<li><a class="page-scroll" href="#feature "> Logout </a></li>
 	</ul>
 	<!-- Mobile Menu End --> </nav> <!-- Navbar End --> <!--  Hero Area Start -->
@@ -209,147 +268,147 @@
 			}
 		}
 	</script>
-	<!-- Team Section Start -->
-	<section id="team" class="section-padding text-center">
-	<div class="container">
-		<div class="row">
-			<div class="col-12">
-				<div class="section-header text-center">
-					<h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Our
-						Team</h2>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-6 col-md-6 col-lg-4">
-				<!-- Team Item Starts -->
-				<div class="team-item text-center">
-					<div class="team-img">
-						<img class="img-fluid" src="home/assets/img/team/team-01.jpg"
-							alt="">
-						<div class="team-overlay">
-							<div class="overlay-social-icon text-center">
-								<ul class="social-icons">
-									<li><a href="https://www.linkedin.com/in/sanket-modi"><i
-											class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="info-text">
-						<h3>
-							<a href="#">Sanket Modi</a>
-						</h3>
-						<p>Front-end Designer</p>
-					</div>
-				</div>
-				<!-- Team Item Ends -->
-			</div>
-			<div class="col-sm-6 col-md-6 col-lg-4">
-				<!-- Team Item Starts -->
-				<div class="team-item text-center">
-					<div class="team-img">
-						<img class="img-fluid" src="home/assets/img/team/team-02.jpg"
-							alt="">
-						<div class="team-overlay">
-							<div class="overlay-social-icon text-center">
-								<ul class="social-icons">
-									<li><a
-										href="https://www.linkedin.com/in/balnur-duisenbayeva/"><i
-											class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="info-text">
-						<h3>
-							<a href="#">Balnur Duisenbayeva</a>
-						</h3>
-						<p>Back-end Designer</p>
-					</div>
-				</div>
-				<!-- Team Item Ends -->
-			</div>
+    <!-- Team Section Start -->
+    <section id="team" class="section-padding text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header text-center">
+                        <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Our
+                            Team</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-4">
+                    <!-- Team Item Starts -->
+                    <div class="team-item text-center">
+                        <div class="team-img">
+                            <img class="img-fluid" src="home/assets/img/team/team-01.jpg"
+                                 alt="" width="150" height="150">
+                            <div class="team-overlay">
+                                <div class="overlay-social-icon text-center">
+                                    <ul class="social-icons">
+                                        <li><a href="https://www.linkedin.com/in/sanket-modi"><i
+                                                class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-text">
+                            <h3>
+                                <a href="#">Sanket Modi</a>
+                            </h3>
+                            <p>Front-end Designer</p>
+                        </div>
+                    </div>
+                    <!-- Team Item Ends -->
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-4">
+                    <!-- Team Item Starts -->
+                    <div class="team-item text-center">
+                        <div class="team-img">
+                            <img class="img-fluid" src="home/assets/img/team/team-02.jpg"
+                                 alt="" width="150" height="150">
+                            <div class="team-overlay">
+                                <div class="overlay-social-icon text-center">
+                                    <ul class="social-icons">
+                                        <li><a
+                                                href="https://www.linkedin.com/in/balnur-duisenbayeva/"><i
+                                                class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-text">
+                            <h3>
+                                <a href="#">Balnur Duisenbayeva</a>
+                            </h3>
+                            <p>Back-end Designer</p>
+                        </div>
+                    </div>
+                    <!-- Team Item Ends -->
+                </div>
 
-			<div class="col-sm-6 col-md-6 col-lg-4">
-				<!-- Team Item Starts -->
-				<div class="team-item text-center">
-					<div class="team-img">
-						<img class="img-fluid" src="home/assets/img/team/team-03.jpg"
-							alt="">
-						<div class="team-overlay">
-							<div class="overlay-social-icon text-center">
-								<ul class="social-icons">
-									<li><a href="https://www.linkedin.com/in/pavithraconnect/"><i
-											class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="info-text">
-						<h3>
-							<a href="#">Pavithra Kannan</a>
-						</h3>
-						<p>Front-end Developer</p>
-					</div>
-				</div>
-				<!-- Team Item Ends -->
-			</div>
-			<div class="col-sm-6 col-md-6 col-lg-4">
-				<!-- Team Item Starts -->
-				<div class="team-item text-center">
-					<div class="team-img">
-						<img class="img-fluid" src="home/assets/img/team/team-02.jpg"
-							alt="">
-						<div class="team-overlay">
-							<div class="overlay-social-icon text-center">
-								<ul class="social-icons">
-									<li><a
-										href="https://www.linkedin.com/in/tulika-mithal-95695886/"><i
-											class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="info-text">
-						<h3>
-							<a href="#">Tulika Mithal</a>
-						</h3>
-						<p>Back-end Designer</p>
-					</div>
-				</div>
-				<!-- Team Item Ends -->
-			</div>
+                <div class="col-sm-6 col-md-6 col-lg-4">
+                    <!-- Team Item Starts -->
+                    <div class="team-item text-center">
+                        <div class="team-img">
+                            <img class="img-fluid" src="home/assets/img/team/team-03.jpg"
+                                 alt="" width="150" height="150">
+                            <div class="team-overlay">
+                                <div class="overlay-social-icon text-center">
+                                    <ul class="social-icons">
+                                        <li><a href="https://www.linkedin.com/in/pavithraconnect/"><i
+                                                class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-text">
+                            <h3>
+                                <a href="#">Pavithra Kannan</a>
+                            </h3>
+                            <p>Front-end Developer</p>
+                        </div>
+                    </div>
+                    <!-- Team Item Ends -->
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-4">
+                    <!-- Team Item Starts -->
+                    <div class="team-item text-center">
+                        <div class="team-img">
+                            <img class="img-fluid" src="home/assets/img/team/team-02.jpg"
+                                 alt="" width="150" height="150">
+                            <div class="team-overlay">
+                                <div class="overlay-social-icon text-center">
+                                    <ul class="social-icons">
+                                        <li><a
+                                                href="https://www.linkedin.com/in/tulika-mithal-95695886/"><i
+                                                class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-text">
+                            <h3>
+                                <a href="#">Tulika Mithal</a>
+                            </h3>
+                            <p>Back-end Designer</p>
+                        </div>
+                    </div>
+                    <!-- Team Item Ends -->
+                </div>
 
-			<div class="col-sm-6 col-md-6 col-lg-4">
-				<!-- Team Item Starts -->
-				<div class="team-item text-center">
-					<div class="team-img">
-						<img class="img-fluid" src="home/assets/img/team/team-03.jpg"
-							alt="">
-						<div class="team-overlay">
-							<div class="overlay-social-icon text-center">
-								<ul class="social-icons">
-									<li><a
-										href="https://www.linkedin.com/in/namrata-rathore-88150212a/"><i
-											class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="info-text">
-						<h3>
-							<a href="#">Namratha Rathore</a>
-						</h3>
-						<p>Front-end Designer</p>
-					</div>
-				</div>
-				<!-- Team Item Ends -->
-			</div>
-		</div>
-	</div>
-	</section>
-	<!-- Team Section End -->
+                <div class="col-sm-6 col-md-6 col-lg-4">
+                    <!-- Team Item Starts -->
+                    <div class="team-item text-center">
+                        <div class="team-img">
+                            <img class="img-fluid" src="home/assets/img/team/team-03.jpg"
+                                 alt="" width="150" height="150">
+                            <div class="team-overlay">
+                                <div class="overlay-social-icon text-center">
+                                    <ul class="social-icons">
+                                        <li><a
+                                                href="https://www.linkedin.com/in/namrata-rathore-88150212a/"><i
+                                                class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-text">
+                            <h3>
+                                <a href="#">Namrata Rathore</a>
+                            </h3>
+                            <p>Front-end Designer</p>
+                        </div>
+                    </div>
+                    <!-- Team Item Ends -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Team Section End -->
 
 
 

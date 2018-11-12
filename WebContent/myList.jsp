@@ -66,14 +66,15 @@
 				<form name="regform" action="CustomerController" method="post"
 					class="form-horizontal" role="form">
 					<input class=" nav-item nav-link" type="hidden" name="username"
-						value="${userId}"></input> <input class=" nav-item nav-link"
+						value="${userId}">
+                    <input class=" nav-item nav-link"
 						type="submit" name="submit" value="editProfile"
-						style="border: hidden"></input>
+						style="border: hidden">
 				</form>
 				<li class=" nav-item "><a class="nav-link" href="postItem.jsp">
 						Post Item </a></li>
 				<li class="nav-item"><a class="nav-link " href="list_items.jsp">
-						My List </a>
+						Favorite List </a>
 				<li class="nav-item"><a class="nav-link " href="logout.jsp">
 						Logout </a></li>
 			</ul>
