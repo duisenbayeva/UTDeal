@@ -112,9 +112,12 @@
 					class="form-horizontal" role="form">
 					<input class=" nav-item nav-link" type="hidden" name="username"
 						value="${userId}">
-                    <input class=" nav-item nav-link" type="submit" name="submit" value="editProfile"
-						style="border: hidden">
+                    <%--<input class=" nav-item nav-link" type="submit" name="submit" value="editProfile"--%>
+						<%--style="border: hidden">--%>
+
 				</form>
+                <li class=" nav-item "><a class="nav-link" href="myProfile.jsp">
+                    My Profile </a></li>
 				<li class=" nav-item "><a class="nav-link" href="postItem.jsp">
 						Post Item </a></li>
                 <%--<div class="dropdown">--%>

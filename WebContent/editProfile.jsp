@@ -38,7 +38,7 @@
 	 
       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
        
-      <input id="username" readonly type="text" class="form-control" name="username" value="${userDetails.username}" placeholder="netid should be @utdallas.edu" pattern="+.@utdallas.edu" title="Must be a utdallas email address" required>                                        
+      <input id="username" readonly type="text" class="form-control" name="username" value="${user.getUsername()}" placeholder="netid should be @utdallas.edu" pattern="+.@utdallas.edu" title="Must be a utdallas email address" required>
        </div>
        
        
@@ -46,7 +46,7 @@
        <div style="margin-bottom: 25px" class="input-group">
 	 
       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-       <input type="text" class="form-control" name="first_name" id="first_name" value="${userDetails.first_name }" placeholder="Enter your First Name" required/>
+       <input type="text" class="form-control" name="first_name" id="first_name" value="${user.getFirst_name()}" placeholder="Enter your First Name" required/>
          </div>
          
          
@@ -54,14 +54,14 @@
          <div style="margin-bottom: 25px" class="input-group">
 	 
       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-       <input type="text" class="form-control" name="last_name" id="last_name" value="${userDetails.last_name }"  placeholder="Enter your last name" required/>
+       <input type="text" class="form-control" name="last_name" id="last_name" value="${user.getLast_name() }"  placeholder="Enter your last name" required/>
          </div>
          
          
       <label for="primary">Password:</label>                          
      <div style="margin-bottom: 25px" class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-      <input id="password" type="password" class="form-control" name="password" value="${userDetails.password}" placeholder="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+      <input id="password" type="password" class="form-control" name="password" value="${user.getPassword()}" placeholder="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
        </div>
        
        
@@ -69,28 +69,19 @@
        <div style="margin-bottom: 25px" class="input-group">
 	 
       <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-       <input type="password" class="form-control" name="retry-password" id="retry-password"  placeholder="Confirm your password" value="${userDetails.password}" required/>
+       <input type="password" class="form-control" name="retry-password" id="retry-password"  placeholder="Confirm your password" value="${user.getPassword()}" required/>
          </div>
          
          <label for="primary">Contact Number:</label>
           <div style="margin-bottom: 25px" class="input-group">
 	 
       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-       <input type="number" class="form-control" name="cell_phone" id="cell_phone" value="${userDetails.cell_phone}" placeholder="Enter your contact number" required/>
+       <input type="number" class="form-control" name="cell_phone" id="cell_phone" value="${user.getCell_phone()}" placeholder="Enter your contact number" required/>
          </div>
          
-         
-       
-       
-       
-         
+
      <input class="btn btn-primary" type="submit" name="submit" value="updateProfile" >
-							
-	                          
-	
-	
-	
-	
+
 	</form>
 	</div>
 	</div>
