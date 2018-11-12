@@ -92,11 +92,11 @@
 						<br/><br/>
 
 
-						<label for="primary">*Is this item for sale?</label>
+						<label for="primary">*Is this item for sale/rent?</label>
 						<div style="margin-bottom: 25px" class="input-group">
 							<input type="radio" name="for_sale" id="for_sale_yes" value="True"
-								required />Yes <input type="radio" name="for_sale"
-								id="for_sale_no" value="False" required />No
+								required />Sale <input type="radio" name="for_sale"
+								id="for_sale_no" value="False" required />Rent
 
 						</div>
 

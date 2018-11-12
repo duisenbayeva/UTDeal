@@ -92,11 +92,11 @@
 						<br/><br/>
 
 
-						<label for="primary">*Is this item for sale?</label>
+						<label for="primary">*Is this item for sale/rent?</label>
 						<div style="margin-bottom: 25px" class="input-group">
 							<input type="radio" name="for_sale" id="for_sale" value="true"
-								required />Yes <input type="radio" name="for_sale"
-								id="for_sale" value="false" required />No
+								required />sale <input type="radio" name="for_sale"
+								id="for_sale" value="false" required />Rent
 
 						</div>
 
@@ -121,13 +121,6 @@
 							<textarea class="form-control" name="comment" id="comment"
 								rows="5" cols="50" placeholder="Enter the item description"></textarea>
 						</div>
-
-						<label for="primary">Is the item sold?</label>
-						<div style="margin-bottom: 25px" class="input-group">
-							<input type="radio" name="status" id="status" value="true" />Yes
-							<input type="radio" name="status" id="status" value="false" />No
-						</div>
-
 
 						<input class="btn btn-primary" type="submit" name="submit"
 							value="saveItem">
