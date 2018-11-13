@@ -63,8 +63,20 @@ public class ItemDAOImpl implements ItemDAO{
 
 	@Override
 	public int deleteItem(int id) {
-		// TODO Auto-generated method stub
-		return 0;
+		int status = 0;
+		try{
+			conn = db.getConnection();				
+			ps =conn.prepareStatement("delete from item id=?");
+			ps.setInt(1, id);
+			
+			System.out.println("before executing ");
+			status = ps.executeUpdate();
+			System.out.println("after executing ");
+			conn.close();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return status;
 		
 	}
 
