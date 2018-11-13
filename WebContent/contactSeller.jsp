@@ -75,7 +75,6 @@
                     Last Name : last name <br/> <br/>
                     Contact number : cell phone <br/> <br/>
 
-                    <%--<input class="btn btn-primary" type="submit" name="submit" value="editProfile" >--%>
                 </form>
             </div>
         </div>

@@ -29,8 +29,6 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-
-    <!-- Bootstrap core CSS -->
     <link href="/items/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
@@ -69,7 +67,6 @@
                         First Name : ${user.getFirst_name() } <br/> <br/>
                         Last Name : ${user.getLast_name() } <br/> <br/>
                         Contact number : ${user.getCell_phone() } <br/> <br/>
-
                     <input class="btn btn-primary" type="submit" name="submit" value="editProfile" >
                 </form>
             </div>

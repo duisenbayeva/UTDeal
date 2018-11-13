@@ -29,7 +29,6 @@
 
     <title>Searched Item</title>
 
-    <!-- Bootstrap core CSS -->
     <link href="/items/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
