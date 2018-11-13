@@ -21,6 +21,19 @@
 
     <!-- Custom styles for this template -->
     <link href="/items/items.css" rel="stylesheet">
+    <style>
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 70px;
+            background-color: #808080;
+            color: white;
+            text-align: center;
+            padding-top: 22px;
+        }
+    </style>
 
     <%
         ItemDAO itemDAO = new ItemDAOImpl();
@@ -86,6 +99,10 @@
             <br/>
         </div>
     </div>
+</div>
+
+<div class="footer">
+    <p>Copyright 2018 UTDeals All Right Reserved</p>
 </div>
 
 
