@@ -34,50 +34,31 @@
 <!-- Responsive Style -->
 <link rel="stylesheet" type="text/css"
 	href="home/sassets/css/responsive.css">
+
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+	<title>Searched Item</title>
+
+	<link href="/items/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+	<link href="/items/items.css" rel="stylesheet">
 </head>
 <body>
 
-	<header id="header-wrap"> <!-- Navbar Start --> <nav
-			class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo"></nav>
-	</header>
-	<div class="container">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#main-navbar" aria-controls="main-navbar"
-				aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span> <span class="icon-menu"></span>
-				<span class="icon-menu"></span> <span class="icon-menu"></span>
-			</button>
-		</div>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light"
-			 style="width:100%"></nav>
-		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="nav navbar-nav mr-auto">
-				<li class="nav-item active"><a class="nav-link"
-					href="#hero-area"> Home </a></li>
-				<li class="nav-item"><a class="nav-link" href="#feature">
-						About Us </a></li>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+	<h5 class="my-0 mr-md-auto font-weight-normal">UTDeals</h5>
+	<nav class="my-2 my-md-0 mr-md-3">
+		<a class="p-2 text-dark" href="userhomepage.jsp">Home</a>
+		<a class="p-2 text-dark" href="#feature">About Us</a>
+		<a class="p-2 text-dark" href="#team">Team</a>
+		<a class="p-2 text-dark" href="#contact">Contact</a>
+	</nav>
+</div>
 
-				<li class="nav-item"><a class="nav-link" href="#team"> Team
-				</a></li>
-				<li class="nav-item"><a class="nav-link" href="#contact">
-						Contact </a></li>
-			</ul>
-		</div>
-	</div>
 
-	<!-- Mobile Menu Start -->
-	<ul class="mobile-menu navbar-nav">
-		<li><a class="page-scroll" href="#hero-area"> Home </a></li>
-
-		<li><a class="page-scroll" href="#feature"> About Us </a></li>
-
-		<li class="nav-item"><a class="nav-link" href="#team"> Team </a>
-		</li>
-		<li><a class="page-scroll" href="#contact"> Contact </a></li>
-	</ul>
-	<!-- Mobile Menu End --> </nav> <!-- Navbar End --> <!-- Hero Area Start -->
 	<div id="hero-area" class="hero-area-bg">
 		<div class="overlay"></div>
 		<div class="container">
@@ -93,7 +74,7 @@
 							<a href="login.jsp" class="btn btn-common">SignIn</a>
 						</div>
 					</div>
-					<h2 class="w3-center" style="font-size: 25px; float: left; font-family:verdana"> Trending now</h2>
+					<h2 class="w3-center" style="font-size: 25px; float: left; font-family:verdana; color: #1d2124"> Trending now</h2>
 					<div class="w3-content w3-section" style="max-width: 350px">
 						<img class="mySlides" src="home/assets/img/item/1.jpg" width="250" height="250">
 						<img class="mySlides" src="home/assets/img/item/2.jpg" width="250" height="250">
