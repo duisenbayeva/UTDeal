@@ -5,8 +5,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="home.css">
-
-
 	<title>Welcome to UTDeals</title>
 	<!-- Bootstrap CSS -->
 <link rel="stylesheet" type="text/css"
@@ -34,11 +32,18 @@
 <!-- Responsive Style -->
 <link rel="stylesheet" type="text/css"
 	href="home/sassets/css/responsive.css">
-</head>
-<body>
 
-	<header id="header-wrap"> <!-- Navbar Start --> <nav
-		class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
+	<%
+
+		String message = request.getServletContext().getAttribute("message").toString();
+		String userId = request.getServletContext().getAttribute("userId").toString();
+
+	%>
+</head>
+
+
+	<header id="header-wrap"> <!-- Navbar Start -->
+		<nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -53,18 +58,19 @@
 			style="width:100%">
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="nav navbar-nav mr-auto">
-				<li class="nav-item active"><a class="nav-link"
+				<li class="nav-item"><a class="nav-link"
 					href="#hero-area"> Home </a></li>
 				<li class="nav-item"><a class="nav-link" href="#team"> Team
 				</a></li>
 				<li class="nav-item"><a class="nav-link" href="#contact">
 						Contact </a></li>
 			</ul>
+			<b><%= message %></b>
 			<ul class="nav navbar-nav ml-auto">
 				<form name="regform" action="CustomerController" method="post"
 					class="form-horizontal" role="form">
 					<input class=" nav-item nav-link" type="hidden" name="username"
-						value="${userId}">
+						value="<%= userId %>">
                     <%--<input class=" nav-item nav-link" type="submit" name="submit" value="editProfile"--%>
 						<%--style="border: hidden">--%>
 
@@ -83,6 +89,7 @@
 						Logout </a></li>
 			</ul>
 		</div>
+		</nav>
 	</div>
 	<!-- Mobile Menu Start -->
 	<ul class="mobile-menu navbar-nav">
@@ -98,6 +105,8 @@
 		<li><a class="page-scroll" href="#feature "> Logout </a></li>
 	</ul>
 	<!-- Mobile Menu End --> </nav> <!-- Navbar End --> <!--  Hero Area Start -->
+	</header>
+		<body>
 
 	<div id="hero-area" class="hero-area-bg">
 		<div class="overlay"></div>
@@ -105,24 +114,6 @@
 			<div class="row" style="background-color: white">
 				<div class="col-md-12 col-sm-12">
 					<div class="contents text-center">
-
-						<%--<div class="row">
-							<div class="left" style="background-color: #bbb;">
-								<div class="search-container">
-									<input type="text" onkeyup="myFunction()"
-										placeholder="Enter your search term" name="searchbar"
-										id="mySearch" style="width: 95%">
-
-								</div>
-								<ul id="myMenu">
-									<li><a href="#">Furniture</a></li>
-									<li><a href="#">Books</a></li>
-									<li><a href="#">Kitchen</a></li>
-									<li><a href="#">Electronics</a></li>
-									<li><a href="#">Clothes</a></li>
-								</ul>
-							</div>--%>
-
 							<div class="right">
 
 								<div class="search-container">
