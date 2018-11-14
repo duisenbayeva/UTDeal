@@ -130,7 +130,7 @@
 										style="border: solid; color: grey; height: 50px; width: 90%">
 									<button type="submit" class="btn btn-common"
 										style="float: right; vertical-align: top; height: 50px;border-radius: 12px"
-										onclick="searchItem()" name="itemSearch" id="itemSearch"><i class="fa fa-search"></i></button>
+										onclick="searchItem()" name="itemSearch" id="itemSearch">Search</button>
 								</div>
 								<br />
 								<br />
