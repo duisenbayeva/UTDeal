@@ -5,57 +5,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="home.css">
-<title>Welcome to UTDeals</title>
 
-<%--<style>--%>
-    <%--.dropdown {--%>
-        <%--float: left;--%>
-        <%--overflow: hidden;--%>
-    <%--}--%>
 
-    <%--.dropdown .dropbtn {--%>
-        <%--font-size: 16px;--%>
-        <%--border: none;--%>
-        <%--outline: none;--%>
-        <%--color: white;--%>
-        <%--padding: 14px 16px;--%>
-        <%--/*background-color: inherit;*/--%>
-        <%--font-family: inherit;--%>
-        <%--margin: 0;--%>
-    <%--}--%>
-
-    <%--.navbar a:hover, .dropdown:hover .dropbtn {--%>
-        <%--/*background-color: red;*/--%>
-    <%--}--%>
-
-    <%--.dropdown-content {--%>
-        <%--display: none;--%>
-        <%--position: absolute;--%>
-        <%--/*background-color: #f9f9f9;*/--%>
-        <%--min-width: 160px;--%>
-        <%--box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);--%>
-        <%--z-index: 1;--%>
-    <%--}--%>
-
-    <%--.dropdown-content a {--%>
-        <%--float: none;--%>
-        <%--color: black;--%>
-        <%--padding: 12px 16px;--%>
-        <%--text-decoration: none;--%>
-        <%--display: block;--%>
-        <%--text-align: left;--%>
-    <%--}--%>
-
-    <%--.dropdown-content a:hover {--%>
-        <%--/*background-color: #ddd;*/--%>
-    <%--}--%>
-
-    <%--.dropdown:hover .dropdown-content {--%>
-        <%--display: block;--%>
-    <%--}
-    <style>--%>
-
-<!-- Bootstrap CSS -->
+	<title>Welcome to UTDeals</title>
+	<!-- Bootstrap CSS -->
 <link rel="stylesheet" type="text/css"
 	href="home/assets/css/bootstrap.min.css">
 <!-- Icon -->
@@ -116,23 +69,16 @@
 						<%--style="border: hidden">--%>
 
 				</form>
-                <li class=" nav-item "><a class="nav-link" href="myProfile.jsp">
-                    My Profile </a></li>
+
 				<li class=" nav-item "><a class="nav-link" href="postItem.jsp">
-						Post Item </a></li>
-                <%--<div class="dropdown">--%>
-                    <%--<<li class=" nav-item "><a class="dropbtn">MyList--%>
-                        <%--&lt;%&ndash;<i class="fa fa-caret-down"></i>&ndash;%&gt;--%>
-                    <%--</a></li>--%>
-                    <%--<div class="dropdown-content">--%>
-                        <%--<a href="list_items.jsp">Posted Items</a>--%>
-                        <%--<a href="myList.jsp">Favorite List</a>--%>
-                    <%--</div>--%>
-                <%--</div>--%>
-            <li class="nav-item"><a class="nav-link " href="list_items.jsp">
-						Posted Items </a>
+						Post New Item </a></li>
+               <li class="nav-item"><a class="nav-link " href="list_items.jsp">
+						View Posted Items </a>
                 <li class="nav-item"><a class="nav-link " href="myList.jsp">
-                    Favorite List </a>
+                    Favorites </a>
+				<li class=" nav-item "><a class="nav-link" href="myProfile.jsp">
+					My Profile </a></li>
+
 				<li class="nav-item"><a class="nav-link " href="logout.jsp">
 						Logout </a></li>
 			</ul>
@@ -145,8 +91,10 @@
 		</li>
 		<li><a class="page-scroll" href="#contact"> Contact </a></li>
 		<li><a class="page-scroll" href="#feature "> Edit Profile </a></li>
-        <li><a class="page-scroll" href="list_items.jsp"> Posted Items </a></li>
-		<li><a class="page-scroll" href="myList.jsp"> Favorite List </a></li>
+		<li><a class="page-scroll" href="postItem.jsp"> Post New Item </a></li>
+        <li><a class="page-scroll" href="list_items.jsp"> View Posted Items </a></li>
+		<li><a class="page-scroll" href="myList.jsp"> Favorites </a></li>
+		<li><a class="page-scroll" href="#myProfile.jsp"> My Profile </a></li>
 		<li><a class="page-scroll" href="#feature "> Logout </a></li>
 	</ul>
 	<!-- Mobile Menu End --> </nav> <!-- Navbar End --> <!--  Hero Area Start -->
@@ -158,7 +106,7 @@
 				<div class="col-md-12 col-sm-12">
 					<div class="contents text-center">
 
-						<div class="row">
+						<%--<div class="row">
 							<div class="left" style="background-color: #bbb;">
 								<div class="search-container">
 									<input type="text" onkeyup="myFunction()"
@@ -173,17 +121,16 @@
 									<li><a href="#">Electronics</a></li>
 									<li><a href="#">Clothes</a></li>
 								</ul>
-							</div>
+							</div>--%>
 
 							<div class="right">
 
 								<div class="search-container">
 									<input type="text" placeholder="Search.." name="itemSearch"
-
-										style="border: solid; color: grey; height: 50px; width: 80%">
-									<button type="submit"
-										style="float: right; vertical-align: top; height: 50px"
-										onclick="searchItem()" name="itemSearch" id="itemSearch">Submit</button>
+										style="border: solid; color: grey; height: 50px; width: 90%">
+									<button type="submit" class="btn btn-common"
+										style="float: right; vertical-align: top; height: 50px;border-radius: 12px"
+										onclick="searchItem()" name="itemSearch" id="itemSearch"><i class="fa fa-search"></i></button>
 								</div>
 								<br />
 								<br />
@@ -192,16 +139,14 @@
 									trending...</h2>
 								<div class="w3-content w3-section" style="max-width: 500px">
 									<img class="mySlides" src="home/assets/img/item/1.jpg"
-										style="width: 100%"> <img class="mySlides"
-										src="home/assets/img/item/2.jpg" style="width: 100%">
+										 style="width: 500px; height: 500px"> <img class="mySlides"
+																				   src="home/assets/img/item/2.jpg" style="width: 500px; height: 500px">
 									<img class="mySlides" src="home/assets/img/item/3.jpg"
-										style="width: 100%"> <img class="mySlides"
-										src="home/assets/img/item/5.jpg" style="width: 100%">
+										 style="width: 500px; height: 500px"> <img class="mySlides"
+																				   src="home/assets/img/item/5.jpg" style="width: 500px; height: 500px">
 									<img class="mySlides" src="home/assets/img/item/6.jpg"
-										style="width: 100%">
+										 style="width: 500px; height: 500px">
 								</div>
-
-
 
 
 
@@ -253,8 +198,7 @@
 	</div>
 	<!-- Hero Area End --> </header>
 	<!-- Header Area wrapper End -->
-
-	<script>
+<script>
 		function myFunction() {
 			var input, filter, ul, li, a, i;
 			input = document.getElementById("mySearch");
