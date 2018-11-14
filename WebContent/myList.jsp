@@ -37,49 +37,52 @@
 </head>
 <body>
 
-	<header id="header-wrap"> <!-- Navbar Start -->
-        <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo"></nav></header>
-    <div class="container">
+<header id="header-wrap"> <!-- Navbar Start --> <nav
+		class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#main-navbar" aria-controls="main-navbar"
-				aria-expanded="false" aria-label="Toggle navigation">
+					data-target="#main-navbar" aria-controls="main-navbar"
+					aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span> <span class="icon-menu"></span>
 				<span class="icon-menu"></span> <span class="icon-menu"></span>
 			</button>
 		</div>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light"
-			style="width:100%">
-		<div class="collapse navbar-collapse" id="navbarNav">
-
-			<ul class="nav navbar-nav mr-auto">
-				<li class="nav-item active"><a class="nav-link"
-					href="#hero-area"> Home </a></li>
-				<li class="nav-item"><a class="nav-link" href="#team"> Team
-				</a></li>
-				<li class="nav-item"><a class="nav-link" href="#contact">
+			 style="width:100%">
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="nav navbar-nav mr-auto">
+					<li class="nav-item active"><a class="nav-link"
+												   href="#hero-area"> Home </a></li>
+					<li class="nav-item"><a class="nav-link" href="#team"> Team
+					</a></li>
+					<li class="nav-item"><a class="nav-link" href="#contact">
 						Contact </a></li>
-			</ul>
-			<ul class="nav navbar-nav ml-auto">
-				<form name="regform" action="CustomerController" method="post"
-					class="form-horizontal" role="form">
-					<input class=" nav-item nav-link" type="hidden" name="username"
-						value="${userId}">
-                    <input class=" nav-item nav-link"
-						type="submit" name="submit" value="editProfile"
-						style="border: hidden">
-				</form>
-				<li class=" nav-item "><a class="nav-link" href="postItem.jsp">
-						Post Item </a></li>
-				<li class="nav-item"><a class="nav-link " href="list_items.jsp">
-						Favorite List </a>
-				<li class="nav-item"><a class="nav-link " href="logout.jsp">
+				</ul>
+				<ul class="nav navbar-nav ml-auto">
+					<form name="regform" action="CustomerController" method="post"
+						  class="form-horizontal" role="form">
+						<input class=" nav-item nav-link" type="hidden" name="username"
+							   value="${userId}">
+						<%--<input class=" nav-item nav-link" type="submit" name="submit" value="editProfile"--%>
+						<%--style="border: hidden">--%>
+
+					</form>
+
+					<li class=" nav-item "><a class="nav-link" href="postItem.jsp">
+						Post New Item </a></li>
+					<li class="nav-item"><a class="nav-link " href="list_items.jsp">
+						View Posted Items </a>
+					<li class="nav-item"><a class="nav-link " href="myList.jsp">
+						Favorites </a>
+					<li class=" nav-item "><a class="nav-link" href="myProfile.jsp">
+						My Profile </a></li>
+
+					<li class="nav-item"><a class="nav-link " href="logout.jsp">
 						Logout </a></li>
-			</ul>
-		</div>
-		</nav>
+				</ul>
+			</div>
 	</div>
 	<!-- Mobile Menu Start -->
 	<ul class="mobile-menu navbar-nav">
@@ -88,7 +91,10 @@
 		</li>
 		<li><a class="page-scroll" href="#contact"> Contact </a></li>
 		<li><a class="page-scroll" href="#feature "> Edit Profile </a></li>
-		<li><a class="page-scroll" href="#feature "> My List </a></li>
+		<li><a class="page-scroll" href="postItem.jsp"> Post New Item </a></li>
+		<li><a class="page-scroll" href="list_items.jsp"> View Posted Items </a></li>
+		<li><a class="page-scroll" href="myList.jsp"> Favorites </a></li>
+		<li><a class="page-scroll" href="#myProfile.jsp"> My Profile </a></li>
 		<li><a class="page-scroll" href="#feature "> Logout </a></li>
 	</ul>
 	<!-- Mobile Menu End --> </nav> <!-- Navbar End --> <!--  Hero Area Start -->
