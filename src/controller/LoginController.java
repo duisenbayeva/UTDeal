@@ -1,18 +1,21 @@
 package controller;
 
-import dao.CustomerDao;
-import dao.CustomerDaoImpl;
-import dao.ItemDAO;
-import dao.ItemDAOImpl;
-import domain.login.Login;
-import model.Customer;
+import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+
+import dao.CustomerDao;
+import dao.CustomerDaoImpl;
+import dao.ItemDAO;
+import dao.ItemDAOImpl;
+import domain.login.Login;
+import model.Customer;
+import model.Item;
 
 /**
  * Servlet implementation class Login
@@ -37,12 +40,10 @@ public class LoginController extends HttpServlet {
 		Customer c = customerDao.validateCustomer(login);
 		
 		if(submitType.equals("login") && c!=null && c.getFirst_name()!=null){
-			request.setAttribute("message", "Hello,/**/ "+c.getFirst_name());
+			request.setAttribute("message", "Hello "+c.getFirst_name());
 			request.setAttribute("userId", c.getUsername());
 			request.getSession().setAttribute("user", c);
 			request.getSession().setAttribute("username", c.getUsername());
-			request.getServletContext().setAttribute("message", "Hello, "+c.getFirst_name());
-			request.getServletContext().setAttribute("userId", c.getUsername());
 			request.getRequestDispatcher("userhomepage.jsp").forward(request, response);
 		}else if(submitType.equals("register")){
 			c.setFirst_name(request.getParameter("first_name"));
