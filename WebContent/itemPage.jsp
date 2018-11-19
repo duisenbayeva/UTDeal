@@ -71,11 +71,11 @@
                     <div class="product-price">$ 30.00 (price)</div>
                     <div class="product-stock">Status(sold/not) : In Stock</div>
                     <hr>
-                    <div class="btn-group cart">
-                        <button type="button" class="btn btn-success">
-                            Add to Favorites
-                        </button>
-                    </div>
+                    <form class="btn-group cart" action="ItemController" method="post">
+                        <input type="submit" value="addToFavorites" class="btn btn-success"
+                            name="submit"/>
+                       
+                    </form>
                     <div class="btn-group wishlist">
                         <button type="button" class="btn"><a href="contactSeller.jsp">
                             Contact seller</a>

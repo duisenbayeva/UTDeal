@@ -82,7 +82,6 @@ public class ItemDAOImpl implements ItemDAO{
 
 	@Override
 	public List<Item> fetchPostedItems(String username) {
-		// TODO Auto-generated method stub
 		
 		List<Item> list = new ArrayList<>();
 		try{
@@ -122,11 +121,48 @@ public class ItemDAOImpl implements ItemDAO{
 	}
 
 	@Override
-	public List<Item> fetchFavItems(Customer cust) {
-		// TODO Auto-generated method stub
-		if(cust.getFavList()==null)cust.setFavList(new ArrayList<Item>());
+	public List<Item> fetchFavItems(String username) {
+		
+//		if(cust.getFavList()==null)cust.setFavList(new ArrayList<Item>());
 //		cust.getFavList().add(i);
-		return cust.getFavList();
+//		return cust.getFavList();
+		
+		List<Item> list = new ArrayList<>();
+		try{
+			conn = db.getConnection();
+			ps =conn.prepareStatement("select * from item right join favorite where "
+					+ "tem.net_id=favorite.net_id and net_id=?");
+			ps.setString(1, username);
+
+			ResultSet rs = ps.executeQuery();
+			Item i = null;
+			while(rs.next()){
+				i = new Item();
+				i.setId(rs.getInt(1));
+				i.setName(rs.getString(2));
+//				i.setCategory(rs.getString(3));
+				i.setCategory(null);
+				i.setQuantity(rs.getInt(4));
+				i.setTags(rs.getString(5));
+//				i.setCustomer(rs.getString(6));
+				i.setCustomer(null);
+				i.setImage_url(rs.getString(7));
+				i.setFor_sale(rs.getBoolean(8));
+				i.setPrice(rs.getFloat(9));
+				i.setNegotiable(rs.getBoolean(10));
+				i.setComments(rs.getString(11));
+				i.setDate_posted(rs.getString(12));
+				i.setFav_count(rs.getInt(13));
+//				i.setStatus(rs.getString(14));
+				i.setStatus(rs.getBoolean(14));
+				list.add(i);
+			}
+			conn.close();
+		}catch(Exception e){
+			System.out.println(e);
+		}
+		
+		return list;
 	}
 
 	@Override
@@ -213,9 +249,26 @@ public class ItemDAOImpl implements ItemDAO{
 
 
 	@Override
-	public void addToFavorites(Item i) {
-		if(i.getCustomer().getFavList()==null)i.getCustomer().setFavList(new ArrayList<Item>());
-		i.getCustomer().getFavList().add(i);
+	public void addToFavorites(Item i, Customer c) {
+//		if(c.getFavList()==null)c.setFavList(new ArrayList<Item>());
+//		c.getFavList().add(i);     
+		System.out.println("add to favorites start");
+        
+		try{
+			conn = db.getConnection();				
+			ps =conn.prepareStatement("insert into favorite(net_id,item_id) "
+					+ "values(?,?)");
+			ps.setString(1, c.getUsername());
+			ps.setInt(2, i.getId());
+			
+			System.out.println("before executing ");
+			ps.executeUpdate();
+			System.out.println("after executing ");
+			conn.close();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
 		System.out.println("Adding item to favorites");
 		
 	}

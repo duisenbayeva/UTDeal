@@ -47,11 +47,10 @@ public class ItemController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ItemDAO itemDao = new ItemDAOImpl();
-		
-		String submitType = request.getParameter("submit").trim();
-		
+		ItemDAO itemDao = new ItemDAOImpl();		
+		String submitType = request.getParameter("submit").trim();		
 		System.out.println("submitType "+submitType);
+		
 		
 		if(submitType.equals("getPostedItems")) {
 			String username = request.getParameter("username");
@@ -62,7 +61,16 @@ public class ItemController extends HttpServlet {
 			request.getRequestDispatcher("home.jsp").forward(request, response);
 		}
 		
-		if(submitType.equals("saveItem")) {
+		else if(submitType.equals("getFavoriteItems")) {
+			String username = request.getParameter("username");
+			System.out.println("inside if");
+			List<Item> items = itemDao.fetchFavItems(username);
+			System.out.println("fav items "+items.toString());
+			request.setAttribute("fav_items", items);
+			request.getRequestDispatcher("home.jsp").forward(request, response);
+		}
+		
+		else if(submitType.equals("saveItem")) {
 			Item item = new Item();
 			item.setName(request.getParameter("pname"));
 			item.setCategory(new Category(Integer.parseInt(request.getParameter("category"))));
@@ -88,7 +96,7 @@ public class ItemController extends HttpServlet {
 		
 		
 		
-		if(submitType.equals("editItem")) {
+		else if(submitType.equals("editItem")) {
 			
 			int itemId = Integer.parseInt(request.getParameter("itemId"));
 			System.out.println("check"+request.getParameter("itemId"));
@@ -111,7 +119,7 @@ public class ItemController extends HttpServlet {
 			request.getRequestDispatcher("updateItem.jsp").forward(request, response);
 		}
 		
-		if(submitType.equals("updateItem")) {
+		else if(submitType.equals("updateItem")) {
 			Item item = new Item();
 			item.setId(Integer.parseInt(request.getParameter("itemId")));
 			item.setName(request.getParameter("pname"));
@@ -132,29 +140,31 @@ public class ItemController extends HttpServlet {
 			request.getRequestDispatcher("userhomepage.jsp").forward(request, response);
 		}
 		
-		if(submitType.equals("deleteItem")) {
+		else if(submitType.equals("deleteItem")) {
 			int status = itemDao.deleteItem(Integer.parseInt(request.getParameter("id")));
 			request.getRequestDispatcher("userhomepage.jsp").forward(request, response);
 		}
 		
-		if(submitType.equals("addToFavorites")) {
+		else if(submitType.equals("addToFavorites")) {
+			System.out.println("add to favorites controller");
 			Item item = new Item();
-//			item.setId(Integer.parseInt(request.getParameter("itemId")));
-			item.setName(request.getParameter("pname"));
-			item.setCategory(new Category(Integer.parseInt(request.getParameter("category"))));
-			if(request.getParameter("quantity")!=null)item.setQuantity(Integer.parseInt(request.getParameter("quantity")));
-			item.setTags(request.getParameter("tags"));			
-			if(request.getParameter("fav_count")!=null)item.setFav_count(Integer.parseInt(request.getParameter("fav_count")));
-			item.setCustomer((Customer)request.getSession().getAttribute("user"));
-			if(request.getParameter("image_url")!=null)item.setImage_url(request.getParameter("image_url"));
-			item.setComments(request.getParameter("comment"));
-			if(request.getParameter("for_sale")!=null)item.setFor_sale(Boolean.parseBoolean(request.getParameter("for_sale")));
-			item.setNegotiable(Boolean.parseBoolean(request.getParameter("negotiable")));
-			item.setPrice(Float.parseFloat(request.getParameter("price")));
-			item.setStatus(Boolean.parseBoolean(request.getParameter("status")));
-			
+			item.setId(Integer.parseInt(request.getParameter("itemId")));
+			//item.setId(366);
+//			item.setName(request.getParameter("pname"));
+//			item.setCategory(new Category(Integer.parseInt(request.getParameter("category"))));
+//			if(request.getParameter("quantity")!=null)item.setQuantity(Integer.parseInt(request.getParameter("quantity")));
+//			item.setTags(request.getParameter("tags"));			
+//			if(request.getParameter("fav_count")!=null)item.setFav_count(Integer.parseInt(request.getParameter("fav_count")));
+//			
+//			if(request.getParameter("image_url")!=null)item.setImage_url(request.getParameter("image_url"));
+//			item.setComments(request.getParameter("comment"));
+//			if(request.getParameter("for_sale")!=null)item.setFor_sale(Boolean.parseBoolean(request.getParameter("for_sale")));
+//			item.setNegotiable(Boolean.parseBoolean(request.getParameter("negotiable")));
+//			item.setPrice(Float.parseFloat(request.getParameter("price")));
+//			item.setStatus(Boolean.parseBoolean(request.getParameter("status")));
+//			
 			System.out.println(item.toString());
-			itemDao.updateItem(item);
+			itemDao.addToFavorites(item,(Customer)request.getSession().getAttribute("user"));
 			request.getRequestDispatcher("userhomepage.jsp").forward(request, response);
 		}
 	}
