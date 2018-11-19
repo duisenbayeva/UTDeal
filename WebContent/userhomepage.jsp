@@ -39,6 +39,20 @@
 		String userId = request.getServletContext().getAttribute("userId").toString();
 
 	%>
+
+	<style>
+		.footer {
+			position: relative;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 70px;
+			background-color: #808080;
+			color: white;
+			text-align: center;
+			padding-top: 22px;
+		}
+	</style>
 </head>
 
 
@@ -67,14 +81,14 @@
 					</ul>
 					<b><%= message %></b>
 					<ul class="nav navbar-nav ml-auto">
-						<form name="regform" action="CustomerController" method="post"
-							  class="form-horizontal" role="form">
-							<input class=" nav-item nav-link" type="hidden" name="username"
-								   value="<%= userId %>">
-							<%--<input class=" nav-item nav-link" type="submit" name="submit" value="editProfile"--%>
-							<%--style="border: hidden">--%>
+						<%--<form name="regform" action="CustomerController" method="post"--%>
+							  <%--class="form-horizontal" role="form">--%>
+							<%--<input class=" nav-item nav-link" type="hidden" name="username"--%>
+								   <%--value="<%= userId %>">--%>
+							<%--&lt;%&ndash;<input class=" nav-item nav-link" type="submit" name="submit" value="editProfile"&ndash;%&gt;--%>
+							<%--&lt;%&ndash;style="border: hidden">&ndash;%&gt;--%>
 
-						</form>
+						<%--</form>--%>
 
 						<li class=" nav-item "><a class="nav-link" href="postItem.jsp">
 							Post New Item </a></li>
@@ -406,15 +420,11 @@
 
 
 
-<section id="copyright">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<p>Copyright © 2018 UTDeals All Right Reserved</p>
-			</div>
-		</div>
-	</div>
-</section>
+
+<div class="footer" style="background-color: black">
+    <p>Copyright 2018 UTDeals All Right Reserved</p>
+</div>
+
 
 <!-- Go to Top Link -->
 <a href="#" class="back-to-top"> <i class="lni-arrow-up"></i>

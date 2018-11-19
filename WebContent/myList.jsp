@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="home.css">
-<title>Welcome to UTDeals</title>
+<title>My Favorite List</title>
 
 
 <!-- Bootstrap CSS -->
@@ -34,8 +34,21 @@
 <!-- Responsive Style -->
 <link rel="stylesheet" type="text/css"
 	href="home/sassets/css/responsive.css">
+	<style>
+		.footer {
+			position: relative;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 70px;
+			background-color: #808080;
+			color: white;
+			text-align: center;
+			padding-top: 22px;
+		}
+	</style>
 </head>
-<body>
+
 
 <header id="header-wrap"> <!-- Navbar Start --> <nav
 		class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
@@ -53,10 +66,9 @@
 			 style="width:100%">
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="nav navbar-nav mr-auto">
-					<li class="nav-item active"><a class="nav-link"
-												   href="#hero-area"> Home </a></li>
-					<li class="nav-item"><a class="nav-link" href="#team"> Team
-					</a></li>
+					<li class="nav-item "><a class="nav-link"
+												   href="userhomepage.jsp"> Home </a></li>
+
 					<li class="nav-item"><a class="nav-link" href="#contact">
 						Contact </a></li>
 				</ul>
@@ -83,6 +95,7 @@
 						Logout </a></li>
 				</ul>
 			</div>
+		</nav>
 	</div>
 	<!-- Mobile Menu Start -->
 	<ul class="mobile-menu navbar-nav">
@@ -98,6 +111,8 @@
 		<li><a class="page-scroll" href="#feature "> Logout </a></li>
 	</ul>
 	<!-- Mobile Menu End --> </nav> <!-- Navbar End --> <!--  Hero Area Start -->
+</header>
+<body>
 	<div id="hero-area" class="hero-area-bg">
 		<div class="overlay"></div>
 		<div class="container">
@@ -123,19 +138,14 @@
 			</div>
 		</div>
 
-		<section id="copyright">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<p>Copyright © 2018 UTDeals All Right Reserved</p>
-				</div>
-			</div>
-		</div>
-		</section>
+<div class="footer" style="background-color: black">
+	<p>Copyright 2018 UTDeals All Right Reserved</p>
+</div>
 
-		<!-- Go to Top Link -->
-		<a href="#" class="back-to-top"> <i class="lni-arrow-up"></i>
-		</a>
+
+			<!-- Go to Top Link -->
+			<a href="#" class="back-to-top"> <i class="lni-arrow-up"></i>
+			</a>
 
 		<!-- Preloader -->
 		<div id="preloader">
