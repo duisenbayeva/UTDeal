@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -9,6 +10,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import dao.ItemDAO;
 import dao.ItemDAOImpl;
@@ -167,6 +171,34 @@ public class ItemController extends HttpServlet {
 			itemDao.addToFavorites(item,(Customer)request.getSession().getAttribute("user"));
 			request.getRequestDispatcher("userhomepage.jsp").forward(request, response);
 		}
+		
+		else if(submitType.equals("autocomplete")){
+
+			int categoryId = Integer.parseInt(request.getParameter("category"));
+			String query = request.getParameter("q");
+			System.out.println(categoryId+" "+query);
+			List<Item>  res = itemDao.getAutoComplete(query, categoryId);
+			Gson gson = new Gson();
+			String element = gson.toJson(
+                    res,new TypeToken<ArrayList<Item>>() {}.getType());
+			System.out.println(element);
+			response.getWriter().append(element);
+			
+		}
+		
+		
+		else if(submitType.equals("searchItem")){
+
+			String query = request.getParameter("Search");
+			System.out.println("query"+query);
+			List<Item>  res = itemDao.getSearchedItems(query);
+			System.out.println("query"+res.size());
+			request.setAttribute("itemDetails", res);
+			request.setAttribute("searchQuery",query);
+			request.getRequestDispatcher("userhomepage.jsp").forward(request, response);
+			
+		}
+	
 	}
 
 }
