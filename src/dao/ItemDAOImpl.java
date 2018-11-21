@@ -273,7 +273,73 @@ public class ItemDAOImpl implements ItemDAO{
 		
 	}
 
+	@Override
+	public List<Item> getAutoComplete(String query, int categoryId) {
+		// TODO Auto-generated method stub
+		
+		List<Item> res = new ArrayList<Item>();
+		
+		try{
+			conn = db.getConnection();
+			ps =conn.prepareStatement("select distinct tags from item where tags like ? and category=?");
+			ps.setString(1, "%"+query+"%");
+			ps.setInt(2, categoryId);
+		
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				Item i = new Item();
+				//i.setId(Integer.parseInt(rs.getString(1)));
+				i.setName(rs.getString(1));
+				res.add(i);
+			}
+			conn.close();
+		}catch(Exception e){
+			System.out.println(e);
+		}
+		return res;
+		
+	}
+
+
+	@Override
+	public List<Item> getSearchedItems(String tag) {
+		// TODO Auto-generated method stub
+		
+		List<Item> res = new ArrayList<Item>();
+		
+		try{
+			conn = db.getConnection();
+			ps =conn.prepareStatement("select * from item where tags like ? or name like ?");
+			ps.setString(1, "%"+tag+"%");
+			ps.setString(2, "%"+tag+"%");
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				Item i = new Item();
+				i.setId(Integer.parseInt(rs.getString(1)));
+				i.setName(rs.getString(2));
+				i.setCategory(new Category(Integer.parseInt(rs.getString(3))));
+				i.setQuantity(Integer.parseInt(rs.getString(4)));
+				i.setTags(rs.getString(5));
+				i.setCustomer(new Customer(rs.getString(6)));
+				i.setImage_url(rs.getString(7));
+				System.out.println("check2"+((rs.getString(8)).equals("1")?true:false));
+				i.setFor_sale((rs.getString(8)).equals("1")?true:false);
+				i.setPrice(Integer.parseInt(rs.getString(9)));
+				i.setNegotiable((rs.getString(10)).equals("1")?true:false);
+				i.setComments(rs.getString(11));
+				i.setDate_posted(rs.getString(12));
+				i.setFav_count(Integer.parseInt(rs.getString(13)));
+				i.setStatus((rs.getString(14)).equals("1")?true:false);
+				res.add(i);
+			}
+			conn.close();
+		}catch(Exception e){
+			System.out.println(e);
+		}
+		return res;
 	
+	}
+
 	
 
 }
