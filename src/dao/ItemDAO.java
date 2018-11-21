@@ -20,6 +20,9 @@ public interface ItemDAO {
 	List<Item> getAllItems();
 	List<Item> getFilteredItems(ItemFilter filter);
 	List<Item> getTrendingItems();
+	List<Item> getAutoComplete(String query, int categoryId);
+	List<Item> getSearchedItems(String tag);
+
 	
 	
 }
