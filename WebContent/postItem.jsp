@@ -167,11 +167,11 @@
 						<div style="margin-bottom: 25px" class="input-group">
 							<span class="input-group-addon"></span> <select
 								class="form-control" name="category">
-								<option value="0">Furniture</option>
-								<option value="1">Books</option>
-								<option value="2">Kitchen</option>
-								<option value="3">Electronics</option>
-								<option value="4">Clothes</option>
+								<option value="1">Furniture</option>
+								<option value="2">Books</option>
+								<option value="3">Kitchen</option>
+								<option value="4">Electronics</option>
+								<option value="5">Clothes</option>
 							</select>
 						</div>
 
