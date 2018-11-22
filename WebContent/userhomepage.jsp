@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 		 pageEncoding="ISO-8859-1"%>
+<%@page import="model.Item"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -35,10 +39,10 @@
 
 	<%
 
-		String message = request.getServletContext().getAttribute("message").toString();
-		String userId = request.getServletContext().getAttribute("userId").toString();
+	//	String message = request.getServletContext().getAttribute("message").toString();
+		//String userId = request.getServletContext().getAttribute("userId").toString();
 
-	%>
+	%> 
 
 	<style>
 		.footer {
@@ -79,7 +83,7 @@
 						<li class="nav-item"><a class="nav-link" href="#contact">
 							Contact </a></li>
 					</ul>
-					<b><%= message %></b>
+					
 					<ul class="nav navbar-nav ml-auto">
 						<%--<form name="regform" action="CustomerController" method="post"--%>
 							  <%--class="form-horizontal" role="form">--%>
@@ -130,18 +134,41 @@
 				<div class="contents text-center">
 					<div class="right">
 
-						<div class="search-container">
+						<form action="ItemController" method="post">
+								<div>
+							        <select style="height:30px" id="categ">
+									  <option value="1">Furniture</option>
+									  <option value="2">Books</option>
+									  <option value="3">Kitchen</option>
+									  <option value="4">Electronics</option>
+									  <option value="5">Clothes</option>
+									</select>
+									<input type="text" id="Search" name = "Search" value="${searchQuery}" autocomplete="off">
+								    <input type="submit" name="submit" value="searchItem">Search</input>
+							       
+							    </div>
+						</form>
+						<div class="row">
+							&ensp;
+						</div>
+						
+						<!--<div class="search-container">
 							<input type="text" placeholder="Search.." name="itemSearch"
 								   style="border: solid; color: grey; height: 50px; width: 90%">
 							<button type="submit" class="btn btn-common"
 									style="float: right; vertical-align: top; height: 50px;border-radius: 12px"
 									onclick="searchItem()" name="itemSearch" id="itemSearch">Search</button>
-						</div>
+						</div>-->
 						<br />
 						<br />
 						<h2 class="w3-center"
 							style="font-size: 25px; float: left; font-family: Segoe UI Light">Now
-							trending...</h2>
+							trending......
+							<% List<Item> items = (List<Item>)request.getAttribute("itemDetails"); 
+							if(items==null) items= new ArrayList<Item>();%>
+							<% for(int i=0; i<items.size(); i++){ %>
+								<p><%= items.get(i).getName() %></p>
+							<%}%></h2>
 						<div class="w3-content w3-section" style="max-width: 500px">
 							<img class="mySlides" src="home/assets/img/item/1.jpg"
 								 style="width: 500px; height: 500px"> <img class="mySlides"
@@ -438,8 +465,10 @@
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="home/assets/js/jquery-min.js"></script>
-<script src="home/assets/js/popper.min.js"></script>
 <script src="home/assets/js/bootstrap.min.js"></script>
+<script src="home/assets/js/bootstrap3-typeahead.js"></script>
+<script src="home/assets/js/script.js"></script>
+<script src="home/assets/js/popper.min.js"></script>
 <script src="home/assets/js/owl.carousel.min.js"></script>
 <script src="home/assets/js/slick.min.js"></script>
 <script src="home/assets/js/wow.js"></script>
