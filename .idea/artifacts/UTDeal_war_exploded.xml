@@ -6,6 +6,9 @@
         <element id="directory" name="classes">
           <element id="module-output" name="UTDeal" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="module" name="JUnit4" module-name="UTDeal" />
+        </element>
       </element>
       <element id="javaee-facet-resources" facet="UTDeal/web/Web" />
     </root>
