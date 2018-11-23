@@ -1,5 +1,8 @@
 <%@page import="db.DbManager"%>
 <%@page import="java.sql.Connection"%>
+<%@page import="model.Category"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -167,11 +170,13 @@
 						<div style="margin-bottom: 25px" class="input-group">
 							<span class="input-group-addon"></span> <select
 								class="form-control" name="category">
-								<option value="1">Furniture</option>
-								<option value="2">Books</option>
-								<option value="3">Kitchen</option>
-								<option value="4">Electronics</option>
-								<option value="5">Clothes</option>
+								
+								<% List<Category> categories = (List<Category>)request.getServletContext().getAttribute("categories"); %>
+						
+								<% for(int i=0; i<categories.size(); i++){ %>
+									<option value="<%=categories.get(i).getId()%>"><%=categories.get(i).getName() %></option>
+								<%}%>
+								
 							</select>
 						</div>
 

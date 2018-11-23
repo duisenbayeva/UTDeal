@@ -4,6 +4,7 @@ package dao;
 
 import java.util.List;
 
+import model.Category;
 import model.Customer;
 import model.Item;
 import model.ItemFilter;
@@ -22,6 +23,7 @@ public interface ItemDAO {
 	List<Item> getTrendingItems();
 	List<Item> getAutoComplete(String query, int categoryId);
 	List<Item> getSearchedItems(String tag);
+	List<Category> getCategories();
 
 	
 	

@@ -52,7 +52,8 @@ public class ItemController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		ItemDAO itemDao = new ItemDAOImpl();		
-		String submitType = request.getParameter("submit").trim();		
+		String submitType = request.getParameter("submit").trim();
+		
 		System.out.println("submitType "+submitType);
 		
 		
@@ -122,6 +123,7 @@ public class ItemController extends HttpServlet {
 			request.setAttribute("itemDetails", map);
 			request.getRequestDispatcher("updateItem.jsp").forward(request, response);
 		}
+		
 		
 		else if(submitType.equals("updateItem")) {
 			Item item = new Item();
@@ -195,9 +197,32 @@ public class ItemController extends HttpServlet {
 			System.out.println("query"+res.size());
 			request.setAttribute("itemDetails", res);
 			request.setAttribute("searchQuery",query);
+			request.setAttribute("isSearch","true");
 			request.getRequestDispatcher("userhomepage.jsp").forward(request, response);
 			
 		}
+		
+		else {
+			
+			int itemId = Integer.parseInt(request.getParameter("itemId"));
+			System.out.println("check"+request.getParameter("itemId"));
+			Item item = itemDao.getItemDetails(itemId);
+			
+			HashMap<String,String> map = new HashMap<String,String>();
+			map.put("product_name", item.getName());
+			map.put("category_name", item.getCategory().getName());
+			map.put("quantity", Integer.toString(item.getQuantity()));
+			map.put("tags", item.getTags());
+			map.put("price", Float.toString(item.getPrice()));
+			map.put("comments", item.getComments());
+			map.put("itemId", Integer.toString(item.getId()));
+			map.put("for_sale",Boolean.toString(item.getFor_sale()));
+			map.put("status", Boolean.toString(item.getStatus()));
+			map.put("negotiable", Boolean.toString(item.getNegotiable()));
+			
+			request.setAttribute("itemDetails", map);
+			request.getRequestDispatcher("itemPage1.jsp").forward(request, response);
+		}	
 	
 	}
 

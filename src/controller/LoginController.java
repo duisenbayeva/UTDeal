@@ -43,6 +43,7 @@ public class LoginController extends HttpServlet {
 			request.getSession().setAttribute("username", c.getUsername());
 			request.getServletContext().setAttribute("message", "Hello, "+c.getFirst_name());
 			request.getServletContext().setAttribute("userId", c.getUsername());
+			request.getServletContext().setAttribute("categories", itemDAO.getCategories());
 			request.getRequestDispatcher("userhomepage.jsp").forward(request, response);
 		}else if(submitType.equals("register")){
 			c.setFirst_name(request.getParameter("first_name"));

@@ -107,36 +107,36 @@
 									style="float: right; width: 50%; height: 50%" />
 								<h2>
 									Product Name : <input type="text" name="pname"
-										value="IKEA Table" style="font-weight: normal" readonly>
+										value="${itemDetails.product_name}" style="font-weight: normal" readonly>
 								</h2>
 								<h2>
-									Category <input type="text" name="category" value="Furniture"
+									Category <input type="text" name="category" value="${itemDetails.category_name}"
 										style="font-weight: normal" readonly>
 								</h2>
 								<h2>
-									Quantity <input type="text" name="quantity" value="1"
+									Quantity <input type="text" name="quantity" value="${itemDetails.quantity}"
 										style="font-weight: normal" readonly>
 								</h2>
 								<h2>
-									Tags <input type="text" name="tags" value="Table IKEA New Wood"
+									Tags <input type="text" name="tags" value="${itemDetails.tags}"
 										style="font-weight: normal" readonly>
 								</h2>
 								<h2>
 									Is this for sale? <input type="text" name="for_sale"
-										value="Yes" style="font-weight: normal" readonly>
+										value="${itemDetails.for_sale}" style="font-weight: normal" readonly>
 								</h2>
 								<h2>
-									Price <input type="text" name="price" value="$35"
+									Price <input type="text" name="price" value="${itemDetails.price}"
 										style="font-weight: normal" readonly>
 								</h2>
 								<h2>
-									Negotiable? <input type="text" name="negotiable" value="Yes"
+									Negotiable? <input type="text" name="negotiable" value="${itemDetails.negotiable}"
 										style="font-weight: normal" readonly>
 								</h2>
 								<h2>
 									Comments
 									<textarea rows="4" cols="50" name="comment"
-										style="font-weight: normal" readonly>Brand new wooden IKEA Table hardly used. </textarea>
+										style="font-weight: normal" readonly>${itemDetails.comments}</textarea>
 								</h2>
 								<button type="button" class="btn btn-primary">Contact
 									Seller</button>
