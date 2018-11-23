@@ -281,9 +281,10 @@ public class ItemDAOImpl implements ItemDAO{
 		
 		try{
 			conn = db.getConnection();
-			ps =conn.prepareStatement("select distinct tags from item where tags like ? and category=?");
+			ps =conn.prepareStatement("select distinct tags from item where (tags like ? or name like ?) and category=?");
 			ps.setString(1, "%"+query+"%");
-			ps.setInt(2, categoryId);
+			ps.setString(2, "%"+query+"%");
+			ps.setInt(3, categoryId);
 		
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()){
@@ -338,6 +339,31 @@ public class ItemDAOImpl implements ItemDAO{
 		}
 		return res;
 	
+	}
+
+
+	@Override
+	public List<Category> getCategories() {
+		// TODO Auto-generated method stub
+		List<Category> list = new ArrayList<>();
+		try{
+			conn = db.getConnection();
+			ps =conn.prepareStatement("select * from category");
+		
+			ResultSet rs = ps.executeQuery();
+			Category c = null;
+			while(rs.next()){
+				c = new Category();
+				c.setId(rs.getInt("id"));
+				c.setName(rs.getString("name"));
+				list.add(c);
+			}
+			conn.close();
+		}catch(Exception e){
+			System.out.println(e);
+		}
+		
+		return list;
 	}
 
 	
