@@ -3,6 +3,8 @@
 <%@page import="model.Item"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
+<%@page import="model.Category"%>
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -39,8 +41,8 @@
 
 	<%
 
-	//	String message = request.getServletContext().getAttribute("message").toString();
-		//String userId = request.getServletContext().getAttribute("userId").toString();
+		String message = request.getServletContext().getAttribute("message").toString();
+		String userId = request.getServletContext().getAttribute("userId").toString();
 
 	%> 
 
@@ -137,11 +139,11 @@
 						<form action="ItemController" method="post">
 								<div>
 							        <select style="height:30px" id="categ">
-									  <option value="1">Furniture</option>
-									  <option value="2">Books</option>
-									  <option value="3">Kitchen</option>
-									  <option value="4">Electronics</option>
-									  <option value="5">Clothes</option>
+									  <% List<Category> categories = (List<Category>)request.getServletContext().getAttribute("categories"); %>
+						
+										<% for(int i=0; i<categories.size(); i++){ %>
+											<option value="<%=categories.get(i).getId()%>"><%=categories.get(i).getName() %></option>
+										<%}%>
 									</select>
 									<input type="text" id="Search" name = "Search" value="${searchQuery}" autocomplete="off">
 								    <input type="submit" name="submit" value="searchItem">Search</input>
@@ -159,16 +161,47 @@
 									style="float: right; vertical-align: top; height: 50px;border-radius: 12px"
 									onclick="searchItem()" name="itemSearch" id="itemSearch">Search</button>
 						</div>-->
-						<br />
-						<br />
+						
+						
+						<div id="hero-area" class="hero-area-bg">
+						<div class="overlay"></div>
+						<div class="container">
+							<div class="row" style="background-color: white">
+								<div class="col-md-12 col-sm-12">
+									<div class="contents text-left">
+										<div class="row contact-form-area wow fadeInUp"
+											data-wow-delay="0.4s">
+											
+											
+											
+											
+											<% List<Item> items = (List<Item>)request.getAttribute("itemDetails"); 
+											if(items==null) items= new ArrayList<Item>();%>
+											<% for(int i=0; i<items.size(); i++){ %>
+											<form action="ItemController" method="post" id="myform">
+												<input type="hidden"  name = "itemId" value= "<%= items.get(i).getId() %>" autocomplete="off">
+												<input type="hidden"  name = "submitType" value= "getItemDetails" autocomplete="off">
+												<div class="col-md-6 col-lg-6 col-sm-12">
+													<!-- <a href="javascript:document.getElementById('myform').submit();"> -->
+													<img src="home/assets/img/item/1.jpg" alt="Snow"
+													style="width:50%"/><p><%= items.get(i).getName() %></p></a>
+													<input type="submit"  name = "submit" style = "border:none;background:white;cursor:pointer" value= "<%= items.get(i).getName() %>">
+												</div>
+											
+											</form>
+											<%}%>
+											
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					
+					<div id="trending">
 						<h2 class="w3-center"
 							style="font-size: 25px; float: left; font-family: Segoe UI Light">Now
-							trending......
-							<% List<Item> items = (List<Item>)request.getAttribute("itemDetails"); 
-							if(items==null) items= new ArrayList<Item>();%>
-							<% for(int i=0; i<items.size(); i++){ %>
-								<p><%= items.get(i).getName() %></p>
-							<%}%></h2>
+							trending.....
+							</h2>
 						<div class="w3-content w3-section" style="max-width: 500px">
 							<img class="mySlides" src="home/assets/img/item/1.jpg"
 								 style="width: 500px; height: 500px"> <img class="mySlides"
@@ -180,7 +213,7 @@
 								 style="width: 500px; height: 500px">
 						</div>
 
-
+					</div>
 
 
 						<script>
@@ -462,6 +495,16 @@
 	<div class="loader" id="loader-1"></div>
 </div>
 <!-- End Preloader -->
+<script>
+
+	var isSearch = "${isSearch}"; 
+	console.log(isSearch);
+	console.log("isSearch");
+	if(isSearch =="true") {
+		document.getElementById("trending").style.display = "none";
+	}
+
+</script>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="home/assets/js/jquery-min.js"></script>
