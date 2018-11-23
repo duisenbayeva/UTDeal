@@ -79,13 +79,13 @@
 								placeholder="Enter the tag names"  required value="${itemDetails.tags}"/>
 						</div>
 
-						<label for="primary">*Photos:</label>
+						<label for="primary">Photos:</label>
 						<div style="margin-bottom: 25px" class="input-group">
 					
 
 							<span class="input-group-addon"></span> 
 							<input type='file' onchange="readURL(this);" class="form-control" name="image_url" id="image_url"
-								placeholder="Upload a picture" required/>
+								placeholder="Upload a picture"/>
 						</div>
 						    <img id="blah" src="#" alt="" style="width:30%"/>
 						

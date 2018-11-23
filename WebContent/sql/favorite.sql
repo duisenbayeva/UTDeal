@@ -1,5 +1,5 @@
 --
--- Table structure for table `category`
+-- Table structure for table `favorite`
 --
 
 DROP TABLE IF EXISTS `favorite`;
