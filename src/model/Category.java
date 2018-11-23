@@ -6,7 +6,9 @@ public class Category {
 	private String name;
 	
 	
-	
+	public Category() {
+		
+	}
 	public Category(int id) {
 		super();
 		this.id = id;
