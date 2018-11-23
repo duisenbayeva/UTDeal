@@ -98,7 +98,7 @@
 
 						<li class=" nav-item "><a class="nav-link" href="postItem.jsp">
 							Post New Item </a></li>
-						<li class="nav-item"><a class="nav-link " href="list_items.jsp">
+						<li class="nav-item"><a id="viewPostedItemsLink" class="nav-link " href="list_items.jsp">
 							View Posted Items </a>
 						<li class="nav-item"><a class="nav-link " href="myList.jsp">
 							Favorites </a>

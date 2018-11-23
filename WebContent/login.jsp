@@ -45,7 +45,7 @@
       <input id="password" type="password" class="form-control" name="password" placeholder="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
        </div>
          
-     <input type="submit" name="submit" value="login"><br>
+     <input id="loginBtn" type="submit" name="submit" value="login"><br>
 	                          
 	
 	<!-- Username: <input type="text" name="username" id="username"><br>

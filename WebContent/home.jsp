@@ -85,8 +85,8 @@
                             Welcome to<br> UTDeals
                         </h2>
                         <div class="header-button wow fadeInUp" data-wow-delay="0.3s">
-                            <a href="register.jsp" class="btn btn-common"style="border-radius: 12px">SignUp now</a> &nbsp
-                            <a href="login.jsp" class="btn btn-common"style="border-radius: 12px">SignIn</a>
+                            <a id="signUpBtn" href="register.jsp" class="btn btn-common"style="border-radius: 12px">SignUp now</a> &nbsp
+                            <a id="signInBtn" href="login.jsp" class="btn btn-common"style="border-radius: 12px">SignIn</a>
                         </div>
 
 
