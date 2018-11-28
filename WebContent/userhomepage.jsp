@@ -219,6 +219,7 @@
 										<% for(int i=0; i<allItems.size(); i++){ %>
 											<a href="itemPage.jsp?itemId=<%=allItems.get(i).getId() %>"><img class="mySlides" src="<%= allItems.get(i).getImage_url() %>"
 												style="width: 500px; height: 500px"></a>
+										
 										<%} %>
 										</div>
 

@@ -16,43 +16,42 @@ public class UpdateItemTestSelenium {
 	public void openUtDealsHomePage() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
 		driver = new ChromeDriver();
-		driver.get("http://localhost:8080/test_project/home.jsp");
-		Assert.assertEquals("Welcome to UTDeals", driver.getTitle());
+		driver.get("localhost:8080/test_project/login.jsp");
 	}
 
 	@Test
-	public void testSignInLink() throws InterruptedException {
-		WebElement link = driver.findElement(By.id("signInBtn"));
-		link.submit();
-		Thread.sleep(5000);
-		Assert.assertEquals("Login Page", driver.getTitle());
-	}
-
-	@Test
-	public void testLoginBox() throws InterruptedException {
+	public void testUpdateItemBox() throws InterruptedException {
 		WebElement usernameBox = driver.findElement(By.id("username"));
-		usernameBox.sendKeys("qwe111111");
+		usernameBox.sendKeys("asd222222");
 		WebElement passwordBox = driver.findElement(By.id("password"));
-		passwordBox.sendKeys("Qwerty123");
+		passwordBox.sendKeys("Asd222222");
+		WebElement loginBtn = driver.findElement(By.name("submit"));
 		Thread.sleep(5000);
-		WebElement loginBtn = driver.findElement(By.id("loginBtn"));
 		loginBtn.click();
+		
 		Thread.sleep(5000);
 		WebElement link = driver.findElement(By.id("viewPostedItemsLink"));
 		link.click();
-		Assert.assertEquals("List of posted items", driver.getTitle());
+		
+		Thread.sleep(5000);
+		WebElement link2 = driver.findElement(By.name("editItem"));
+		link2.click();
+		Thread.sleep(2000);
+		
+		WebElement itemNameBox = driver.findElement(By.id("pname"));
+		itemNameBox.sendKeys("black desk 33");
+		WebElement updateBtn = driver.findElement(By.name("submit"));
+		Thread.sleep(2000);
+		updateBtn.click();
+		
+		Thread.sleep(3000);
+		WebElement link3 = driver.findElement(By.id("viewPostedItemsLink"));
+		link3.click();
+		
+		Thread.sleep(5000);
 	}
 	
-	@Test
-	public void testUpdateItemBox() throws InterruptedException {
-		WebElement itemNameBox = driver.findElement(By.id("itemName"));
-		itemNameBox.sendKeys("chair1");
-		Thread.sleep(5000);
-		WebElement updateBtn = driver.findElement(By.id("updateBtn"));
-		updateBtn.click();
-		Thread.sleep(5000);
-		Assert.assertEquals("Item Updated", driver.getTitle());
-	}
+
 
 	@After
 	public void closePage() {

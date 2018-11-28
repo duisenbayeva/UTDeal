@@ -101,7 +101,7 @@ public class ItemController extends HttpServlet {
 			for (FileItem item : multipart) {
 	            if (!item.isFormField())
 	            {
-	            	String path="home/assets/img/item/";
+	            	String path="/home/balnur/git/UTDeal/WebContent/home/assets/img/item/";
 	                
 	            	int index = item.getName().lastIndexOf('/');
 	            	int len = item.getName().length();
@@ -268,8 +268,8 @@ public class ItemController extends HttpServlet {
 			item.setQuantity(quantity);
 			item.setTags(tags);	
 			item.setCustomer(new Customer(request.getSession().getAttribute("username").toString()));
-			int ind = img_url.lastIndexOf("home");
-			item.setImage_url(img_url.substring(ind, img_url.length()));
+			//int ind = img_url.lastIndexOf("home");
+			//item.setImage_url(img_url.substring(ind, img_url.length()));
 			item.setComments(comment);
 			item.setFor_sale(for_sale);
 			item.setNegotiable(negotiable);

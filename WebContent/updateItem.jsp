@@ -82,17 +82,6 @@
 								placeholder="Enter the tag names"  required value="${itemDetails.tags}"/>
 						</div>
 
-						<label for="primary">Photos:</label>
-						<div style="margin-bottom: 25px" class="input-group">
-					
-							<span class="input-group-addon"></span> 
-							<input type='file' class="form-control" name="image_url" id="image_url"
-								placeholder="Upload a picture"  value="${itemDetails.image_url}"/>
-						</div>
-						    <img id="blah" src="" alt="" style="width:30%"/>
-						
-						<br/><br/>
-
 
 						<label for="primary">*Is this item for sale/rent?</label>
 						<div style="margin-bottom: 25px" class="input-group">

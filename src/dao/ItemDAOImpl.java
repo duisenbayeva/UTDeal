@@ -221,14 +221,14 @@ public class ItemDAOImpl implements ItemDAO{
 		int status = 0, j=0;
 		try{
 			conn = db.getConnection();
-			ps =conn.prepareStatement("update item set name=?, category=?, quantity=?, tags=?, net_id=?, photo=?, for_sale=?, price=?, negotiable=?, comments=?, status=?  where id=?");
+			ps =conn.prepareStatement("update item set name=?, category=?, quantity=?, tags=?, net_id=?, for_sale=?, price=?, negotiable=?, comments=?, status=?  where id=?");
 		
 			ps.setString(++j, i.getName());
 			ps.setInt(++j, i.getCategory().getId());
 			ps.setInt(++j, i.getQuantity());
 			ps.setString(++j, i.getTags());
 			ps.setString(++j, i.getCustomer().getUsername());
-			ps.setString(++j, i.getImage_url());
+			//ps.setString(++j, i.getImage_url());
 			ps.setBoolean(++j, i.getFor_sale());
 			ps.setFloat(++j, i.getPrice());
 			ps.setBoolean(++j, i.getNegotiable());

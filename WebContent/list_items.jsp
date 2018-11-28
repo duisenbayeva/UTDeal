@@ -180,7 +180,7 @@
                             <input type="hidden" name="itemId" value="<%=items.get(i).getId()%>">
                             <%--<button type="button" class="btn btn-primary">Edit Item</button>--%>
                             <input type="hidden" name="submit" value="editItem">
-                           <input type="submit" class=" btn btn-primary" value="edit"> 
+                           <input type="submit" class=" btn btn-primary" value="edit" name="editItem"> 
                            <input type="hidden" name="id" value="<%=items.get(i).getId()%>">
                             <input type="submit" class=" btn btn-primary" name = "submit" value="deleteItem"> 
                            <!--  <a href="javascript:document.editItemform.submit();"><span class="glyphicon glyphicon-pencil"></span></a> &nbsp &nbsp -->
