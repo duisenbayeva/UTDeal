@@ -20,7 +20,7 @@ import static org.junit.Assert.assertTrue;
             c.setFirst_name("Alexa");
             c.setLast_name("Amazon");
             c.setUsername("axa123456");
-            c.setPassword("password");
+            c.setPassword("Axa123456");
             c.setCell_phone("123456789");
             customerDao.register(c);
             System.out.println();
