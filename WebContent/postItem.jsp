@@ -155,7 +155,7 @@
 						class="alert alert-danger col-sm-12"></div>
 
 					<form name="itemform" action="ItemController" method="post"
-						accept="image/gif, image/jpeg" class="form-horizontal"
+					 class="form-horizontal"  enctype="multipart/form-data"
 						role="form" style="color: black">
 						
 						<%--@declare id="primary"--%><br> <label for="primary">*Product name:</label>
@@ -239,7 +239,8 @@
 							<textarea class="form-control" name="comment" id="comment"
 								rows="5" cols="50" placeholder="Enter the item description"></textarea>
 						</div>
-
+						
+						<input type="hidden" value="home/img/" name="destination"/>
 						<input class="btn btn-primary" type="submit" name="submit"
 							value="saveItem">
 
