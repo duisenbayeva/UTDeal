@@ -66,7 +66,7 @@ public class ItemDAOImpl implements ItemDAO{
 		int status = 0;
 		try{
 			conn = db.getConnection();				
-			ps =conn.prepareStatement("delete from item id=?");
+			ps =conn.prepareStatement("delete from item where id=?");
 			ps.setInt(1, id);
 			
 			System.out.println("before executing ");
