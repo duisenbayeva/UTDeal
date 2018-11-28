@@ -179,14 +179,14 @@
                     <div class="pull-right action-buttons">
 
                         <form name="editItemform" action="ItemController" method="post"
-                              class="form-horizontal" role="form">
+                              class="form-horizontal" role="form"  enctype="multipart/form-data">
                             <input type="hidden" name="itemId" value="<%=items.get(i).getId()%>">
                             <%--<button type="button" class="btn btn-primary">Edit Item</button>--%>
                             <input type="hidden" name="submit" value="editItem">
-                            <input type="submit" class=" btn btn-primary" value="edit">
-                            <a href="javascript:document.editItemform.submit();"><span class="glyphicon glyphicon-pencil"></span></a> &nbsp &nbsp
-                            <input type="hidden" name="submit" value="deleteItem">
-                            <input type="submit" class=" btn btn-primary" value="delete">
+                           <input type="submit" class=" btn btn-primary" value="edit"> 
+                           <!--  <a href="javascript:document.editItemform.submit();"><span class="glyphicon glyphicon-pencil"></span></a> &nbsp &nbsp -->
+                          <!--   <input type="hidden" name="submit" value="deleteItem"> -->
+                          <!--   <input type="submit" class=" btn btn-primary" value="delete"> -->
                             <a href="" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
                         </form>
                     </div>
