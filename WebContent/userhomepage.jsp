@@ -136,7 +136,7 @@
 				<div class="contents text-center">
 					<div class="right">
 
-						<form action="ItemController" method="post">
+						<form action="ItemController" method="post" enctype="multipart/form-data">
 								<div>
 							        <select style="height:30px" id="categ">
 									  <% List<Category> categories = (List<Category>)request.getServletContext().getAttribute("categories"); %>
@@ -178,13 +178,13 @@
 											<% List<Item> items = (List<Item>)request.getAttribute("itemDetails"); 
 											if(items==null) items= new ArrayList<Item>();%>
 											<% for(int i=0; i<items.size(); i++){ %>
-											<form action="ItemController" method="post" id="myform">
+											<form action="ItemController" method="post" id="myform" enctype="multipart/form-data">
 												<input type="hidden"  name = "itemId" value= "<%= items.get(i).getId() %>" autocomplete="off">
 												<input type="hidden"  name = "submitType" value= "getItemDetails" autocomplete="off">
 												<div class="col-md-6 col-lg-6 col-sm-12">
 													<!-- <a href="javascript:document.getElementById('myform').submit();"> -->
-													<img src="home/assets/img/item/1.jpg" alt="Snow"
-													style="width:50%"/><p><%= items.get(i).getName() %></p></a>
+													<img src="<%= items.get(i).getImage_url()%>" 
+													style="width:100%"/><p><%= items.get(i).getName() %></p></a>
 													<input type="submit"  name = "submit" style = "border:none;background:white;cursor:pointer" value= "<%= items.get(i).getName() %>">
 												</div>
 											
