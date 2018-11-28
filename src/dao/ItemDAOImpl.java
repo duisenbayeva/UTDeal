@@ -281,10 +281,9 @@ public class ItemDAOImpl implements ItemDAO{
 		
 		try{
 			conn = db.getConnection();
-			ps =conn.prepareStatement("select distinct tags from item where (tags like ? or name like ?) and category=?");
+			ps =conn.prepareStatement("select distinct tags from item where tags like ? and category=?");
 			ps.setString(1, "%"+query+"%");
-			ps.setString(2, "%"+query+"%");
-			ps.setInt(3, categoryId);
+			ps.setInt(2, categoryId);
 		
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()){
