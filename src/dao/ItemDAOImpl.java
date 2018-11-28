@@ -130,8 +130,8 @@ public class ItemDAOImpl implements ItemDAO{
 		List<Item> list = new ArrayList<>();
 		try{
 			conn = db.getConnection();
-			ps =conn.prepareStatement("select * from item right join favorite where "
-					+ "tem.net_id=favorite.net_id and net_id=?");
+			ps =conn.prepareStatement("select * from item inner join favorite on "
+					+ "item.id=favorite.item_id where favorite.net_id=?");
 			ps.setString(1, username);
 
 			ResultSet rs = ps.executeQuery();

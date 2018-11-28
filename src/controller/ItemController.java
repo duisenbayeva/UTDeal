@@ -289,7 +289,7 @@ public class ItemController extends HttpServlet {
 		else if(submitType.equals("addToFavorites")) {
 			System.out.println("add to favorites controller");
 			Item item = new Item();
-			item.setId(itemId);
+			item.setId(Integer.parseInt(request.getParameter("itemId")));
 			//item.setId(366);
 //			item.setName(request.getParameter("pname"));
 //			item.setCategory(new Category(Integer.parseInt(request.getParameter("category"))));

@@ -1,3 +1,8 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.Item"%>
+<%@page import="java.util.List"%>
+<%@page import="dao.ItemDAOImpl"%>
+<%@page import="dao.ItemDAO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -47,6 +52,17 @@
 			padding-top: 22px;
 		}
 	</style>
+	   <%
+        ItemDAO itemDAO = new ItemDAOImpl();
+        List<Item> items = itemDAO.fetchFavItems(request.getSession().getAttribute("username").toString());
+        System.out.println("Getting list of fav items"+items);
+        request.getServletContext().setAttribute("favItems", items);
+        if(items==null) items= new ArrayList<Item>();
+
+        String message = request.getServletContext().getAttribute("message").toString();
+        String userId = request.getServletContext().getAttribute("userId").toString();
+
+    %>
 </head>
 
 
@@ -116,27 +132,50 @@
 	<div id="hero-area" class="hero-area-bg">
 		<div class="overlay"></div>
 		<div class="container">
-			<div class="row" style="background-color: white">
-				<div class="col-md-12 col-sm-12">
-					<div class="contents text-left">
-						<div class="row contact-form-area wow fadeInUp"
-							data-wow-delay="0.4s">
+			<div class="container"style="color: black">
+    <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 box-shadow">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Items</h4>
+            </div>
+            <div class="card-body">
 
-							<div class="col-md-6 col-lg-6 col-sm-12">
-							<a href="itemPage1.jsp">
-							<img src="home/assets/img/item/1.jpg" alt="Snow"
-								style="width:30%"/></a>
-								<a href="itemPage2.jsp">
-							<img src="home/assets/img/item/2.jpg" alt="Forest"
-								style="width:30%"/></a>
-								<a href="itemPage3.jsp">
-							<img src="home/assets/img/item/6.jpg" alt="Mountains"
-								style="width:30%"/></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+                <% for(int i=0; i<items.size(); i++){ %>
+                <li class="list-group-item">
+
+                    <%--@declare id="checkbox"--%><label for="checkbox">
+                    <%= items.get(i).getName() %>
+                </label>
+
+                    <div class="pull-right action-buttons">
+
+                        <form name="editItemform" action="ItemController" method="post"
+                               role="form"  enctype="multipart/form-data">
+                            <input type="hidden" name="itemId" value="<%=items.get(i).getId()%>">
+                            <%--<button type="button" class="btn btn-primary">Edit Item</button>--%>
+                           
+                           <input type="hidden" name="id" value="<%=items.get(i).getId()%>">
+                            <input type="submit" class=" btn btn-primary" name = "submit" value="deleteItem"> 
+                           <!--  <a href="javascript:document.editItemform.submit();"><span class="glyphicon glyphicon-pencil"></span></a> &nbsp &nbsp -->
+                          <!--   <input type="hidden" name="submit" value="deleteItem"> -->
+                          <!--   <input type="submit" class=" btn btn-primary" value="delete"> -->
+                           <!--  <a href="" class="trash"><span class="glyphicon glyphicon-trash"></span></a> -->
+                        </form>
+                        
+                       
+                            
+                         
+                       
+                    </div>
+                </li>
+                <%} %>
+
+            </div>
+
+            <br/>
+        </div>
+    </div>
+</div>
 
 <div class="footer" style="background-color: black">
 	<p>Copyright 2018 UTDeals All Right Reserved</p>
