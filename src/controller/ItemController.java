@@ -339,21 +339,21 @@ public class ItemController extends HttpServlet {
 		
 			Item item = itemDao.getItemDetails(itemId);
 			
-			HashMap<String,String> map = new HashMap<String,String>();
-			map.put("product_name", item.getName());
-			map.put("category_name", item.getCategory().getName());
-			map.put("quantity", Integer.toString(item.getQuantity()));
-			map.put("tags", item.getTags());
-			map.put("price", Float.toString(item.getPrice()));
-			map.put("comments", item.getComments());
-			map.put("image_url", item.getImage_url());
-			map.put("itemId", Integer.toString(item.getId()));
-			map.put("for_sale",Boolean.toString(item.getFor_sale()));
-			map.put("status", Boolean.toString(item.getStatus()));
-			map.put("negotiable", Boolean.toString(item.getNegotiable()));
+//			HashMap<String,String> map = new HashMap<String,String>();
+//			map.put("product_name", item.getName());
+//			map.put("category_name", item.getCategory().getName());
+//			map.put("quantity", Integer.toString(item.getQuantity()));
+//			map.put("tags", item.getTags());
+//			map.put("price", Float.toString(item.getPrice()));
+//			map.put("comments", item.getComments());
+//			map.put("image_url", item.getImage_url());
+//			map.put("itemId", Integer.toString(item.getId()));
+//			map.put("for_sale",Boolean.toString(item.getFor_sale()));
+//			map.put("status", Boolean.toString(item.getStatus()));
+//			map.put("negotiable", Boolean.toString(item.getNegotiable()));
 			
-			request.setAttribute("itemDetails", map);
-			request.getRequestDispatcher("itemPage1.jsp").forward(request, response);
+			request.setAttribute("itemId", itemId);
+			request.getRequestDispatcher("itemPage.jsp").forward(request, response);
 		}	
 	
 	}

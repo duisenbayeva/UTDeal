@@ -35,7 +35,8 @@
     <link href="/items/items.css" rel="stylesheet">
     <%
     ItemDAO itemDAO = new ItemDAOImpl();
-    Item item = itemDAO.getItemDetails(Integer.parseInt(request.getParameter("itemId")));
+    String id = request.getParameter("itemId")==null ? request.getAttribute("itemId").toString():request.getParameter("itemId");
+    Item item = itemDAO.getItemDetails(Integer.parseInt(id));
     System.out.println(item.toString());
     %>
 
@@ -77,6 +78,7 @@
                     
                     <hr>
                     <form class="btn-group cart" action="ItemController" method="post">
+                    <input type="hidden" name="itemId" value="<%= item.getId() %>"></input>
                         <input type="submit" value="addToFavorites" class="btn btn-success"
                             name="submit"/>
                        
