@@ -103,7 +103,7 @@
 							<form name="itemform" action="ItemController" method="post"
 								accept="image/gif, image/jpeg"
 								class="col-md-6 col-lg-6 col-sm-12" role="form">
-								<img src="home/assets/img/item/1.jpg"
+								<img src="${itemDetails.image_url}"
 									style="float: right; width: 50%; height: 50%" />
 								<h2>
 									Product Name : <input type="text" name="pname"
