@@ -42,7 +42,7 @@
 						class="alert alert-danger col-sm-12"></div>
 
 					<form name="itemform" action="ItemController" method="post"
-						accept="image/gif, image/jpeg" class="form-horizontal"
+						enctype="multipart/form-data" class="form-horizontal"
 						role="form">
 						
 						<%--@declare id="primary"--%><br> <label for="primary">*Product name:</label>
@@ -85,12 +85,11 @@
 						<label for="primary">Photos:</label>
 						<div style="margin-bottom: 25px" class="input-group">
 					
-
 							<span class="input-group-addon"></span> 
-							<input type='file' onchange="readURL(this);" class="form-control" name="image_url" id="image_url"
-								placeholder="Upload a picture"/>
+							<input type='file' class="form-control" name="image_url" id="image_url"
+								placeholder="Upload a picture"  value="${itemDetails.image_url}"/>
 						</div>
-						    <img id="blah" src="#" alt="" style="width:30%"/>
+						    <img id="blah" src="" alt="" style="width:30%"/>
 						
 						<br/><br/>
 
@@ -169,6 +168,7 @@ $(document).ready(function(){
 		
 	if("${itemDetails.status}" == "true")
 		document.getElementById("status_yes").checked = true;
+	
 	else
 		document.getElementById("status_no").checked = true;
 
