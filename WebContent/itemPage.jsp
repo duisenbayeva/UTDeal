@@ -33,6 +33,11 @@
 
     <!-- Custom styles for this template -->
     <link href="/items/items.css" rel="stylesheet">
+    <%
+    ItemDAO itemDAO = new ItemDAOImpl();
+    Item item = itemDAO.getItemDetails(Integer.parseInt(request.getParameter("itemId")));
+    System.out.println(item.toString());
+    %>
 
 
 </head>
@@ -59,17 +64,17 @@
                 <div class="col-md-12">
                     <div class="product col-md-3 service-image-left">
                         <center>
-                            <img id="item-display" src="home/assets/img/item/1.jpg" alt="" width="250" height="250"></img>
+                            <img id="item-display" src="<%= item.getImage_url() %>" alt="" width="250" height="250"></img>
                         </center>
                     </div>
                 </div>
 
                 <div class="col-md-7">
-                    <div class="product-title">Chair (item name) </div>
-                    <div class="product-desc">Comments given</div>
+                    <div class="product-title"><%= item.getName() %> </div>
+                    <div class="product-desc">Comment -<%= item.getComments() %></div>
                     <hr>
-                    <div class="product-price">$ 30.00 (price)</div>
-                    <div class="product-stock">Status(sold/not) : In Stock</div>
+                    <div class="product-price">$ <%= item.getPrice() %> (price)</div>
+                    
                     <hr>
                     <form class="btn-group cart" action="ItemController" method="post">
                         <input type="submit" value="addToFavorites" class="btn btn-success"

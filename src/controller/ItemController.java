@@ -101,9 +101,9 @@ public class ItemController extends HttpServlet {
 			for (FileItem item : multipart) {
 	            if (!item.isFormField())
 	            {
-	            	String path="C:\\Users\\lenovo\\gitUtdeals\\UTDeal\\WebContent\\home\\assets\\img\\";
+	            	String path="home/assets/img/item/";
 	                
-	            	int index = item.getName().lastIndexOf('\\');
+	            	int index = item.getName().lastIndexOf('/');
 	            	int len = item.getName().length();
 	                String fileName =item.getName().substring(index+1, len);
 	                

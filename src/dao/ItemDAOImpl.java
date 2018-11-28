@@ -167,8 +167,40 @@ public class ItemDAOImpl implements ItemDAO{
 
 	@Override
 	public List<Item> getAllItems() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Item> list = new ArrayList<>();
+		try{
+			conn = db.getConnection();
+			ps =conn.prepareStatement("select * from item");
+
+			ResultSet rs = ps.executeQuery();
+			Item i = null;
+			while(rs.next()){
+				i = new Item();
+				i.setId(rs.getInt(1));
+				i.setName(rs.getString(2));
+//				i.setCategory(rs.getString(3));
+				i.setCategory(null);
+				i.setQuantity(rs.getInt(4));
+				i.setTags(rs.getString(5));
+//				i.setCustomer(rs.getString(6));
+				i.setCustomer(null);
+				i.setImage_url(rs.getString(7));
+				i.setFor_sale(rs.getBoolean(8));
+				i.setPrice(rs.getFloat(9));
+				i.setNegotiable(rs.getBoolean(10));
+				i.setComments(rs.getString(11));
+				i.setDate_posted(rs.getString(12));
+				i.setFav_count(rs.getInt(13));
+//				i.setStatus(rs.getString(14));
+				i.setStatus(rs.getBoolean(14));
+				list.add(i);
+			}
+			conn.close();
+		}catch(Exception e){
+			System.out.println(e);
+		}
+		
+		return list;
 	}
 
 	@Override

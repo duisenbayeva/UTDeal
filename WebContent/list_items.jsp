@@ -56,9 +56,6 @@
         System.out.println("Getting list of posted items"+items);
         request.getServletContext().setAttribute("postedItems", items);
         if(items==null) items= new ArrayList<Item>();
-    %>
-
-    <%
 
         String message = request.getServletContext().getAttribute("message").toString();
         String userId = request.getServletContext().getAttribute("userId").toString();
